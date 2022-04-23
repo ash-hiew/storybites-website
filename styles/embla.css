@@ -1,0 +1,47 @@
+.embla {
+  position: relative;
+  max-width: 100%;
+}
+
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__viewport:hover {
+  cursor: move;
+  cursor: grab;
+}
+
+.embla__viewport:active {
+  cursor: grabbing;
+}
+
+.embla__container {
+  display: flex;
+
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.embla__slide {
+  position: relative;
+  flex: 0 0 90%;
+}
+@media (min-width: 768px) {
+  .embla__slide {
+    flex: 0 0 45%; /* Breakpoint SM slide covers 50% of the viewport */
+  }
+}
+
+.embla__slide__inner {
+  position: relative;
+  overflow: hidden;
+}
+
+.embla__slide__img {
+  position: absolute;
+  display: block;
+}
