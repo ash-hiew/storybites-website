@@ -1,4 +1,3 @@
-import { urlFor } from "../../lib/sanity";
 import { sanityClient } from "../../lib/sanity.server";
 import { GetStaticProps } from "next";
 import { Recipe } from "../../typing";
@@ -37,7 +36,10 @@ const Recipe = ({recipe}: Props) => {
             className="absolute top-0 left-0 w-full h-full"
             url={recipe.video}
             width='100%'
-            height='100%' />
+            height='100%'
+            controls={true}
+            
+          />
         </div>
 
         <div className="my-20">
