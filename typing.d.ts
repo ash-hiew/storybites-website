@@ -1,12 +1,23 @@
 import { Url } from "url";
 
+export interface Chef {
+  _id: string;
+  name: string;
+  image: {
+    asset: {
+      url: string;
+    };
+  };
+  slug: {
+    current: string;
+  };
+  bio: object[];
+}
+
 export interface Story {
   _id: string;
   name: string;
-  chef: {
-    name: string;
-    image: string;
-  };
+  chefs: Chef[];
   mainImage: {
     asset: {
       url: string;
@@ -17,6 +28,10 @@ export interface Story {
   };
   video: url;
   description: object[];
+  category: {
+    _id: string;
+    title: string;
+  }
 };
 
 export interface Recipe {
@@ -38,17 +53,3 @@ export interface Recipe {
   };
   video: url;
 };
-
-export interface Chef {
-  _id: string;
-  name: string;
-  image: {
-    asset: {
-      url: string;
-    };
-  };
-  slug: {
-    current: string;
-  };
-  bio: object[];
-}
