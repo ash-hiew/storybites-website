@@ -2,7 +2,7 @@ import { urlFor } from "../../lib/sanity";
 import { sanityClient } from "../../lib/sanity.server";
 import { GetStaticProps } from "next";
 
-import { Story } from "../../typing";
+import { Story, Chef } from "../../typing";
 
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -14,6 +14,7 @@ import ReactPlayer from 'react-player/lazy';
 
 interface Props {
   story: Story;
+  chef: Chef;
 }
 
 const Story = ({story}: Props) => {
@@ -30,8 +31,9 @@ const Story = ({story}: Props) => {
 
       <article className="font-primary mx-auto max-w-3xl p-5 my-20">
 
-        <div className="my-5">
+        <div className="my-5 space-y-2">
           <h2 className="font-medium uppercase tracking-wide">Story</h2>
+          <p className='text-xs text-gray-400 '>{story.category.title}</p>
           <h1 className="mt-3 font-display font-bold text-5xl">{story.name}</h1>
         </div>
 
@@ -69,6 +71,18 @@ const Story = ({story}: Props) => {
             url={story.video}
             width='100%'
             height='100%' />
+        </div>
+        
+        <div className="grid justify-items-center my-20">
+          <p className="uppercase tracking-wider mb-5 font-semibold">Featured Chefs</p>
+          <div className='flex space-x-8'>
+            {story.chefs.map(chef => (
+              <div className='flex items-center space-x-3'>
+              <img className='rounded-full' src={urlFor(chef.image).width(50).url()!} alt={chef.name} />
+              <p className="text-xs">{chef.name}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
       </article>
@@ -108,6 +122,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const storyQuery = `*[_type == "story" && slug.current == $slug][0]{
   _id,
   name,
+  chefs[] -> {
+    name,
+    image
+  },
+  category-> {
+    _id,
+    title
+  },
   slug,
   video,
   description
