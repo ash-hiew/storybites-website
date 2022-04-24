@@ -47,8 +47,8 @@ export default function StoriesPage({ stories }: Props){
                 <Image className='w-full h-auto group-hover:scale-105 duration-300 transition-all' src={urlFor(story.mainImage).url()!} alt={story.name} placeholder='blur' blurDataURL={urlFor(story.mainImage).url()!} width={1280} height={720} />
               </div>                             
               <div className='flex-grow mt-3 md:ml-10 space-y-3 md:space-y-5'>
-                <p className='text-xs text-gray-400 group-hover:text-yellow-500 duration-300 transition-all'>{story.category.title}</p>
-                <h3 className='text-2xl md:text-2xl lg:text-5xl font-semibold group-hover:text-yellow-500 duration-300 transition-all'>{story.name}</h3>
+                <p className='text-xs uppercase tracking-widest text-gray-500 group-hover:text-yellow-500 duration-300 transition-all'>{story.category.title}</p>
+                <h3 className='text-2xl md:text-2xl lg:text-4xl font-semibold group-hover:text-yellow-500 duration-300 transition-all'>{story.name}</h3>
 
                 <FiArrowRightCircle size={42} className='group-hover:text-yellow-500 duration-300 transition-all'/>
               </div>
