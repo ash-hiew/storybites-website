@@ -31,10 +31,9 @@ const Story = ({story}: Props) => {
 
       <article className="font-primary mx-auto max-w-3xl p-5 my-20">
 
-        <div className="my-5 space-y-2">
-          <h2 className="font-medium uppercase tracking-wide">Story</h2>
-          <p className='text-xs text-gray-400 '>{story.category.title}</p>
-          <h1 className="mt-3 font-display font-bold text-5xl">{story.name}</h1>
+        <div className="flex flex-col items-center my-5 space-y-5">
+          <h2 className="font-medium uppercase tracking-wide">Story - <span>{story.category.title}</span></h2>
+          <h1 className="mt-3 text-center font-display font-bold text-5xl">{story.name}</h1>
         </div>
 
         <div className="my-10">
@@ -75,7 +74,7 @@ const Story = ({story}: Props) => {
         
         <div className="grid justify-items-center my-20">
           <p className="uppercase tracking-wider mb-5 font-semibold">Featured Chefs</p>
-          <div className='flex space-x-8'>
+          <div className='flex flex-wrap space-x-8'>
             {story.chefs.map(chef => (
               <div className='flex items-center space-x-3'>
               <img className='rounded-full' src={urlFor(chef.image).width(50).url()!} alt={chef.name} />
