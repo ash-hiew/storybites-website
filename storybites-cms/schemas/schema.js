@@ -8,7 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import recipe from './documents/recipe'
 import story from './documents/story'
 import chef from './documents/chef'
-//import category from './documents/category'
+import category from './documents/category'
 
 // Object types
 import blockContent from './objects/blockContent'
@@ -23,7 +23,7 @@ export default createSchema({
     recipe,
     story,
     chef,
-    //category,
+    category,
     blockContent,
     //breaks
   ]),

@@ -18,10 +18,30 @@ export default {
       },
     },
     {
-      name: "chef",
-      title: "Chef",
-      type: "reference",
-      to: { type: "chef" },
+      name: 'categories',
+      type: 'array',
+      title: 'Categories',
+      of: [
+        {
+          type: 'reference',
+          to: [{
+            type: 'category'
+          }]
+        }
+      ]
+    },
+    {
+      name: 'chef',
+      title: 'Chef',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{
+            type: 'chef'
+          }]
+        }
+      ]
     },
     {
       name: "mainImage",

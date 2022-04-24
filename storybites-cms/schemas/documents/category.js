@@ -1,13 +1,23 @@
-import { FiTag } from 'react-icons/fi';
-import { qF } from 'sanity-quick-fields';
-
 export default {
-  ...qF('category', 'document'),
-  icon: FiTag,
-  fields: [qF('title'), qF('plural')],
-  preview: {
-    select: {
-      title: 'title',
+  title: 'Category',
+  name: 'category',
+  type: 'document',
+  fields: [
+    {
+      title: 'Title',
+      name: 'title',
+      type: 'string',
     },
-  },
+    // add a unique slug field for queries, permalinks etc
+    {
+      title: 'Slug',
+      name: 'slug',
+      type: 'slug',
+      options: {
+        // auto generates a slug from the title field
+        source: 'title',
+        auto: true
+      }
+    }
+  ]
 }
