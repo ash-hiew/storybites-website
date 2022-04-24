@@ -35,7 +35,7 @@ const serializers = {
     </a>
   ),
   normal: ({ children }: any) => (
-    <p>
+    <p className="text-sm sm:text-base leading-loose sm:leading-loose">
       {children}<br />
     </p>
   )
@@ -53,10 +53,10 @@ const Recipe = ({recipe}: Props) => {
         alt=""
     />*/}
 
-      <article className="font-primary mx-auto max-w-3xl px-5 my-10">
-        <div className="my-5">
+      <article className="font-primary mx-auto max-w-3xl my-20">
+        <div className="m-10">
         <h2 className="font-medium uppercase tracking-wide">Recipe</h2>
-        <h1 className="mt-3 font-display font-bold text-5xl">{recipe.name}</h1>
+        <h1 className="mt-3 font-display font-bold text-4xl sm:text-5xl md:text-6xl">{recipe.name}</h1>
         </div>
 
         <div className="my-10 relative pb-fluid-video">
@@ -69,7 +69,7 @@ const Recipe = ({recipe}: Props) => {
             
           />
         </div>
-        <div className="my-10 p-6 bg-slate-200">
+        <div className="m-10 p-6 bg-slate-200">
           <h3 className="mb-4 text-3xl"><code>Ingredients</code></h3>
           <PortableText
             dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
@@ -78,7 +78,7 @@ const Recipe = ({recipe}: Props) => {
             serializers={serializers}
            />
         </div>
-        <div className="my-10">
+        <div className="m-10">
           <h3 className="mb-4 text-3xl">Instructions</h3>
           <PortableText
             dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}

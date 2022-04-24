@@ -29,14 +29,14 @@ const Story = ({story}: Props) => {
         alt=""
     />*/}
 
-      <article className="font-primary mx-auto max-w-3xl p-5 my-20">
+      <article className="font-primary mx-auto max-w-3xl my-20">
 
-        <div className="flex flex-col items-center my-5 space-y-5">
+        <div className="flex flex-col m-10 space-y-5">
           <h2 className="font-medium uppercase tracking-wide">Story - <span>{story.category.title}</span></h2>
-          <h1 className="mt-3 text-center font-display font-bold text-5xl">{story.name}</h1>
+          <h1 className="mt-3 font-display font-bold text-4xl sm:text-5xl md:text-6xl">{story.name}</h1>
         </div>
 
-        <div className="my-10">
+        <div className="m-10">
           <PortableText
             dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
@@ -57,7 +57,7 @@ const Story = ({story}: Props) => {
                 </a>
               ),
               normal: ({ children }: any) => (
-                <p>
+                <p className="text-sm sm:text-base leading-loose sm:leading-loose">
                   {children}<br />
                 </p>
               )
@@ -72,9 +72,9 @@ const Story = ({story}: Props) => {
             height='100%' />
         </div>
         
-        <div className="grid justify-items-center my-20">
+        <div className="grid justify-items-center my-20 mx-10">
           <p className="uppercase tracking-wider mb-5 font-semibold">Featured Chefs</p>
-          <div className='flex flex-wrap space-x-8'>
+          <div className='flex flex-col sm:flex-row items-start sm:space-x-8 space-y-6 sm:space-y-0'>
             {story.chefs.map(chef => (
               <div className='flex items-center space-x-3'>
               <img className='rounded-full' src={urlFor(chef.image).width(50).url()!} alt={chef.name} />
