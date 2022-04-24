@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-/storybites-cms/node_modules
+#/storybites-cms/node_modules
 
 # testing
 /coverage
