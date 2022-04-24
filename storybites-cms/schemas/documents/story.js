@@ -18,28 +18,21 @@ export default {
       },
     },
     {
-      name: 'categories',
-      type: 'array',
-      title: 'Categories',
-      of: [
-        {
-          type: 'reference',
-          to: [{
-            type: 'category'
-          }]
-        }
-      ]
+      name: "category",
+      title: "Category",
+      type: "reference",
+      to: { type: "category" },
     },
     {
-      name: 'chef',
-      title: 'Chef',
+      name: 'chefs',
+      title: 'Chefs',
       type: 'array',
       of: [
         {
           type: 'reference',
           to: [{
             type: 'chef'
-          }]
+          }],
         }
       ]
     },
