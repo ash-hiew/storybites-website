@@ -38,7 +38,7 @@ export default function ChefsPage({ chefs } : Props){
           </div>
         </section>
 
-        <section className='font-primary px-6 max-w-4xl mx-auto my-20'>
+        <section className='font-primary px-10 max-w-4xl mx-auto my-20'>
           <div className="space-y-4 md:space-y-6 text-start md:text-center">
           <h2 className='font-semibold tracking-tight text-3xl'>Chefs We've Collaborated With.</h2>
           <p className='mt-3 max-w-2xl mx-auto'>
@@ -49,7 +49,8 @@ export default function ChefsPage({ chefs } : Props){
           <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 justify-center content-start mt-10'>
           {chefs.map((chef, index) => (
             <div key={index} className='flex flex-col my-8  justify-center'>
-                <img className='rounded-full' src={urlFor(chef.image).url()!} alt={chef.name} />                          
+                <img className='rounded-full self-center w-44 h-44 ' src={urlFor(chef.image).width(250).url()!} loading="lazy" alt={chef.name} />        
+                           
               <div className='space-y-1 mt-5 text-center'>
                 <h3 className='text-lg font-semibold'>{chef.name}</h3>
                 <p className='text-xs text-gray-400'>          
@@ -65,7 +66,7 @@ export default function ChefsPage({ chefs } : Props){
         </section>
 
         {/* CTA Section */}
-        <section className='font-primary px-6 max-w-4xl mx-auto m-40 md:my-52 text-center'>
+        <section className='font-primary px-10 max-w-4xl mx-auto m-40 md:my-52 text-center'>
           <div className='mx-auto my-10'>
             <h2 className="font-primary font-medium uppercase m-6 tracking-wide">Contact</h2>
             <h3 className="font-display font-semibold leading-tight tracking-tight text-4xl md:text-6xl md:leading-tight">Keen to Partner With Us?</h3>
