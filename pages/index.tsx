@@ -34,9 +34,9 @@ const storiesQuery = `*[_type == "story"]{
   name,
   slug,
   mainImage,
-  chef-> {
-    name,
-    image
+  category-> {
+    _id,
+    title
   }
 }`;
 
@@ -59,14 +59,6 @@ export default function Home({ recipes, stories }: Props) {
     containScroll: 'trimSnaps',
   }, [WheelGesturesPlugin({forceWheelAxis:'x'})]);
 
-  {/*const scrollPrev = useCallback(() => {
-    if (emblaApi2) emblaApi2.scrollPrev()
-  }, [emblaApi2])
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi2) emblaApi2.scrollNext()
-  }, [emblaApi2])*/}
-
   return (
   <div>
       <Head>
@@ -78,15 +70,15 @@ export default function Home({ recipes, stories }: Props) {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className='text-center px-10 lg:max-w-4xl mx-10 m-24 lg:m-40 xl:mx-auto'>
+        <section className='text-center px-10 lg:max-w-4xl sm:mx-10 my-24 lg:m-40 xl:mx-auto'>
           <h1 className="font-primary font-medium uppercase m-6 tracking-wide">Storybites</h1>
-          <h2 className="font-display font-semibold leading-tight tracking-tight text-4xl md:text-6xl md:leading-tight duration-500 transition-all">Sharing our love for <a href='/stories' className='text-yellow-500 underline decoration-transparent hover:decoration-yellow-500 duration-500 transition-all decoration-4 underline-offset-2'>people</a> and <a href='/recipes' className='text-yellow-500 underline decoration-transparent hover:decoration-yellow-500 duration-500 transition-all decoration-4 underline-offset-2'>food</a> one bite at a time<span className='text-yellow-500'>.</span></h2>
+          <h2 className="font-display font-semibold leading-tight tracking-tight text-3xl md:text-6xl md:leading-tight duration-500 transition-all">Sharing our love for <a href='/stories' className='text-yellow-500 underline decoration-transparent hover:decoration-yellow-500 duration-500 transition-all decoration-4 underline-offset-2'>people</a> and <a href='/recipes' className='text-yellow-500 underline decoration-transparent hover:decoration-yellow-500 duration-500 transition-all decoration-4 underline-offset-2'>food</a> one bite at a time<span className='text-yellow-500'>.</span></h2>
         </section>
 
         {/* About Section */}
 
         {/* Higlight Reel Section */}
-        <section className='text-center px-10 lg:max-w-4xl mx-10 m-24 lg:m-40 xl:mx-auto sm:py-44'>
+        <section className='text-center px-10 lg:max-w-4xl sm:mx-10 my-24 lg:m-40 xl:mx-auto sm:py-44'>
           <p className="font-primary text-l md:text-2xl leading-loose">We are a <span className='font-semibold'>New Zealand</span> based culinary brand mandated to empower one million people to find humanity in <span className='font-semibold'>gastronomy</span>.</p>
         </section>
 
@@ -102,8 +94,9 @@ export default function Home({ recipes, stories }: Props) {
                   <Link key={story._id} href={`/stories/${story.slug.current}`}>
                     <div className='links mx-3 lg:mx-6 group active:scale-105 duration-500 transition-all'>
                       <Image className='w-full h-auto group-hover:scale-105 duration-500 transition-all' src={urlFor(story.mainImage).url()!} alt={story.name} placeholder='blur' blurDataURL={urlFor(story.mainImage).url()!} width={1280} height={720}/>
-                      <div>                             
-                      <h3 className='text-xl md:text-2xl font-semibold mt-5 group-hover:text-yellow-500 duration-500 transition-all'>{story.name}</h3>
+                      <div>        
+                      <p className='mt-5 text-xs uppercase tracking-widest text-gray-500 group-hover:text-yellow-500 duration-300 transition-all'>{story.category.title}</p>                     
+                      <h3 className='mt-2 text-xl md:text-2xl font-semibold group-hover:text-yellow-500 duration-500 transition-all'>{story.name}</h3>
 
                       </div>
                     </div>
@@ -155,10 +148,10 @@ export default function Home({ recipes, stories }: Props) {
         </section>
 
         {/* CTA-Newsletter Section */}
-        <section className='font-primary px-10 max-w-4xl mx-auto m-40 md:my-52'>
+        <section className='font-primary px-10 max-w-xl mx-auto m-40 md:my-52'>
           <div className='text-center'>
             <h2 className="font-primary font-medium uppercase m-6 tracking-wide">Newsletter</h2>
-            <h3 className="font-display font-semibold leading-tight tracking-tight text-4xl md:text-6xl md:leading-tight">Sign up for Monthly Updates</h3>
+            <h3 className="font-display font-semibold leading-tight tracking-tight text-3xl md:text-6xl md:leading-tight">Sign up for Monthly Updates</h3>
             <p className='mt-6 max-w-2xl text-sm sm:text-base leading-loose m-auto'>Join the narrative and get exclusive access to our finest recipes, articles, and cooking tips.</p>
           </div>
 
