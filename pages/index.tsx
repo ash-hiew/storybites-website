@@ -18,7 +18,7 @@ interface Props {
   stories: [Story];
 }
 
-const recipesQuery = `*[_type == "recipe"]{
+const recipesQuery = `*[_type == "recipe"][0..3]{
   _id,
   name,
   slug,
@@ -29,7 +29,7 @@ const recipesQuery = `*[_type == "recipe"]{
   }
 }`;
 
-const storiesQuery = `*[_type == "story"]{
+const storiesQuery = `*[_type == "story"][0..3]{
   _id,
   name,
   slug,
