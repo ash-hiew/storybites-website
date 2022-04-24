@@ -7,13 +7,12 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // Document types
 import recipe from './documents/recipe'
 import story from './documents/story'
-//import ingredient from './documents/ingredient'
 import chef from './documents/chef'
 //import category from './documents/category'
 
 // Object types
-//import videoEmbed from './objects/videoEmbed'
 import blockContent from './objects/blockContent'
+//import breaks from './objects/breaks'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -23,10 +22,9 @@ export default createSchema({
   types: schemaTypes.concat([
     recipe,
     story,
-    //ingredient,
     chef,
     //category,
-    //videoEmbed
     blockContent,
+    //breaks
   ]),
 })

@@ -35,7 +35,11 @@ export default {
       name: "video",
       title: "Recipe Video Url",
       type: "url"
-      //of: [{ type: "videoEmbed" }]
+    },
+    {
+      name: "ingredients",
+      title: "Ingredients",
+      type: "blockContent",
     },
     {
       name: "instructions",

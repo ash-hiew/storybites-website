@@ -21,6 +21,7 @@ export interface Story {
 
 export interface Recipe {
   instructions: object[];
+  ingredients: object[];
   _id: string;
   name: string;
   chef: {

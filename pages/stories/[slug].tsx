@@ -55,6 +55,11 @@ const Story = ({story}: Props) => {
                   {children}
                 </a>
               ),
+              normal: ({ children }: any) => (
+                <p>
+                  {children}<br />
+                </p>
+              )
             }} />
         </div>
 
