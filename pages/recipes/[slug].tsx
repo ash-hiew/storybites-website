@@ -8,6 +8,7 @@ import Footer from "../../components/Footer";
 import PortableText from 'react-portable-text';
 
 import ReactPlayer from 'react-player/lazy';
+import { urlFor } from "../../lib/sanity";
 
 interface Props {
   recipe: Recipe;
@@ -87,6 +88,14 @@ const Recipe = ({recipe}: Props) => {
             serializers={serializers}
            />
         </div>
+
+        <div className='grid justify-items-center my-20'>
+          <p className="uppercase tracking-wider mb-5 font-semibold">Written By</p>
+          <div className='flex items-center space-x-3'>
+            <img className='rounded-full' src={urlFor(recipe.chef.image).width(50).url()!} alt={recipe.chef.name} />
+            <p className="text-xs">{recipe.chef.name}</p>
+          </div>
+        </div>
         
       </article>
 
@@ -127,7 +136,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   name,
   slug,
   chef -> {
-    name
+    name,
+    image
   },
   mainImage,
   video,
