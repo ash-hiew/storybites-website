@@ -47,7 +47,7 @@ export default function RecipesPage({ recipes} : Props){
                 <Image className='w-full h-auto group-hover:scale-105 duration-300 transition-all' src={urlFor(recipe.mainImage).url()!} alt={recipe.name} width={1280} height={720} />
               </div>                             
               <div className='flex-grow md:ml-10 space-y-2'>
-                <p className='text-xs text-gray-400 group-hover:text-yellow-500 duration-300 transition-all'>Category</p>
+                {/*<p className='text-xs text-gray-400 group-hover:text-yellow-500 duration-300 transition-all'>Category</p>*/}
                 <h3 className='text-2xl md:text-2xl lg:text-5xl font-semibold group-hover:text-yellow-500 duration-300 transition-all'>{recipe.name}</h3>
                 <p className='group-hover:text-yellow-500 duration-300 transition-all'>{recipe.chef.name}</p>
                 <FiArrowRightCircle size={42} className='group-hover:text-yellow-500 duration-300 transition-all'/>
