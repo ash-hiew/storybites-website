@@ -20,8 +20,7 @@ const recipesQuery = `*[_type == "recipe"]{
   slug,
   mainImage,
   chef-> {
-    name,
-    image
+    name
   }
 }`;
 
@@ -42,11 +41,11 @@ export default function RecipesPage({ recipes} : Props){
           {recipes.map((recipe, index) => (
             <div key={index} className='py-10'>
             <Link key={index} href={`/recipes/${recipe.slug.current}`}>
-            <div className='links md:flex md:items-center group active:scale-105 duration-300 transition-all space-y-5'>
+            <div className='links md:flex md:items-center group active:scale-105 duration-300 transition-all'>
               <div className='overflow-hidden relative flex-shrink md:max-w-xs lg:max-w-sm'>
                 <Image className='w-full h-auto group-hover:scale-105 duration-300 transition-all' src={urlFor(recipe.mainImage).url()!} alt={recipe.name} width={1280} height={720} />
               </div>                             
-              <div className='flex-grow md:ml-10 space-y-2'>
+              <div className='flex-grow md:ml-10 space-y-5'>
                 {/*<p className='text-xs text-gray-400 group-hover:text-yellow-500 duration-300 transition-all'>Category</p>*/}
                 <h3 className='text-2xl md:text-2xl lg:text-5xl font-semibold group-hover:text-yellow-500 duration-300 transition-all'>{recipe.name}</h3>
                 <p className='group-hover:text-yellow-500 duration-300 transition-all'>{recipe.chef.name}</p>
