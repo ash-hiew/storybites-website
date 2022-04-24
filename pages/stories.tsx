@@ -20,9 +20,9 @@ const storiesQuery = `*[_type == "story"]{
   name,
   slug,
   mainImage,
-  chef-> {
-    name,
-    image
+  category-> {
+    _id,
+    title
   }
 }`;
 
@@ -42,13 +42,14 @@ export default function StoriesPage({ stories }: Props){
           {stories.map((story, index) => (
             <div key={index} className='py-10'>
             <Link key={story._id} href={`/stories/${story.slug.current}`}>
-            <div className='links md:flex md:items-center group active:scale-105 duration-300 transition-all space-y-5'>
+            <div className='links md:flex md:items-center group active:scale-105 duration-300 transition-all'>
               <div className='overflow-hidden relative flex-shrink md:max-w-xs lg:max-w-sm'>
                 <Image className='w-full h-auto group-hover:scale-105 duration-300 transition-all' src={urlFor(story.mainImage).url()!} alt={story.name} width={1280} height={720} />
               </div>                             
-              <div className='flex-grow md:ml-10 space-y-2'>
-                <p className='text-xs text-gray-400 group-hover:text-yellow-500 duration-300 transition-all'>Doumentaries</p>
+              <div className='flex-grow md:ml-10 space-y-5'>
+                <p className='text-xs text-gray-400 group-hover:text-yellow-500 duration-300 transition-all'>{story.category.title}</p>
                 <h3 className='text-2xl md:text-2xl lg:text-5xl font-semibold group-hover:text-yellow-500 duration-300 transition-all'>{story.name}</h3>
+
                 <FiArrowRightCircle size={42} className='group-hover:text-yellow-500 duration-300 transition-all'/>
               </div>
             </div>
