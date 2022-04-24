@@ -9,11 +9,11 @@ export default function ContactPage() {
       <Header />
       
       <main>
-        <section className='font-primary px-6 max-w-2xl mx-auto my-32'>
+        <section className='font-primary px-10 max-w-2xl mx-auto my-32'>
           <div className="text-center space-y-6">
             <h1 className="font-medium uppercase tracking-wide">Contact</h1>
-            <h2 className="font-display font-semibold text-6xl leading-tight text-center">Work With Us</h2>
-            <p className="text-md">
+            <h2 className="font-display font-semibold tracking-tight text-4xl md:text-6xl leading-normal md:leading-tight text-center">Work With Us</h2>
+            <p className="text-sm sm:text-base leading-loose sm:leading-loose">
             See potential for a synergistic conversation? No matter your background whether in hospitality, FMCG, equipment innovation, or food tourism, we want to hear from you.
             </p>
           </div>

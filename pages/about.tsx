@@ -25,7 +25,7 @@ export default function AboutPage(){
         <section className='font-primary max-w-xl mx-auto my-10 md:my-20'>
           <div className="space-y-4 px-10">
             <h1 className='font-semibold text-3xl'>The Why</h1>
-            <p>Ask yourself this. What brings your neighbourhood together? What makes a city come alive? What is that one thing that nations would put race, creed, or religion aside for to sit in unity with one another; <span className="font-semibold">their love for people and food</span>.</p>
+            <p className='text-sm sm:text-base leading-loose'>Ask yourself this. What brings your neighbourhood together? What makes a city come alive? What is that one thing that nations would put race, creed, or religion aside for to sit in unity with one another; <span className="font-semibold">their love for people and food</span>.</p>
           </div>
           <img className='mt-20 mx-auto' src='https://via.placeholder.com/500x300'/>
         </section>

@@ -25,10 +25,10 @@ export default function ChefsPage({ chefs } : Props){
       <Header />
       
       <main>
-        <section className='font-primary px-6 max-w-4xl mx-auto my-32'>
+        <section className='font-primary px-10 max-w-4xl mx-auto my-32'>
           <div className="space-y-4 md:space-y-6">
             <h1 className="font-medium uppercase tracking-wide">Our Chefs</h1>
-            <p className="font-display font-semibold leading-tight tracking-tight text-4xl md:text-6xl md:leading-tight">The Quintessence to Culinary Collaboration.</p>
+            <p className="font-display font-semibold tracking-tight text-4xl md:text-6xl leading-normal md:leading-tight">The Quintessence to Culinary Collaboration.</p>
           </div>
         </section>
 
@@ -41,7 +41,7 @@ export default function ChefsPage({ chefs } : Props){
         <section className='font-primary px-10 max-w-4xl mx-auto my-20'>
           <div className="space-y-4 md:space-y-6 text-start md:text-center">
           <h2 className='font-semibold tracking-tight text-3xl'>Chefs We've Collaborated With.</h2>
-          <p className='mt-3 max-w-2xl mx-auto'>
+          <p className='mt-3 max-w-2xl mx-auto text-sm sm:text-base sm:leading-loose'>
             From fried chicken, to french pastries, food has no place for discrimination. Check out our team of culinary collaborators.
           </p>        
           </div>

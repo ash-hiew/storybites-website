@@ -78,7 +78,7 @@ export default function Home({ recipes, stories }: Props) {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className='text-center px-5 lg:max-w-4xl mx-10 m-24 lg:m-40 xl:mx-auto'>
+        <section className='text-center px-10 lg:max-w-4xl mx-10 m-24 lg:m-40 xl:mx-auto'>
           <h1 className="font-primary font-medium uppercase m-6 tracking-wide">Storybites</h1>
           <h2 className="font-display font-semibold leading-tight tracking-tight text-4xl md:text-6xl md:leading-tight duration-500 transition-all">Sharing our love for <a href='/stories' className='text-yellow-500 underline decoration-transparent hover:decoration-yellow-500 duration-500 transition-all decoration-4 underline-offset-2'>people</a> and <a href='/recipes' className='text-yellow-500 underline decoration-transparent hover:decoration-yellow-500 duration-500 transition-all decoration-4 underline-offset-2'>food</a> one bite at a time<span className='text-yellow-500'>.</span></h2>
         </section>
@@ -86,15 +86,15 @@ export default function Home({ recipes, stories }: Props) {
         {/* About Section */}
 
         {/* Higlight Reel Section */}
-        <section className='text-center px-5 lg:max-w-4xl mx-10 m-24 lg:m-40 xl:mx-auto py-44'>
-          <p className="font-primary text-xl md:text-2xl">We are a <span className='font-semibold'>New Zealand</span> based culinary brand mandated to empower one million people to find humanity in <span className='font-semibold'>gastronomy</span>.</p>
+        <section className='text-center px-10 lg:max-w-4xl mx-10 m-24 lg:m-40 xl:mx-auto sm:py-44'>
+          <p className="font-primary text-l md:text-2xl leading-loose">We are a <span className='font-semibold'>New Zealand</span> based culinary brand mandated to empower one million people to find humanity in <span className='font-semibold'>gastronomy</span>.</p>
         </section>
 
         {/* Recent Embla Stories Section */}
-        <section className='flex flex-col justify-center font-primary max-w-7xl lg:px-6 mx-auto my-20 xl:my-40'>
-          <h2 className='text-3xl md:text-5xl lg:mb-5 px-6'>Recent <span className='font-bold'>Stories</span> We've Shared.</h2>
+        <section className='font-primary flex flex-col justify-center max-w-7xl mx-auto my-32 lg:my-40 px-10'>
+          <h2 className='text-3xl md:text-5xl lg:mb-5'>Recent <span className='font-bold'>Stories</span> We've Shared.</h2>
 
-          <div className='embla overflow-hidden px-3 lg:px-0'>
+          <div className='embla overflow-hidden lg:px-0'>
             <div className='embla__viewport ' ref={emblaRef}>
               <div className='embla__container'>
               {stories.slice(0, 3).map((story, index) => (
@@ -119,10 +119,10 @@ export default function Home({ recipes, stories }: Props) {
         </section>
 
         {/* Recent Recipes Section */}
-        <section className='font-primary flex flex-col justify-center max-w-7xl mx-auto my-32 lg:my-40'>
-          <h2 className='text-3xl md:text-5xl lg:mb-5 px-6'>The Latest <span className='font-bold'>Recipes</span> Collected.</h2>
+        <section className='font-primary flex flex-col justify-center max-w-7xl mx-auto my-32 lg:my-40 px-10'>
+          <h2 className='text-3xl md:text-5xl lg:mb-5'>The Latest <span className='font-bold'>Recipes</span> Collected.</h2>
 
-          <div className='embla mx-auto px-3'>
+          <div className='embla mx-auto'>
           {/*<div className='mx-auto'>
             <button className="p-5 rounded-lg" type="button" onClick={scrollPrev}>
             Prev
@@ -155,11 +155,11 @@ export default function Home({ recipes, stories }: Props) {
         </section>
 
         {/* CTA-Newsletter Section */}
-        <section className='font-primary px-6 max-w-4xl mx-auto m-40 md:my-52'>
+        <section className='font-primary px-10 max-w-4xl mx-auto m-40 md:my-52'>
           <div className='text-center'>
             <h2 className="font-primary font-medium uppercase m-6 tracking-wide">Newsletter</h2>
             <h3 className="font-display font-semibold leading-tight tracking-tight text-4xl md:text-6xl md:leading-tight">Sign up for Monthly Updates</h3>
-            <p className='mt-6 max-w-2xl m-auto'>Join the narrative and get exclusive access to our finest recipes, articles, and cooking tips.</p>
+            <p className='mt-6 max-w-2xl text-sm sm:text-base leading-loose m-auto'>Join the narrative and get exclusive access to our finest recipes, articles, and cooking tips.</p>
           </div>
 
           <form className='flex flex-col lg:flex-row text-align mt-16 mx-auto max-w-md'>

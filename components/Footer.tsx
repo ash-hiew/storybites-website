@@ -14,7 +14,7 @@ function Footer() {
     </div>
 
     {/* Subscribe Form */}
-    <div className="flex flex-col flex-grow lg:items-center mx-4 md:mx-18">
+    <div className="flex flex-col flex-grow lg:items-center mx-10 md:mx-18">
       <p className="mb-3 text-xs font-semibold tracking-wider text-gray-50 uppercase">SUBSCRIBE TO OUR NEWSLETTER</p>
       <form action="#" className="mb-2 flex lg:w-10/12">
         <input className="w-full px-3 py-2 text-base leading-normal transition duration-150 ease-in-out bg-black border-gray-50 border-2 focus:outline-none" type="email" placeholder="Enter your email" />
