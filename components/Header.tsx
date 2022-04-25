@@ -55,7 +55,7 @@ function Header() {
             active ? 'max-h-full' : 'max-h-0 overflow-hidden duration-700'
           } fixed lg:relative top-0 left-0 transition-all duration-800 delay-100 ease-in-out bg-gray-50 h-screen w-full lg:h-full lg:max-h-full lg:inline-flex lg:flex-grow lg:w-auto z-10`}
         >
-          <div className='p-5 mt-32 text-3xl font-bold space-y-5 lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto lg:p-0 lg:mt-0 lg:space-y-0 w-full lg:items-center flex flex-col lg:text-base lg:font-medium lg:h-auto'>
+          <div className='p-5 mt-32 text-3xl font-bold space-y-5 lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto lg:p-0 lg:mt-0 lg:space-y-0 w-full lg:items-center flex flex-col lg:text-base lg:font-medium lg:h-auto transition-all duration-300 ease-in-out'>
             <Link href='/stories'>
               <a className={`${ active ? 'text-opacity-100 delay-300' : 'text-opacity-0' }'transition-all duration-300 ease-in-out lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black items-center justify-center lg:text-opacity-100 hover:scale-105 hover:text-yellow-500`}>
                 Stories
