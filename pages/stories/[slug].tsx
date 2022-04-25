@@ -77,8 +77,11 @@ const Story = ({story}: Props) => {
           <div className='flex flex-col sm:flex-row items-start sm:space-x-8 space-y-6 sm:space-y-0'>
             {story.chefs.map(chef => (
               <div className='flex items-center space-x-3'>
-              <img className='rounded-full' src={urlFor(chef.image).width(50).url()!} alt={chef.name} />
-              <p className="text-xs">{chef.name}</p>
+                <img className='rounded-full' src={urlFor(chef.image).width(50).url()!} alt={chef.name} />
+                <div>
+                  <p className="text-sm">{chef.name}</p>
+                  <p className="text-xs text-gray-400">{chef.bio}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -123,7 +126,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   name,
   chefs[] -> {
     name,
-    image
+    image,
+    bio
   },
   category-> {
     _id,

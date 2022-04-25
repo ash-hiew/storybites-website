@@ -93,7 +93,7 @@ export default function Home({ recipes, stories }: Props) {
                 <div key={index} className='embla__slide py-10'>
                   <Link key={story._id} href={`/stories/${story.slug.current}`}>
                     <div className='links mx-3 lg:mx-6 group active:scale-105 duration-500 transition-all'>
-                      <Image className='w-full h-auto group-hover:scale-105 duration-500 transition-all' src={urlFor(story.mainImage).url()!} alt={story.name} placeholder='blur' blurDataURL={urlFor(story.mainImage).url()!} width={1280} height={720}/>
+                      <Image className='w-full h-auto group-hover:scale-105 duration-500 transition-all' src={urlFor(story.mainImage).url()!} alt={story.name} placeholder='blur' blurDataURL={urlFor(story.mainImage).url()!} width={854} height={480} priority={true}/>
                       <div>        
                       <p className='mt-5 text-xs uppercase tracking-widest text-gray-500 group-hover:text-yellow-500 duration-300 transition-all'>{story.category.title}</p>                     
                       <h3 className='mt-2 text-xl md:text-2xl font-semibold group-hover:text-yellow-500 duration-500 transition-all'>{story.name}</h3>
@@ -130,7 +130,7 @@ export default function Home({ recipes, stories }: Props) {
                 <div key={index} className='embla__slide py-10'>
                   <Link key={recipe._id} href={`/recipes/${recipe.slug.current}`}>
                     <div className='embla__slide__inner links mx-3 lg:mx-6 group active:scale-105 duration-500 transition-all'>
-                      <Image className='embla__slide__img w-full h-auto group-hover:scale-105 duration-500 transition-all' src={urlFor(recipe.mainImage).url()!} alt={recipe.name} placeholder='blur' blurDataURL={urlFor(recipe.mainImage).url()!} width={1280} height={720}/>
+                      <Image className='embla__slide__img w-full h-auto group-hover:scale-105 duration-500 transition-all' src={urlFor(recipe.mainImage).url()!} alt={recipe.name} placeholder='blur' blurDataURL={urlFor(recipe.mainImage).url()!} width={854} height={480} priority={true}/>
                       <div>                             
                         <h3 className='text-xl lg:text-2xl font-semibold mt-5 group-hover:text-yellow-500 duration-500 transition-all'>{recipe.name}</h3>
                         <p className='mt-2 group-hover:text-yellow-500 duration-500 transition-all'>{recipe.chef.name}</p>

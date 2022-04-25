@@ -5,6 +5,7 @@ import { Recipe } from "../../typing";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
+import Image from "next/image";
 import PortableText from 'react-portable-text';
 
 import ReactPlayer from 'react-player/lazy';
@@ -48,12 +49,6 @@ const Recipe = ({recipe}: Props) => {
     <div>
     <Header />
     <main>
-      {/*<img
-        className="w-screen object-cover"
-        src={urlFor(recipe.mainImage).url()!}
-        alt=""
-    />*/}
-
       <article className="font-primary mx-auto max-w-3xl my-20">
         <div className="m-10">
         <h2 className="font-medium uppercase tracking-wide">Recipe</h2>
@@ -92,8 +87,12 @@ const Recipe = ({recipe}: Props) => {
         <div className='grid justify-items-center my-20'>
           <p className="uppercase tracking-wider mb-5 font-semibold">Written By</p>
           <div className='flex items-center space-x-3'>
-            <img className='rounded-full' src={urlFor(recipe.chef.image).width(50).url()!} alt={recipe.chef.name} />
-            <p className="text-xs">{recipe.chef.name}</p>
+            <Image className='rounded-full' src={urlFor(recipe.chef.image).width(100).url()!} alt={recipe.chef.name} width={50} height={50} placeholder='blur' blurDataURL={urlFor(recipe.chef.image).url()!}/>
+            <div>
+              <p className="text-sm">{recipe.chef.name}</p>
+              <p className="text-xs text-gray-400">{recipe.chef.bio}</p>
+            </div>
+            
           </div>
         </div>
         
@@ -137,7 +136,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   slug,
   chef -> {
     name,
-    image
+    image,
+    bio
   },
   mainImage,
   video,

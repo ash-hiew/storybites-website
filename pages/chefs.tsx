@@ -49,15 +49,12 @@ export default function ChefsPage({ chefs } : Props){
           <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 justify-center content-start mt-10'>
           {chefs.map((chef, index) => (
             <div key={index} className='flex flex-col my-8  justify-center'>
-                <img className='rounded-full self-center w-44 h-44 ' src={urlFor(chef.image).width(250).url()!} loading="lazy" alt={chef.name} />        
+                <Image className='rounded-full self-center w-44 h-44' src={urlFor(chef.image).width(400).url()!} width={400} height={400} alt={chef.name} placeholder='blur' blurDataURL={urlFor(chef.image).url()!}/>        
                            
               <div className='space-y-1 mt-5 text-center'>
                 <h3 className='text-lg font-semibold'>{chef.name}</h3>
                 <p className='text-xs text-gray-400'>          
-                <PortableText
-            dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
-            projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
-            content={chef.bio} /></p>
+                {chef.bio}</p>
               </div>
             
             </div>

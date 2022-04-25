@@ -11,7 +11,7 @@ export interface Chef {
   slug: {
     current: string;
   };
-  bio: object[];
+  bio: string;
 }
 
 export interface Story {
@@ -42,6 +42,7 @@ export interface Recipe {
   chef: {
     name: string;
     image: string;
+    bio: string;
   };
   mainImage: {
     asset: {

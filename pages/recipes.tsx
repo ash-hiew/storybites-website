@@ -43,7 +43,7 @@ export default function RecipesPage({ recipes} : Props){
             <Link key={index} href={`/recipes/${recipe.slug.current}`}>
             <div className='links md:flex md:items-center group active:scale-105 duration-300 transition-all'>
               <div className='overflow-hidden relative flex-shrink md:max-w-xs lg:max-w-sm'>
-                <Image className='w-full h-auto group-hover:scale-105 duration-300 transition-all' src={urlFor(recipe.mainImage).url()!} alt={recipe.name} placeholder='blur' blurDataURL={urlFor(recipe.mainImage).url()!} width={1280} height={720} />
+                <Image className='w-full h-auto group-hover:scale-105 duration-300 transition-all' src={urlFor(recipe.mainImage).url()!} alt={recipe.name} placeholder='blur' blurDataURL={urlFor(recipe.mainImage).url()!} width={854} height={480} priority={true}/>
               </div>                             
               <div className='flex-grow md:ml-10 mt-3 space-y-3 md:space-y-5'>
                 {/*<p className='text-xs text-gray-400 group-hover:text-yellow-500 duration-300 transition-all'>Category</p>*/}
