@@ -27,7 +27,7 @@ export default function ChefsPage({ chefs } : Props){
       <main>
         <section className='font-primary px-10 max-w-4xl mx-auto my-32'>
           <div className="space-y-4 md:space-y-6">
-            <h1 className="font-medium uppercase tracking-wide">Our Chefs</h1>
+            <h1 className="font-medium uppercase tracking-widest text-sm">Our Chefs</h1>
             <p className="font-display font-semibold tracking-tight text-4xl md:text-6xl leading-normal md:leading-tight">The Quintessence to Culinary Collaboration.</p>
           </div>
         </section>
@@ -53,7 +53,7 @@ export default function ChefsPage({ chefs } : Props){
                            
               <div className='space-y-1 mt-5 text-center'>
                 <h3 className='text-lg font-semibold'>{chef.name}</h3>
-                <p className='text-xs text-gray-400'>          
+                <p className='text-xs text-stone-500'>          
                 {chef.bio}</p>
               </div>
             
@@ -72,7 +72,7 @@ export default function ChefsPage({ chefs } : Props){
             </p>
           </div>
 
-          <a href="/stories" className='font-medium px-5 py-2 border-2 border-black mx-auto bg-yellow-500 hover:bg-black hover:text-white duration-500 transition-all'>Let's have a chat</a>
+          <a href="/stories" className='font-medium px-5 py-2 border-2 border-zinc-900 mx-auto bg-yellow-500 hover:bg-zinc-900 hover:text-white duration-500 transition-all'>Let's have a chat</a>
         </section>
 
       </main>

@@ -54,7 +54,7 @@ const Story = ({story}: Props) => {
                 <img className='rounded-full' src={urlFor(chef.image).width(50).url()!} alt={chef.name} />
                 <div>
                   <p className="text-sm">{chef.name}</p>
-                  <p className="text-xs text-gray-400">{chef.bio}</p>
+                  <p className="text-xs text-stone-400">{chef.bio}</p>
                 </div>
               </div>
             ))}

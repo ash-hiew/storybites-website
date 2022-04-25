@@ -23,7 +23,7 @@ const Recipe = ({recipe}: Props) => {
     <main>
       <article className="font-primary mx-auto max-w-3xl my-20">
         <div className="m-10">
-        <h2 className="font-medium uppercase tracking-wide">Recipe</h2>
+        <h2 className="font-medium uppercase tracking-widest text-sm">Recipe</h2>
         <h1 className="mt-3 font-display font-bold text-4xl sm:text-5xl md:text-6xl">{recipe.name}</h1>
         </div>
 
@@ -37,22 +37,22 @@ const Recipe = ({recipe}: Props) => {
             
           />
         </div>
-        <div className="m-10 p-6 bg-slate-200 prose">
+        <div className="m-10 sm:p-8 p-6 bg-stone-100">
           <h3 className="mb-4 text-3xl">Ingredients</h3>
           <PortableText
             dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
             content={recipe.ingredients}
-            className="prose-p:text-sm sm:prose-p:text-base prose-p:leading-loose sm:prose-p:leading-loose prose-headings:font-bold"
+            className="prose prose-li:text-sm sm:prose-li:text-base prose-headings:font-bold"
            />
         </div>
-        <div className="m-10 prose">
+        <div className="m-10">
           <h3 className="mb-4 text-3xl">Instructions</h3>
           <PortableText
             dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
             content={recipe.instructions}
-            className="prose-p:text-sm sm:prose-p:text-base prose-p:leading-loose sm:prose-p:leading-loose prose-headings:font-bold"
+            className="prose prose-p:text-sm sm:prose-p:text-base prose-p:leading-loose sm:prose-p:leading-loose prose-headings:font-bold"
            />
         </div>
 
@@ -62,7 +62,7 @@ const Recipe = ({recipe}: Props) => {
             <Image className='rounded-full' src={urlFor(recipe.chef.image).width(100).url()!} alt={recipe.chef.name} width={50} height={50} placeholder='blur' blurDataURL={urlFor(recipe.chef.image).url()!}/>
             <div>
               <p className="text-sm">{recipe.chef.name}</p>
-              <p className="text-xs text-gray-400">{recipe.chef.bio}</p>
+              <p className="text-xs text-stone-500">{recipe.chef.bio}</p>
             </div>
             
           </div>

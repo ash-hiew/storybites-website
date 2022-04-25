@@ -6,7 +6,7 @@ import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return( 
-  <div className='bg-gray-50'>
+  <div className='bg-stone-200'>
     <Component {...pageProps} />
   </div>)
 }
