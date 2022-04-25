@@ -12,6 +12,7 @@ import PortableText from 'react-portable-text';
 import ReactPlayer from 'react-player/lazy';
 
 
+
 interface Props {
   story: Story;
   chef: Chef;
@@ -23,12 +24,6 @@ const Story = ({story}: Props) => {
     <div>
     <Header />
     <main>
-      {/*<img
-        className="w-screen object-cover"
-        src={urlFor(recipe.mainImage).url()!}
-        alt=""
-    />*/}
-
       <article className="font-primary mx-auto max-w-3xl my-20">
 
         <div className="flex flex-col m-10 space-y-5">
@@ -36,32 +31,11 @@ const Story = ({story}: Props) => {
           <h1 className="mt-3 font-display font-bold text-4xl sm:text-5xl md:text-6xl">{story.name}</h1>
         </div>
 
-        <div className="m-10">
+        <div className="m-10 prose prose-p:text-sm sm:prose-p:text-base prose-p:leading-loose sm:prose-p:leading-loose prose-headings:font-bold">
           <PortableText
             dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
-            content={story.description}
-            serializers={{
-              h1: (props: any) => (
-                <h1 className="my-5 text-2xl font-bold" {...props}></h1>
-              ),
-              h2: (props: any) => (
-                <h1 className="my-5 text-xl font-bold" {...props}></h1>
-              ),
-              li: ({ children }: any) => (
-                <li className="ml-4 list-decimal">{children}</li>
-              ),
-              link: ({ children, href }: any) => (
-                <a href={href} className="text-blue-500 hover:underline">
-                  {children}
-                </a>
-              ),
-              normal: ({ children }: any) => (
-                <p className="text-sm sm:text-base leading-loose sm:leading-loose">
-                  {children}<br />
-                </p>
-              )
-            }} />
+            content={story.description} />
         </div>
 
         <div className="relative pb-fluid-video mt-10">
@@ -76,7 +50,7 @@ const Story = ({story}: Props) => {
           <p className="uppercase tracking-wider mb-5 font-semibold">Featured Chefs</p>
           <div className='flex flex-col sm:flex-row items-start sm:space-x-8 space-y-6 sm:space-y-0'>
             {story.chefs.map(chef => (
-              <div className='flex items-center space-x-3'>
+              <div key={chef._id} className='flex items-center space-x-3'>
                 <img className='rounded-full' src={urlFor(chef.image).width(50).url()!} alt={chef.name} />
                 <div>
                   <p className="text-sm">{chef.name}</p>
@@ -122,8 +96,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const storyQuery = `*[_type == "story" && slug.current == $slug][0]{
-  _id,
-  name,
+  ...,
   chefs[] -> {
     name,
     image,
@@ -133,9 +106,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     _id,
     title
   },
-  slug,
-  video,
-  description
 }`;
 
   const story = await sanityClient.fetch(storyQuery, {
@@ -152,6 +122,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       story,
     },
-    //revalidate: 600, // after 6000 secs, it'll update the old cache version
+    revalidate: 60 * 60 * 24, // after 6000 secs, it'll update the old cache version
   };
 };

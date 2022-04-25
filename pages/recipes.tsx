@@ -15,10 +15,7 @@ interface Props {
 }
 
 const recipesQuery = `*[_type == "recipe"]{
-  _id,
-  name,
-  slug,
-  mainImage,
+  ...,
   chef-> {
     name
   }
@@ -33,7 +30,7 @@ export default function RecipesPage({ recipes} : Props){
       <main>
         <section className='font-primary max-w-6xl mx-auto px-10 my-10'>
           <div className="space-y-4">
-            <h1 className="font-medium uppercase tracking-wide">Recipes</h1>
+            <h1 className="font-medium uppercase tracking-widest">Recipes</h1>
             <h2 className="font-display text-start font-semibold leading-tight tracking-tight text-4xl md:text-6xl md:leading-tight">All Recipes</h2>
           </div>
 

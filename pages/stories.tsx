@@ -16,10 +16,7 @@ interface Props {
 }
 
 const storiesQuery = `*[_type == "story"]{
-  _id,
-  name,
-  slug,
-  mainImage,
+  ...,
   category-> {
     _id,
     title
@@ -34,7 +31,7 @@ export default function StoriesPage({ stories }: Props){
       <main>
         <section className='font-primary max-w-6xl px-10 mx-auto my-10'>
           <div className="space-y-4">
-            <h1 className="font-medium uppercase tracking-wide">Stories</h1>
+            <h1 className="font-medium text-sm uppercase tracking-widest">Stories</h1>
             <h2 className="font-display text-start font-semibold leading-tight tracking-tight text-4xl md:text-6xl md:leading-tight">All Stories</h2>
           </div>
 

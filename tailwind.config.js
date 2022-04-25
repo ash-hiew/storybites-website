@@ -11,6 +11,6 @@ module.exports = {
     extend: { padding: { "fluid-video": "56.25%" } },
   },
   plugins: [
-    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/typography'),
   ],
 }

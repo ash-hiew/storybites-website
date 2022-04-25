@@ -44,33 +44,33 @@ function Footer() {
   
   {/* Links & Copyright */}
   <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8 text-sm md:text-base leading-6">
-    <nav className="flex flex-wrap justify-center -mx-5 -my-2 text-gray-500 ">
-      <div className="px-5 py-2 hover:text-gray-50 duration-500 transition-all">
+    <nav className="flex flex-wrap justify-center -mx-5 -my-2 text-gray-500 hover:prose-a:text-gray-50 prose-a:duration-500">
+      <div className="px-5 py-2">
         <a href="/stories">
           Stories
         </a>
       </div>
-      <div className="px-5 py-2 hover:text-gray-50 duration-500 transition-all">
+      <div className="px-5 py-2">
         <a href="/recipes">
           Recipes
         </a>
       </div>
-      <div className="px-5 py-2 hover:text-gray-50 duration-500 transition-all">
+      <div className="px-5 py-2">
         <a href="/chefs">
           Our Chefs
         </a>
       </div>
-      <div className="px-5 py-2 hover:text-gray-50 duration-500 transition-all">
+      <div className="px-5 py-2">
         <a href="/about">
           About
         </a>
       </div>
-      <div className="px-5 py-2 hover:text-gray-50 duration-500 transition-all">
+      <div className="px-5 py-2">
         <a href="/contact">
           Contact
         </a>
       </div>
-      <div className="px-5 py-2 hover:text-gray-50 duration-500 transition-all">
+      <div className="px-5 py-2">
         <a href="#">
           Privacy Policy
         </a>

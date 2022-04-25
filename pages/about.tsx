@@ -18,7 +18,7 @@ export default function AboutPage(){
 
         <section className='mx-auto'>
           <div className='mx-auto'>
-            <img src='https://via.placeholder.com/1920x700'/>
+            <img src='https://via.placeholder.com/1920x700' className='object-cover'/>
           </div>
         </section>
 
