@@ -58,7 +58,6 @@ export default function Home({ recipes, stories }: Props) {
 
   return (
     <Layout>
-      <main>
         {/* Hero Section */}
         <section className='text-center px-10 lg:max-w-4xl sm:mx-10 my-24 lg:m-40 xl:mx-auto'>
           <h1 className="font-primary font-medium uppercase m-6 tracking-widest text-sm">Storybites</h1>
@@ -149,7 +148,7 @@ export default function Home({ recipes, stories }: Props) {
             <button className="font-medium focus:outline-none focus:ring-offset-1 focus:ring border-zinc-900 sm:border-zinc-900 border-2 w-full h-12 sm:w-auto lg:ml-4 bg-yellow-500 px-5 hover:bg-zinc-900 hover:text-white duration-500 transition-all">Subscribe</button>
           </form>
         </section>
-      </main></Layout>
+  </Layout>
       
   );
 };
