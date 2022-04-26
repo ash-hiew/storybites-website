@@ -25,11 +25,7 @@ const Layout = ({ children }: Props): JSX.Element => (
             exit="exit"
             variants={variants}
             transition={config}
-            className="
-                    flex flex-col items-start w-full py-10
-                    sm:px-16 md:px-36 lg:px-52 xl:px-80 2xl:px-96
-                     h-full
-                "
+            className="mx-auto py-8 md:py-16 lg:py-20"
         >
             {children}
         </motion.main>
