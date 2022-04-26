@@ -26,8 +26,8 @@ const Layout = ({ children }: Props): JSX.Element => (
             variants={variants}
             transition={config}
             className="
-                    flex flex-col items-start w-full pt-10
-                    px-8 sm:px-16 md:px-36 lg:px-52 xl:px-80 2xl:px-96
+                    flex flex-col items-start w-full py-10
+                    sm:px-16 md:px-36 lg:px-52 xl:px-80 2xl:px-96
                      h-full
                 "
         >

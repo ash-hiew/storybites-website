@@ -7,9 +7,6 @@ import Footer from '../components/Footer';
 import Head from 'next/head';
 import { AnimatePresence, motion } from 'framer-motion';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare const window: any
-
 function MyApp({ Component, pageProps }: AppProps) {
   return( 
   <div className='bg-stone-200'>    

@@ -2,9 +2,6 @@ import { sanityClient } from "../../lib/sanity.server";
 import { GetStaticProps } from "next";
 import { Recipe } from "../../typing";
 
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-
 import Image from "next/image";
 import PortableText from 'react-portable-text';
 
@@ -21,11 +18,10 @@ const Recipe = ({recipe}: Props) => {
   
   return (
     <Layout>
-      <main>
-      <article className="font-primary mx-auto max-w-3xl my-20">
+      <article className="font-primary mx-auto max-w-3xl">
         <div className="m-10">
-        <h2 className="font-medium uppercase tracking-widest text-sm"><span className="hover:text-yellow-500 transition-all duration-300"><Link href='/stories'>Recipe</Link></span></h2>
-        <h1 className="mt-3 font-display font-bold text-4xl sm:text-5xl md:text-6xl">{recipe.name}</h1>
+          <h2 className="font-medium uppercase tracking-widest text-sm"><span className="hover:text-yellow-500 transition-all duration-300"><Link href='/stories'>Recipe</Link></span></h2>
+          <h1 className="mt-3 font-display font-bold text-4xl sm:text-5xl md:text-6xl">{recipe.name}</h1>
         </div>
 
         <div className="my-10 relative pb-fluid-video">
@@ -69,8 +65,6 @@ const Recipe = ({recipe}: Props) => {
         </div>
         
       </article>
-
-    </main>
     </Layout>
   );
 };

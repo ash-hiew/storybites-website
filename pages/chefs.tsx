@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { Chef } from '../typing';
 import { sanityClient } from '../lib/sanity.server';
 import { urlFor } from '../lib/sanity';
-import Link from 'next/link';
 import Layout from '../components/Layout';
 
 interface Props {
