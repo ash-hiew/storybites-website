@@ -28,10 +28,7 @@ export interface Story {
   };
   video: url;
   description: object[];
-  category: {
-    _id: string;
-    title: string;
-  }
+  category: Category;
 };
 
 export interface Recipe {
@@ -53,4 +50,13 @@ export interface Recipe {
     current: string;
   };
   video: url;
+};
+
+export interface Category {
+  _id: string;
+  title: string;
+  slug: {
+    current: string;
+  };
+  stories: Story[];
 };
