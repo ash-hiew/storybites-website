@@ -4,8 +4,6 @@ import { GetStaticProps } from "next";
 
 import { Story, Chef, Category } from "../typing";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Link from "next/link";
 import { FiArrowRightCircle } from "react-icons/fi";
 
@@ -24,7 +22,7 @@ const Category = ({category, categories}: Props) => {
 
   return (
     <Layout>
-            <main>
+      <main>
         <section className='font-primary max-w-6xl px-10 mx-auto my-10'>
           <div className="space-y-4">
             <h1 className="font-medium text-sm uppercase tracking-widest">Stories</h1>
