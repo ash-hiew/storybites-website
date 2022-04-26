@@ -3,13 +3,13 @@ import Link from "next/link";
 function Footer() {
   return (
 <footer className="bg-zinc-900 font-primary pt-10">
-  <div className="flex flex-col lg:space-x-20 lg:flex-row lg:items-end text-zinc-50 sm:p-6 mx-auto max-w-screen-xl px-4 pb-0 space-y-20 lg:space-y-5">
+  <div className="flex flex-col lg:space-x-20 lg:flex-row lg:items-end text-zinc-50 pt-5 sm:p-6 mx-auto max-w-screen-xl px-4 pb-0 space-y-20 lg:space-y-5">
 
     {/* Logo Section */}
     <div className="flex flex-col max-w-xs items-center text-center lg:items-start lg:text-left mx-auto">
-      <a href="/" className="w-1/3" >
-        <img src="/images/storybites-logo-colour.svg"  alt="Storybites Logo" />
-      </a>
+      <Link href="/">
+      <img src="/images/storybites-logo-colour.svg" alt="Storybites Logo" className="w-1/3" />
+      </Link>
       <p className="mt-5 ">Sharing our love for people and <br /> food one bite at a time.</p>
     </div>
 
@@ -46,34 +46,34 @@ function Footer() {
   <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8 text-sm md:text-base leading-6">
     <nav className="flex flex-wrap justify-center -mx-5 -my-2 text-zinc-400 hover:prose-a:text-zinc-50 prose-a:duration-500">
       <div className="px-5 py-2">
-        <a href="/stories">
+        <Link href="/stories">
           Stories
-        </a>
+        </Link>
       </div>
       <div className="px-5 py-2">
-        <a href="/recipes">
+        <Link href="/recipes">
           Recipes
-        </a>
+        </Link>
       </div>
       <div className="px-5 py-2">
-        <a href="/chefs">
+        <Link href="/chefs">
           Our Chefs
-        </a>
+        </Link>
       </div>
       <div className="px-5 py-2">
-        <a href="/about">
+        <Link href="/about">
           About
-        </a>
+        </Link>
       </div>
       <div className="px-5 py-2">
-        <a href="/contact">
+        <Link href="/contact">
           Contact
-        </a>
+        </Link>
       </div>
       <div className="px-5 py-2">
-        <a href="#">
+        <Link href="/privacy-policy">
           Privacy Policy
-        </a>
+        </Link>
       </div>
     </nav>
     <p className="mt-8 text-center text-zinc-400">
