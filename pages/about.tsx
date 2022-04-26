@@ -1,11 +1,8 @@
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Layout from "../components/Layout";
 
 export default function AboutPage(){
   return (
-    <div>
-      <Header />
-      
+    <Layout>
       <main>
         <section className='font-primary px-10 md:px-6 max-w-4xl mx-auto my-24 md:my-32'>
           <div className="space-y-4 md:space-y-6">
@@ -35,8 +32,6 @@ export default function AboutPage(){
 
         </section>
       </main>
-      
-      <Footer />
-    </div>
+    </Layout>
   )
 }

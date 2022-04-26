@@ -1,38 +1,53 @@
 import Link from 'next/link';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 
-import { Story } from "../typing";
+import { Story, Category } from "../typing";
 import { sanityClient } from '../lib/sanity.server';
 import { urlFor } from '../lib/sanity';
 
 import Image from 'next/image';
 
 import { FiArrowRightCircle } from "react-icons/fi";
+import CategoryList from '../components/CategoryList';
+import Layout from '../components/Layout';
 
 
 interface Props {
   stories: [Story];
+  categories: [Category];
 }
 
 const storiesQuery = `*[_type == "story"]{
-  ...,
+  _id,
+  name,
+  slug {
+    current
+  },
+  mainImage,
   category-> {
     _id,
     title
   }
 }`;
 
-export default function StoriesPage({ stories }: Props){
+const categoriesQuery = `*[_type == "category"]{
+  _id,
+  title,
+  "slug": slug.current
+}`;
+
+
+export default function StoriesPage({ stories, categories }: Props){
   return (
-    <div>
-      <Header />
+    <Layout>
       
       <main>
         <section className='font-primary max-w-6xl px-10 mx-auto my-10'>
           <div className="space-y-4">
             <h1 className="font-medium text-sm uppercase tracking-widest">Stories</h1>
             <h2 className="font-display text-start font-semibold leading-tight tracking-tight text-4xl md:text-6xl md:leading-tight">All Stories</h2>
+
+            {/* Categories Filter Section */}
+            <CategoryList categories={categories}/>
           </div>
 
           <div className='flex flex-col mt-10'>
@@ -56,14 +71,15 @@ export default function StoriesPage({ stories }: Props){
           </div>
         </section>
       </main>
-      
-      <Footer />
-    </div>
+    </Layout>
   );
 }
 
 export const getStaticProps = async () => {
   const stories = await sanityClient.fetch(storiesQuery);
+  const categories = await sanityClient.fetch(categoriesQuery);
 
-  return { props: { stories } };
+  return { props: { stories, categories },
+  revalidate: 60 * 60 * 24,  
+};
 }

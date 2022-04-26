@@ -1,12 +1,9 @@
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-
 import Image from 'next/image';
 import { Chef } from '../typing';
 import { sanityClient } from '../lib/sanity.server';
 import { urlFor } from '../lib/sanity';
 import Link from 'next/link';
-import PortableText from 'react-portable-text';
+import Layout from '../components/Layout';
 
 interface Props {
   chefs: [Chef];
@@ -21,10 +18,8 @@ const chefsQuery = `*[_type == "chef"]{
 
 export default function ChefsPage({ chefs } : Props){
   return (
-    <div>
-      <Header />
-      
-      <main>
+      <Layout>
+        <main>
         <section className='font-primary px-10 max-w-4xl mx-auto my-32'>
           <div className="space-y-4 md:space-y-6">
             <h1 className="font-medium uppercase tracking-widest text-sm">Our Chefs</h1>
@@ -38,7 +33,7 @@ export default function ChefsPage({ chefs } : Props){
           </div>
         </section>
 
-        <section className='font-primary px-10 max-w-4xl mx-auto my-20'>
+        <section className='font-primary max-w-4xl mx-auto my-20'>
           <div className="space-y-4 md:space-y-6 text-start md:text-center">
           <h2 className='font-semibold tracking-tight text-3xl'>Chefs We've Collaborated With.</h2>
           <p className='mt-3 max-w-2xl mx-auto text-sm sm:text-base sm:leading-loose'>
@@ -46,13 +41,13 @@ export default function ChefsPage({ chefs } : Props){
           </p>        
           </div>
 
-          <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 justify-center content-start mt-10'>
+          <div className='grid grid-cols-2 md:grid-cols-3 gap-x-10 justify-center mt-10'>
           {chefs.map((chef, index) => (
-            <div key={index} className='flex flex-col my-8  justify-center'>
-                <Image className='rounded-full self-center w-44 h-44' src={urlFor(chef.image).width(400).url()!} width={400} height={400} alt={chef.name} placeholder='blur' blurDataURL={urlFor(chef.image).url()!}/>        
+            <div key={index} className='flex flex-col my-8 justify-center'>
+                <Image className='rounded-full w-44 h-44' src={urlFor(chef.image).width(400).url()!} width={400} height={400} alt={chef.name} placeholder='blur' blurDataURL={urlFor(chef.image).url()!}/>        
                            
               <div className='space-y-1 mt-5 text-center'>
-                <h3 className='text-lg font-semibold'>{chef.name}</h3>
+                <h3 className='text-md lg:text-lg font-semibold'>{chef.name}</h3>
                 <p className='text-xs text-stone-500'>          
                 {chef.bio}</p>
               </div>
@@ -76,9 +71,7 @@ export default function ChefsPage({ chefs } : Props){
         </section>
 
       </main>
-      
-      <Footer />
-    </div>
+      </Layout>
   );
 }
 

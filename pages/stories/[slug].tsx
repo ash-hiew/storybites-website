@@ -10,6 +10,8 @@ import Footer from "../../components/Footer";
 import PortableText from 'react-portable-text';
 
 import ReactPlayer from 'react-player/lazy';
+import Link from "next/link";
+import Layout from "../../components/Layout";
 
 
 
@@ -21,13 +23,12 @@ interface Props {
 const Story = ({story}: Props) => {
 
   return (
-    <div>
-    <Header />
-    <main>
+  <Layout>
+        <main>
       <article className="font-primary mx-auto max-w-3xl my-20">
 
         <div className="flex flex-col m-10 space-y-5">
-          <h2 className="font-medium uppercase tracking-wide">Story - <span>{story.category.title}</span></h2>
+          <h2 className="font-medium uppercase tracking-widest text-sm"><span className="hover:text-yellow-500 transition-all duration-300"><Link href='/stories'>Story</Link></span> - <span className="hover:text-yellow-500 transition-all duration-300"><Link href={`../${story.category.slug.current}`}>{story.category.title}</Link></span></h2>
           <h1 className="mt-3 font-display font-bold text-4xl sm:text-5xl md:text-6xl">{story.name}</h1>
         </div>
 
@@ -43,7 +44,9 @@ const Story = ({story}: Props) => {
             className="absolute top-0 left-0 w-full h-full"
             url={story.video}
             width='100%'
-            height='100%' />
+            height='100%'
+            controls={true}
+            />
         </div>
         
         <div className="grid justify-items-center my-20 mx-10">
@@ -64,8 +67,7 @@ const Story = ({story}: Props) => {
       </article>
 
     </main>
-    <Footer />
-    </div>
+  </Layout>
   );
 };
 
@@ -104,7 +106,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   },
   category-> {
     _id,
-    title
+    title,
+    slug {
+      current
+    }
   },
 }`;
 

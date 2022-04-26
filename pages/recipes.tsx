@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 import { Recipe } from "../typing";
 import { sanityClient } from '../lib/sanity.server';
@@ -9,6 +7,7 @@ import { urlFor } from '../lib/sanity';
 import Image from 'next/image';
 
 import { FiArrowRightCircle } from "react-icons/fi";
+import Layout from '../components/Layout';
 
 interface Props {
   recipes: [Recipe];
@@ -24,10 +23,8 @@ const recipesQuery = `*[_type == "recipe"]{
 
 export default function RecipesPage({ recipes} : Props){
   return (
-    <div>
-      <Header />
-
-      <main>
+    <Layout>
+            <main>
         <section className='font-primary max-w-6xl mx-auto px-10 my-10'>
           <div className="space-y-4">
             <h1 className="font-medium uppercase tracking-widest">Recipes</h1>
@@ -55,10 +52,8 @@ export default function RecipesPage({ recipes} : Props){
           </div>
         </section>
       </main>
-      
-      
-      <Footer />
-    </div>
+    </Layout>
+
   )
 }
 

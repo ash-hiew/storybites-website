@@ -10,6 +10,8 @@ import PortableText from 'react-portable-text';
 
 import ReactPlayer from 'react-player/lazy';
 import { urlFor } from "../../lib/sanity";
+import Link from "next/link";
+import Layout from "../../components/Layout";
 
 interface Props {
   recipe: Recipe;
@@ -18,12 +20,11 @@ interface Props {
 const Recipe = ({recipe}: Props) => {
   
   return (
-    <div>
-    <Header />
-    <main>
+    <Layout>
+      <main>
       <article className="font-primary mx-auto max-w-3xl my-20">
         <div className="m-10">
-        <h2 className="font-medium uppercase tracking-widest text-sm">Recipe</h2>
+        <h2 className="font-medium uppercase tracking-widest text-sm"><span className="hover:text-yellow-500 transition-all duration-300"><Link href='/stories'>Recipe</Link></span></h2>
         <h1 className="mt-3 font-display font-bold text-4xl sm:text-5xl md:text-6xl">{recipe.name}</h1>
         </div>
 
@@ -34,7 +35,6 @@ const Recipe = ({recipe}: Props) => {
             width='100%'
             height='100%'
             controls={true}
-            
           />
         </div>
         <div className="m-10 sm:p-8 p-6 bg-stone-100">
@@ -71,8 +71,7 @@ const Recipe = ({recipe}: Props) => {
       </article>
 
     </main>
-    <Footer />
-    </div>
+    </Layout>
   );
 };
 
