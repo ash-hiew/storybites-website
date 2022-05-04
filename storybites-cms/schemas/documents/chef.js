@@ -9,9 +9,18 @@ export default {
       type: "string",
     },
     {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "name",
+        maxLength: 96,
+      },
+    },
+    {
       name: "image",
       title: "Image",
-      type: "image",
+      type: "cloudinary.asset",
       options: {
         hotspot: true,
       },

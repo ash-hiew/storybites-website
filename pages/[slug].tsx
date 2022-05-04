@@ -1,4 +1,4 @@
-import { urlFor } from "../lib/sanity";
+
 import { sanityClient } from "../lib/sanity.server";
 import { GetStaticProps } from "next";
 
@@ -13,12 +13,16 @@ import Layout from "../components/Layout";
 
 interface Props {
   story: Story;
+  stories: [Story];
   chef: Chef;
-  category: Category;
-  categories: [Category]
+  categoryWithStories: Category;
+  categories: [Category];
+  currentCategory: Category;
 }
 
-const Category = ({category, categories}: Props) => {
+const Category = ({categoryWithStories}: Props) => {
+
+  const { currentCategory, stories, categories } = categoryWithStories;
 
   return (
     <Layout>
@@ -26,25 +30,25 @@ const Category = ({category, categories}: Props) => {
         <section className='font-primary max-w-6xl px-10 mx-auto my-10'>
           <div className="space-y-4">
             <h1 className="font-medium text-sm uppercase tracking-widest">Stories</h1>
-            <h2 className="font-display text-start font-semibold leading-tight tracking-tight text-4xl md:text-6xl md:leading-tight">{category.title}</h2>
+            <h2 className="font-display text-start font-semibold leading-tight tracking-tight text-4xl md:text-6xl md:leading-tight">{currentCategory.title}</h2>
 
             {/* Categories Filter Section */}
             <CategoryList categories={categories} />
           </div>
 
           <div className='flex flex-col mt-10'>
-          {category.stories.map((story) => (
+          {stories.map((story) => (
             <div key={story._id} className='py-10'>
             <Link key={story._id} href={`stories/${story.slug}`}>
             <div className='links md:flex md:items-center group active:scale-105 duration-300 transition-all'>
               <div className='overflow-hidden relative flex-shrink md:max-w-xs lg:max-w-sm'>
-                <Image className='w-full h-auto group-hover:scale-105 duration-300 transition-all' src={urlFor(story.mainImage).url()!} alt={story.name} placeholder='blur' blurDataURL={urlFor(story.mainImage).url()!} width={854} height={480} priority={true}/>
+                <Image className='w-full h-auto group-hover:scale-105 duration-300 transition-all' src={story.mainImage} alt={story.title} placeholder='blur' blurDataURL={story.mainImage} width={854} height={480} priority={true}/>
               </div>                             
               <div className='flex-grow mt-3 md:ml-10 space-y-3 md:space-y-5'>
-                <p className='text-xs uppercase tracking-widest text-stone-500 group-hover:text-yellow-500 duration-300 transition-all'>{category.title}</p>
-                <h3 className='text-2xl md:text-2xl lg:text-4xl font-semibold group-hover:text-yellow-500 duration-300 transition-all'>{story.name}</h3>
+                <p className='text-xs uppercase tracking-widest text-stone-500'>{story.category.title}</p>
+                <h3 className='text-2xl md:text-2xl lg:text-4xl font-semibold group-hover:text-amber-600 duration-300 transition-all'>{story.title}</h3>
 
-                <FiArrowRightCircle size={42} className='group-hover:text-yellow-500 duration-300 transition-all'/>
+                <FiArrowRightCircle size={42} className='group-hover:text-amber-600 duration-300 transition-all'/>
               </div>
             </div>
             </Link>
@@ -81,30 +85,36 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 
-  const categoryQuery = `*[_type == "category" && slug.current == $slug][0]{
-    _id,
-    title,
-    "stories": *[_type == "story" && references(^._id)]{
-      _id,
-      "slug": slug.current,
-      mainImage,
-      name
-    }
-}`;
-
-  const categoriesQuery = `*[_type == "category"]{
+  const query = `
+  *[_type == "category" && slug.current == $slug][0]{
+    "currentCategory": {
+   _id,
+   title,
+   "slug": slug.current,
+ },
+ "stories":*[_type == "story" && references(^._id)]{
+   _id,
+   title,
+  "slug": slug.current,
+   "mainImage": mainImage.secure_url,
+   category-> {
+     _id,
+     title
+   }
+ },
+"categories":  *[_type == "category"]{
     _id,
     title,
     "slug": slug.current,
-  }`;
+  }
+ }`;
 
-  const category = await sanityClient.fetch(categoryQuery, {
+  const categoryWithStories = await sanityClient.fetch(query, {
     slug: params?.slug,
   });
 
-  const categories = await sanityClient.fetch(categoriesQuery);
   
-  if (!category) {
+  if (!categoryWithStories) {
     return {
       notFound: true,
     }
@@ -112,8 +122,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      category, 
-      categories
+      categoryWithStories
     },
     revalidate: 60 * 60 * 24, 
   };

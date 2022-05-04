@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 export default function PrivacyPolicy() {
   return (
     <Layout>
-      <article className='px-10 prose prose-zinc prose-sm md:prose-base mx-auto max-w-3xl my-20'>
+      <article className='px-10 prose prose-zinc prose-sm md:prose-base mx-auto max-w-3xl my-10'>
       <h1 className='font-display font-bold text-4xl sm:text-5xl md:text-6xl'>Privacy Policy</h1>
       <section className='font-primary'>
         <p>Your privacy is important to us. It is Storybites&#39; policy to respect your privacy and comply with any applicable law and regulation regarding any personal information we may collect about you, including across our website, <a className='text-blue-500 underline' href="https://storybites.co.nz">https://storybites.co.nz</a>.</p>

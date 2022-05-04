@@ -25,7 +25,7 @@ const Layout = ({ children }: Props): JSX.Element => (
             exit="exit"
             variants={variants}
             transition={config}
-            className="mx-auto py-8 md:py-16 lg:py-20"
+            className="mx-auto py-8 md:py-16 lg:py-24"
         >
             {children}
         </motion.main>

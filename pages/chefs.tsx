@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { Chef } from '../typing';
 import { sanityClient } from '../lib/sanity.server';
-import { urlFor } from '../lib/sanity';
 import Layout from '../components/Layout';
+import Link from 'next/link';
 
 interface Props {
   chefs: [Chef];
@@ -11,28 +11,29 @@ interface Props {
 const chefsQuery = `*[_type == "chef"]{
   _id,
   name,
-  image,
+  "slug": slug.current,
+  "image": image.secure_url,
   bio
 }`;
 
 export default function ChefsPage({ chefs } : Props){
   return (
       <Layout>
-        <main>
-        <section className='font-primary px-10 max-w-4xl mx-auto my-32'>
+        <main className='mx-auto'>
+          <section className='font-primary px-10 max-w-4xl my-10'>
           <div className="space-y-4 md:space-y-6">
             <h1 className="font-medium uppercase tracking-widest text-sm">Our Chefs</h1>
-            <p className="font-display font-semibold tracking-tight text-4xl md:text-6xl leading-normal md:leading-tight">The Quintessence to Culinary Collaboration.</p>
+            <p className="font-display font-semibold tracking-tight text-4xl md:text-6xl md:leading-tight">The Quintessence to Culinary Collaboration.</p>
           </div>
         </section>
 
         <section className='mx-auto'>
           <div className='mx-auto'>
-            <img src='https://via.placeholder.com/1920x700'/>
+            <Image src='https://res.cloudinary.com/storybites/image/upload/v1651626139/chefs-kitchen_omxjya.avif' width={3200} height={1468} placeholder='blur' blurDataURL='https://res.cloudinary.com/storybites/image/upload/v1651626139/chefs-kitchen_omxjya.avif'/>
           </div>
         </section>
 
-        <section className='font-primary max-w-4xl mx-auto my-20'>
+        <section className='mx-auto font-primary max-w-4xl px-10 my-20'>
           <div className="space-y-4 md:space-y-6 text-start md:text-center">
           <h2 className='font-semibold tracking-tight text-3xl'>Chefs We've Collaborated With.</h2>
           <p className='mt-3 max-w-2xl mx-auto text-sm sm:text-base sm:leading-loose'>
@@ -40,18 +41,21 @@ export default function ChefsPage({ chefs } : Props){
           </p>        
           </div>
 
-          <div className='grid grid-cols-2 md:grid-cols-3 gap-x-10 justify-center mt-10'>
+          <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-10 justify-center mt-10'>
           {chefs.map((chef, index) => (
-            <div key={index} className='flex flex-col my-8 justify-center'>
-                <Image className='rounded-full w-44 h-44' src={urlFor(chef.image).width(400).url()!} width={400} height={400} alt={chef.name} placeholder='blur' blurDataURL={urlFor(chef.image).url()!}/>        
-                           
-              <div className='space-y-1 mt-5 text-center'>
-                <h3 className='text-md lg:text-lg font-semibold'>{chef.name}</h3>
-                <p className='text-xs text-stone-500'>          
-                {chef.bio}</p>
-              </div>
-            
+            <Link key={index} href={`/chefs/${chef.slug}`}>
+            <div className='flex flex-col my-8 justify-center links group transition-all'>
+                <div className='rounded-full grayscale group-hover:grayscale-0 duration-300 transition-all'>
+                <Image className='rounded-full w-44 h-44 ' src={chef.image} width={400} height={400} alt={chef.name} placeholder='blur' blurDataURL={chef.image} priority={true}/> 
+                </div>       
+                          
+                <div className='space-y-1 mt-5 text-center'>
+                  <h3 className='text-md lg:text-lg font-semibold group-hover:text-amber-600 transition-all'>{chef.name}</h3>
+                  <p className='text-xs text-stone-500'>          
+                  {chef.bio}</p>
+                </div>
             </div>
+            </Link>
           ))}
           </div>
         </section>
@@ -68,8 +72,8 @@ export default function ChefsPage({ chefs } : Props){
 
           <a href="/stories" className='font-medium px-5 py-2 border-2 border-zinc-900 mx-auto bg-yellow-500 hover:bg-zinc-900 hover:text-white duration-500 transition-all'>Let's have a chat</a>
         </section>
+        </main>
 
-      </main>
       </Layout>
   );
 }

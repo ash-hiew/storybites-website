@@ -4,8 +4,8 @@ export default {
   type: "document",
   fields: [
     {
-      name: "name",
-      title: "Recipe Name",
+      name: "title",
+      title: "Recipe Title",
       type: "string",
     },
     {
@@ -26,10 +26,7 @@ export default {
     {
       name: "mainImage",
       title: "Recipe Main Image",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
+      type: "cloudinary.asset"
     },
     {
       name: "video",

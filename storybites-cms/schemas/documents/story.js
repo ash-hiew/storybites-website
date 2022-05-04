@@ -4,7 +4,7 @@ export default {
   type: "document",
   fields: [
     {
-      name: "name",
+      name: "title",
       title: "Story Title",
       type: "string",
     },
@@ -24,6 +24,24 @@ export default {
       to: { type: "category" },
     },
     {
+      name: 'tags',
+      title: 'Tags',
+      type: 'tags',
+      options: {
+        //Closes menu after tag selected (defaults to true)
+        closeMenuOnSelect: true
+      }
+    },
+    {
+      name: 'publishedAt',
+      title: 'Published at',
+      type: 'date',
+      options: {
+        dateFormat: 'DD-MM-YYYY',
+        calendarTodayLabel: 'Today'
+      }
+    },
+    {
       name: 'chefs',
       title: 'Chefs',
       type: 'array',
@@ -39,7 +57,7 @@ export default {
     {
       name: "mainImage",
       title: "Recipe Main Image",
-      type: "image",
+      type: "cloudinary.asset",
       options: {
         hotspot: true,
       },

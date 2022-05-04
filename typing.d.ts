@@ -1,51 +1,45 @@
+import { Target } from "framer-motion";
 import { Url } from "url";
 
 export interface Chef {
   _id: string;
   name: string;
-  image: {
-    asset: {
-      url: string;
-    };
-  };
+  image: string;
   slug: {
     current: string;
   };
   bio: string;
+  relatedStories: [Story];
+  relatedRecipes: [Recipe];
+  currentChef: Chef;
 }
 
 export interface Story {
   _id: string;
-  name: string;
+  title: string;
   chefs: Chef[];
-  mainImage: {
-    asset: {
-      url: string;
-    };
-  };
+  mainImage: string;
   slug: {
     current: string;
   };
   video: url;
   description: object[];
   category: Category;
+  tags: object[]; 
+  date: Date;
+  stories: [Story];
+  currentStory: Story;
+  previousStory: Story;
+  nextStory: Story;
 };
 
 export interface Recipe {
   instructions: object[];
   ingredients: object[];
   _id: string;
-  name: string;
-  chef: {
-    name: string;
-    image: string;
-    bio: string;
-  };
-  mainImage: {
-    asset: {
-      url: string;
-    };
-  };
+  title: string;
+  chef: Chef;
+  mainImage: string;
   slug: {
     current: string;
   };
@@ -59,4 +53,6 @@ export interface Category {
     current: string;
   };
   stories: Story[];
+  currentCategory: Category;
+  categories: [Category];
 };

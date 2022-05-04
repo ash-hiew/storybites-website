@@ -25,7 +25,7 @@ function Footer() {
 
       {/* Contact Info Section */}
       <div className="flex flex-col items-center lg:items-end space-y-4 mx-auto">
-        <p className="text-3xl font-semibold">Get in Touch</p>
+        <p className="text-3xl text-right font-semibold">Get in Touch</p>
         <p>hello@storybites.co.nz</p>
         <div className="flex mt-2 space-x-4 justify-end prose-a:text-zinc-400 hover:prose-a:text-zinc-50 prose-a:duration-300 prose-a:transition-all" >
           <a href="https://www.instagram.com/storybites._/" target="_blank">

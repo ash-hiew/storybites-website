@@ -12,7 +12,6 @@ import category from './documents/category'
 
 // Object types
 import blockContent from './objects/blockContent'
-//import breaks from './objects/breaks'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -25,6 +24,5 @@ export default createSchema({
     chef,
     category,
     blockContent,
-    //breaks
   ]),
 })

@@ -29,7 +29,7 @@ function Header() {
   }
 
   return (
-    <header className="font-primary z-50 relative bg-stone-100 lg:fixed top-0 left-0 w-full">
+    <header className="font-primary z-50 relative bg-stone-100 bg-opacity-90 lg:sticky top-0 left-0 w-full">
 
     <nav className='max-w-7xl mx-auto relative'>
         <div className="p-6 flex">
@@ -43,7 +43,7 @@ function Header() {
           </div>
 
           {/* Navigation Links: Desktop */}
-          <div className="hidden relative lg:flex items-center w-full space-x-6 justify-end mr-4 hover:prose-a:text-yellow-500 prose-a:duration-300">
+          <div className="hidden relative lg:flex items-center w-full space-x-6 justify-end mr-4 hover:prose-a:text-yellow-500 prose-a:duration-300 prose-a:tracking-wider">
             <div>
               <Link href="/stories">
                 <a>Stories</a>
@@ -104,7 +104,7 @@ function Header() {
         className="absolute top-0 left-0 p-10 bg-stone-50 h-screen w-full overscroll-auto overflow-y-auto z-40">
           {/* Logo */}
           <Link href='/'>
-            <a className='group inline-flex items-center mb-6'>
+            <a onClick={handleClick} className='group inline-flex items-center mb-6'>
             <img className= "w-16 object-contain cursor-pointer group-hover:scale-90 transition-all duration-300" src="/images/storybites-logo.svg" alt="Storybites Logo" />
             </a>
           </Link>          

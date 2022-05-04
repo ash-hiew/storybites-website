@@ -2,7 +2,6 @@ import Link from 'next/link';
 
 import { Recipe } from "../typing";
 import { sanityClient } from '../lib/sanity.server';
-import { urlFor } from '../lib/sanity';
 
 import Image from 'next/image';
 
@@ -14,11 +13,15 @@ interface Props {
 }
 
 const recipesQuery = `*[_type == "recipe"]{
-  ...,
+  _id,
+  title,
+  slug,
+  "mainImage": mainImage.url,
   chef-> {
-    name
+    name,
+    image
   }
-}`;
+}| order(_createdAt desc)`;
 
 
 export default function RecipesPage({ recipes} : Props){
@@ -37,13 +40,13 @@ export default function RecipesPage({ recipes} : Props){
             <Link key={index} href={`/recipes/${recipe.slug.current}`}>
             <div className='links md:flex md:items-center group active:scale-105 duration-300 transition-all'>
               <div className='overflow-hidden relative flex-shrink md:max-w-xs lg:max-w-sm'>
-                <Image className='w-full h-auto group-hover:scale-105 duration-300 transition-all' src={urlFor(recipe.mainImage).url()!} alt={recipe.name} placeholder='blur' blurDataURL={urlFor(recipe.mainImage).url()!} width={854} height={480} priority={true}/>
+                <Image className='w-full h-auto group-hover:scale-105 duration-300 transition-all' src={recipe.mainImage} alt={recipe.title} placeholder='blur' blurDataURL={recipe.mainImage} width={854} height={480} priority={true}/>
               </div>                             
               <div className='flex-grow md:ml-10 mt-3 space-y-3 md:space-y-5'>
                 {/*<p className='text-xs text-stone-400 group-hover:text-yellow-500 duration-300 transition-all'>Category</p>*/}
-                <h3 className='text-2xl md:text-2xl lg:text-5xl font-semibold group-hover:text-yellow-500 duration-300 transition-all'>{recipe.name}</h3>
-                <p className='group-hover:text-yellow-500 duration-300 transition-all'>{recipe.chef.name}</p>
-                <FiArrowRightCircle size={42} className='group-hover:text-yellow-500 duration-300 transition-all'/>
+                <h3 className='text-2xl md:text-2xl lg:text-5xl font-semibold group-hover:text-amber-600 duration-300 transition-all'>{recipe.title}</h3>
+                <p className='group-hover:text-amber-600 duration-300 transition-all'>{recipe.chef.name}</p>
+                <FiArrowRightCircle size={42} className='group-hover:text-amber-600 duration-300 transition-all'/>
               </div>
             </div>
             </Link>

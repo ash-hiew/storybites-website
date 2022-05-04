@@ -7,6 +7,6 @@ module.exports = {
   },
   images: {
     formats: ['image/avif', 'image/webp'],
-    domains: ['cdn.sanity.io']
+    domains: ['cdn.sanity.io', 'res.cloudinary.com']
   }
 }
