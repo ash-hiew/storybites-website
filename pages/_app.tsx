@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         canonical="https://storybites.co.nz/"
         openGraph={{
           url: "https://storybites.co.nz/",
-          title: "StoryBites",
+          title: "StoryBites - A New Zealand based culinary brand",
           description:
             "We are a New Zealand based culinary brand mandated to empower one million people to find humanity in gastronomy.",
           images: [
@@ -29,6 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               url: "/images/og-image.png",
               width: 1200,
               height: 630,
+              type: "image/png",
               alt: "StoryBites",
             },
           ],
