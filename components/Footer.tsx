@@ -26,7 +26,7 @@ function Footer() {
         </div>
 
         {/* Subscribe Form */}
-        <div className="mx-auto flex max-w-sm flex-grow flex-col items-center">
+        <div className="mx-auto flex flex-grow flex-col items-center">
           <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-zinc-50">
             SUBSCRIBE TO OUR NEWSLETTER
           </p>

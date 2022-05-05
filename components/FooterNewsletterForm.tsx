@@ -7,7 +7,7 @@ export default function FooterNewsletterForm() {
 
   if (state.succeeded) {
     return (
-      <div className="my-5 text-center">
+      <div className="my-5 max-w-sm text-center">
         <p className="text-md font-bold md:text-lg">Thanks for signing up!</p>
         <p className="md:text-md text-sm">
           Look forward to our upcoming newsletters. In the meantime, you can
