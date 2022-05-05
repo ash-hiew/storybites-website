@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             "We are a New Zealand based culinary brand mandated to empower one million people to find humanity in gastronomy.",
           images: [
             {
-              url: "../public/images/og-image.png",
+              url: "/images/og-image.png",
               width: 1200,
               height: 630,
               alt: "StoryBites",
