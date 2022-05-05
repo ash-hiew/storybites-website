@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 import { useState } from "react";
 import { SocialIcons } from "./SocialIcons";
+import siteMetadata from "../data/siteMetadata";
 
 function Header() {
 
@@ -37,7 +38,7 @@ function Header() {
           <div>
           <Link href='/'>
             <a className='group inline-flex items-center mr-4 z-30 transition-all duration-300'>
-            <img className= "w-16 object-contain cursor-pointer group-hover:scale-90 transition-all duration-300" src="/images/storybites-logo.svg" alt="Storybites Logo" />
+            <img className= "w-16 object-contain cursor-pointer group-hover:scale-90 transition-all duration-300" src={siteMetadata.siteLogo} alt="Storybites Logo" />
             </a>
           </Link>
           </div>
@@ -112,34 +113,34 @@ function Header() {
             className="relative prose-li:text-3xl hover:prose-li:text-yellow-500 prose-li:duration-300 space-y-6 prose-li:cursor-pointer">
             <li onClick={handleClick}>
               <Link href="/stories">
-                Stories
+                <a>Stories</a>
               </Link>
             </li>
             <li onClick={handleClick}>
             <Link href="/recipes">
-                Recipes
+                <a>Recipes</a>
               </Link>
             </li>
             <li onClick={handleClick}>
             <Link href="/about">
-                About
+              <a>About</a>
               </Link>
             </li>
             <li onClick={handleClick}>
               <Link href="/chefs">
-                Our Chefs
+                <a>Our Chefs</a>
               </Link>
             </li>
             <li onClick={handleClick}>
               <Link href="/contact">
-                Work with Us
+                <a>Work with Us</a>
               </Link>
             </li>
           </motion.ul>
       {/* Contact Section */}
         <div className="mt-20">
           <p className="font-semibold text-xl">Get in Touch</p>
-          <p>hello@storybites.co.nz</p>
+          <p>{siteMetadata.email}</p>
           <SocialIcons />
         </div>          
         </motion.div>
