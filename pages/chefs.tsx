@@ -112,12 +112,11 @@ export default function ChefsPage({ chefs }: Props) {
             </p>
           </div>
 
-          <a
-            href="/stories"
-            className="mx-auto border-2 border-zinc-900 bg-yellow-500 px-5 py-2 font-medium transition-all duration-500 hover:bg-zinc-900 hover:text-white"
-          >
-            Let&apos;s have a chat
-          </a>
+          <Link href="/stories">
+            <a className="mx-auto border-2 border-zinc-900 bg-yellow-500 px-5 py-2 font-medium transition-all duration-500 hover:bg-zinc-900 hover:text-white">
+              Let&apos;s have a chat
+            </a>
+          </Link>
         </section>
       </main>
     </Layout>

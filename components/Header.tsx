@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 import { useState } from "react";
 import { SocialIcons } from "./SocialIcons";
@@ -35,10 +36,12 @@ function Header() {
           <div>
             <Link href="/">
               <a className="group z-30 mr-4 inline-flex items-center transition-all duration-300">
-                <img
+                <Image
                   className="w-16 cursor-pointer object-contain transition-all duration-300 group-hover:scale-90"
                   src={siteMetadata.siteLogo}
                   alt="Storybites Logo"
+                  width={70}
+                  height={70}
                 />
               </a>
             </Link>
@@ -121,10 +124,12 @@ function Header() {
                 onClick={handleClick}
                 className="group mb-6 inline-flex items-center"
               >
-                <img
+                <Image
                   className="w-16 cursor-pointer object-contain transition-all duration-300 group-hover:scale-90"
-                  src="/images/storybites-logo.svg"
+                  src={siteMetadata.siteLogo}
                   alt="Storybites Logo"
+                  width={80}
+                  height={80}
                 />
               </a>
             </Link>

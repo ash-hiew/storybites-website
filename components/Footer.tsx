@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import siteMetadata from "../data/siteMetadata.js";
 
@@ -10,10 +11,12 @@ function Footer() {
         {/* Logo Section */}
         <div className="mx-auto flex max-w-xs flex-col items-center text-center lg:items-start lg:text-left">
           <Link href="/">
-            <img
-              src="/images/storybites-logo-colour.svg"
+            <Image
+              src={siteMetadata.siteLogoColour}
               alt="Storybites Logo"
               className="w-1/3"
+              width={100}
+              height={100}
             />
           </Link>
           <p className="mt-5 ">
