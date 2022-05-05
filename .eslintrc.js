@@ -20,6 +20,10 @@ module.exports = {
     'react',
     '@typescript-eslint',
   ],
-  'rules': {
+  'rules': {},
+  settings: {
+    react: {
+      version: "latest",
+    },
   },
 };
