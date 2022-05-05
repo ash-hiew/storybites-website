@@ -16,8 +16,15 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
+          <meta charSet="utf-8" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <link rel="shortcut icon" href="/images/favicon.ico" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"/>
+          <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"/>
+          <meta name="robots" content="index, follow" />
           <link
             rel="preconnect"
             href="https://fonts.gstatic.com"
@@ -65,7 +72,7 @@ class MyDocument extends Document {
             />
           </noscript>
         </Head>
-        <body>
+        <body className='bg-stone-200'>
           <Main />
           <NextScript />
         </body>
