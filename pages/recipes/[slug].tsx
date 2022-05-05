@@ -141,25 +141,28 @@ const Recipe = ({ recipe }: Props) => {
           <div className="embla mx-auto">
             <div id="embla_div" className="embla__viewport" ref={emblaRef}>
               <div className="embla__container">
-                {moreRecipes.map((recipe, index) => (
+                {moreRecipes.map((moreRecipe, index) => (
                   <div key={index} className="embla__slide py-10">
-                    <Link key={recipe._id} href={`/recipes/${recipe.slug}`}>
+                    <Link
+                      key={moreRecipe._id}
+                      href={`/recipes/${moreRecipe.slug}`}
+                    >
                       <div className="embla__slide__inner links group mx-3 transition-all duration-300 active:scale-105 lg:mx-6">
                         <Image
                           className="embla__slide__img h-auto w-full transition-all duration-300 group-hover:scale-105"
-                          src={recipe.mainImage}
-                          alt={recipe.title}
+                          src={moreRecipe.mainImage}
+                          alt={moreRecipe.title}
                           placeholder="blur"
-                          blurDataURL={recipe.mainImage}
+                          blurDataURL={moreRecipe.mainImage}
                           width={854}
                           height={480}
                         />
                         <div>
                           <h3 className="mt-5 text-lg font-semibold transition-all duration-300 group-hover:text-amber-600 lg:text-xl">
-                            {recipe.title}
+                            {moreRecipe.title}
                           </h3>
                           <h4 className="mt-2 transition-all duration-300 group-hover:text-amber-600">
-                            {recipe.chef.name}
+                            {moreRecipe.chef.name}
                           </h4>
                         </div>
                       </div>
