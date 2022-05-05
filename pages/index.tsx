@@ -21,7 +21,7 @@ const recipesQuery = `*[_type == "recipe"][0..3]{
   _id,
   title,
   slug,
-  "mainImage": mainImage.url,
+  "mainImage": mainImage.secure_url,
   chef-> {
     name,
   }
@@ -31,7 +31,7 @@ const storiesQuery = `*[_type == "story"][0..3]{
   _id,
   title,
   slug,
-  "mainImage": mainImage.url,
+  "mainImage": mainImage.secure_url,
   category-> {
     _id,
     title

@@ -19,7 +19,7 @@ const recipesQuery = `*[_type == "recipe"]{
   _id,
   title,
   slug,
-  "mainImage": mainImage.url,
+  "mainImage": mainImage.secure_url,
   chef-> {
     name
   }

@@ -213,7 +213,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     instructions,
     video,
     slug,
-    "mainImage": mainImage.url,
+    "mainImage": mainImage.secure_url,
     chef -> {
       name,
       "slug": slug.current,
@@ -228,7 +228,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       name
     },
     "slug": slug.current,
-    "mainImage": mainImage.url
+    "mainImage": mainImage.secure_url
     }
   }`;
 
