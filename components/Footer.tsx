@@ -3,8 +3,15 @@ import Link from "next/link";
 import Image from "next/image";
 
 import siteMetadata from "../data/siteMetadata.js";
+import { useForm, ValidationError } from "@formspree/react";
 
 function Footer() {
+  const [state, handleSubmit] = useForm("mayvlgwy");
+
+  if (state.succeeded) {
+    return <p>Thanks for your submission!</p>;
+  }
+
   return (
     <footer className="bg-zinc-900 pt-10 font-primary">
       <div className="mx-auto flex max-w-screen-xl flex-col space-y-20 px-4 pt-5 pb-0 text-zinc-50 sm:p-6 lg:flex-row lg:items-end lg:space-x-20 lg:space-y-5">
@@ -29,11 +36,16 @@ function Footer() {
           <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-zinc-50">
             SUBSCRIBE TO OUR NEWSLETTER
           </p>
-          <form action="#" className="mb-2 flex lg:w-10/12">
+          <form onSubmit={handleSubmit} className="mb-2 flex lg:w-10/12">
             <input
               className="w-full border-2 border-zinc-50 bg-zinc-900 px-3 py-2 text-base leading-normal transition duration-150 ease-in-out focus:outline-none"
               type="email"
               placeholder="Enter your email"
+            />
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
             />
             <button
               className="bg-zinc-50 px-3 py-3 text-center text-sm font-medium text-zinc-900 no-underline transition-all duration-500 hover:bg-yellow-500"
@@ -41,6 +53,7 @@ function Footer() {
             >
               Subscribe
             </button>
+            <ValidationError errors={state.errors} />
           </form>
           <p className="text-xs leading-normal text-zinc-400">
             Get the latest on recipes, articles, and cooking tips.

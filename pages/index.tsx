@@ -10,6 +10,7 @@ import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 
 import Image from "next/image";
 import Layout from "../components/Layout";
+import { useForm, ValidationError } from "@formspree/react";
 
 interface Props {
   recipes: [Recipe];
@@ -38,6 +39,12 @@ const storiesQuery = `*[_type == "story"][0..3]{
 }| order(_createdAt desc)`;
 
 export default function Home({ recipes, stories }: Props) {
+  const [state, handleSubmit] = useForm("mayvlgwy");
+
+  if (state.succeeded) {
+    return <p>Thanks for your submission!</p>;
+  }
+
   // emblaRef will be a reference to our carousel viewport
   const [emblaRef] = useEmblaCarousel(
     {
@@ -209,25 +216,38 @@ export default function Home({ recipes, stories }: Props) {
             </p>
           </div>
 
-          <form className="text-align mx-auto mt-16 flex max-w-md flex-col lg:flex-row">
+          <form
+            onSubmit={handleSubmit}
+            className="text-align mx-auto mt-16 flex max-w-md flex-col lg:flex-row"
+          >
             <div className="group relative z-0 mb-6 w-full">
               <input
                 type="email"
-                name="floating_email"
+                name="email"
                 className="peer block w-full appearance-none border-0 border-b-2 border-stone-300 bg-transparent py-3.5 px-0 text-sm text-stone-900 focus:border-zinc-900 focus:outline-none focus:ring-0"
                 placeholder=" "
                 required
               />
               <label
-                htmlFor="floating_email"
+                htmlFor="email"
                 className="peer-focus:scale-80 absolute top-3 -z-10 origin-[0] -translate-y-7 scale-75 transform text-sm text-stone-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-7 peer-focus:text-zinc-900 peer-focus:underline"
               >
                 Email address
               </label>
+              <ValidationError
+                prefix="Email"
+                field="email"
+                errors={state.errors}
+              />
             </div>
-            <button className="h-12 w-full border-2 border-zinc-900 bg-yellow-500 px-5 font-medium transition-all duration-500 hover:bg-zinc-900 hover:text-white focus:outline-none focus:ring focus:ring-offset-1 sm:w-auto sm:border-zinc-900 lg:ml-4">
+            <button
+              type="submit"
+              disabled={state.submitting}
+              className="h-12 w-full border-2 border-zinc-900 bg-yellow-500 px-5 font-medium transition-all duration-500 hover:bg-zinc-900 hover:text-white focus:outline-none focus:ring focus:ring-offset-1 sm:w-auto sm:border-zinc-900 lg:ml-4"
+            >
               Subscribe
             </button>
+            <ValidationError errors={state.errors} />
           </form>
         </section>
       </main>
