@@ -76,5 +76,11 @@ export default function RecipesPage({ recipes} : Props){
 export const getStaticProps = async () => {
   const recipes = await sanityClient.fetch(recipesQuery);
 
+  if (!recipes) {
+    return {
+      notFound: true,
+    }
+  }
+
   return { props: { recipes } };
 }

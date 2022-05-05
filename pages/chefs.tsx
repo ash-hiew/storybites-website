@@ -94,5 +94,11 @@ export default function ChefsPage({ chefs } : Props){
 export const getStaticProps = async () => {
   const chefs = await sanityClient.fetch(chefsQuery);
 
+  if (!chefs) {
+    return {
+      notFound: true,
+    }
+  }
+
   return { props: { chefs } };
 }

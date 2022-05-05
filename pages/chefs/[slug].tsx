@@ -1,14 +1,15 @@
+import React from "react";
 import { sanityClient } from "../../lib/sanity.server";
 import { GetStaticProps } from "next";
 
 import Link from "next/link";
 import { FiArrowRightCircle } from "react-icons/fi";
 
-import Image from 'next/image';
+import Image from "next/image";
 import Layout from "../../components/Layout";
 import { Chef, Recipe, Story } from "../../typing";
 
-import { NextSeo } from 'next-seo';
+import { NextSeo } from "next-seo";
 import siteMetadata from "../../data/siteMetadata";
 
 interface Props {
@@ -19,78 +20,110 @@ interface Props {
   currentChef: Chef;
 }
 
-const Chef = ({chefWithRelatedVideos}: Props ) => {
-
-  const { relatedRecipes, relatedStories,  currentChef} = chefWithRelatedVideos;
+const Chef = ({ chefWithRelatedVideos }: Props) => {
+  const { relatedRecipes, relatedStories, currentChef } = chefWithRelatedVideos;
 
   return (
     <Layout>
       <NextSeo
-      title={currentChef.name}
-      description={currentChef.bio}
-      openGraph={{
-        url: `${siteMetadata.siteUrl}/chefs/${currentChef.slug.current}`,
-        title: `${currentChef.name}`,
-        description: `${currentChef.bio}`,
-        images: [
-          {
-            url: `${currentChef.image}`,
-            width: 1200,
-            height: 630,
-            alt: "StoryBites"
-          },
-        ],
-      }}
+        title={currentChef.name}
+        description={currentChef.bio}
+        openGraph={{
+          url: `${siteMetadata.siteUrl}/chefs/${currentChef.slug}`,
+          title: `${currentChef.name}`,
+          description: `${currentChef.bio}`,
+          images: [
+            {
+              url: `${currentChef.image}`,
+              width: 1200,
+              height: 630,
+              alt: "StoryBites",
+            },
+          ],
+        }}
       />
       <main>
-        <section className='font-primary max-w-6xl px-10 mx-auto my-10'>
+        <section className="mx-auto my-10 max-w-6xl px-10 font-primary">
           <div className="space-y-4">
-            <h1 className="font-medium text-sm uppercase tracking-widest">Related Videos</h1>
-            <h2 className="font-display text-start font-semibold leading-tight tracking-tight text-4xl md:text-6xl md:leading-tight">{currentChef.name}</h2>
-
+            <h1 className="text-sm font-medium uppercase tracking-widest">
+              Related Videos
+            </h1>
+            <h2 className="text-start font-display text-4xl font-semibold leading-tight tracking-tight md:text-6xl md:leading-tight">
+              {currentChef.name}
+            </h2>
           </div>
 
-          <div className='flex flex-col mt-10'>
-          {relatedStories.map((story) => (
-            <div key={story._id} className='py-10'>
-            <Link key={story._id} href={`stories/${story.slug}`}>
-            <div className='links md:flex md:items-center group active:scale-105 duration-300 transition-all'>
-              <div className='overflow-hidden relative flex-shrink md:max-w-xs lg:max-w-sm'>
-                <Image className='w-full h-auto group-hover:scale-105 duration-300 transition-all' src={story.mainImage} alt={story.title} placeholder='blur' blurDataURL={story.mainImage} width={854} height={480}/>
-              </div>                             
-              <div className='flex-grow mt-3 md:ml-10 space-y-3 md:space-y-5'>
-                <p className='text-xs uppercase tracking-widest text-stone-500 group-hover:text-amber-600 duration-300 transition-all'>{story.category.title}</p>
-                <h3 className='text-2xl md:text-2xl lg:text-4xl font-semibold group-hover:text-amber-600 duration-300 transition-all'>{story.title}</h3>
+          <div className="mt-10 flex flex-col">
+            {relatedStories.map((story) => (
+              <div key={story._id} className="py-10">
+                <Link key={story._id} href={`stories/${story.slug}`}>
+                  <div className="links group transition-all duration-300 active:scale-105 md:flex md:items-center">
+                    <div className="relative flex-shrink overflow-hidden md:max-w-xs lg:max-w-sm">
+                      <Image
+                        className="h-auto w-full transition-all duration-300 group-hover:scale-105"
+                        src={story.mainImage}
+                        alt={story.title}
+                        placeholder="blur"
+                        blurDataURL={story.mainImage}
+                        width={854}
+                        height={480}
+                      />
+                    </div>
+                    <div className="mt-3 flex-grow space-y-3 md:ml-10 md:space-y-5">
+                      <p className="text-xs uppercase tracking-widest text-stone-500 transition-all duration-300 group-hover:text-amber-600">
+                        {story.category.title}
+                      </p>
+                      <h3 className="text-2xl font-semibold transition-all duration-300 group-hover:text-amber-600 md:text-2xl lg:text-4xl">
+                        {story.title}
+                      </h3>
 
-                <FiArrowRightCircle size={42} className='group-hover:text-amber-600 duration-300 transition-all'/>
+                      <FiArrowRightCircle
+                        size={42}
+                        className="transition-all duration-300 group-hover:text-amber-600"
+                      />
+                    </div>
+                  </div>
+                </Link>
               </div>
-            </div>
-            </Link>
-            </div>
-          ))}
+            ))}
           </div>
 
-          <div className='flex flex-col mt-10'>
-          {relatedRecipes.map((recipe, index) => (
-            <div key={index} className='py-10'>
-            <Link key={index} href={`/recipes/${recipe.slug}`}>
-            <div className='links md:flex md:items-center group active:scale-105 duration-300 transition-all'>
-              <div className='overflow-hidden relative flex-shrink md:max-w-xs lg:max-w-sm'>
-                <Image className='w-full h-auto group-hover:scale-105 duration-300 transition-all' src={recipe.mainImage} alt={recipe.title} placeholder='blur' blurDataURL={recipe.mainImage} width={854} height={480} priority={true}/>
-              </div>                             
-              <div className='flex-grow md:ml-10 mt-3 space-y-3 md:space-y-5'>
-                <h3 className='text-2xl md:text-2xl lg:text-5xl font-semibold group-hover:text-amber-600 duration-300 transition-all'>{recipe.title}</h3>
-                <p className='group-hover:text-amber-600 duration-300 transition-all'>{currentChef.name}</p>
-                <FiArrowRightCircle size={42} className='group-hover:text-amber-600 duration-300 transition-all'/>
+          <div className="mt-10 flex flex-col">
+            {relatedRecipes.map((recipe, index) => (
+              <div key={index} className="py-10">
+                <Link key={index} href={`/recipes/${recipe.slug}`}>
+                  <div className="links group transition-all duration-300 active:scale-105 md:flex md:items-center">
+                    <div className="relative flex-shrink overflow-hidden md:max-w-xs lg:max-w-sm">
+                      <Image
+                        className="h-auto w-full transition-all duration-300 group-hover:scale-105"
+                        src={recipe.mainImage}
+                        alt={recipe.title}
+                        placeholder="blur"
+                        blurDataURL={recipe.mainImage}
+                        width={854}
+                        height={480}
+                        priority={true}
+                      />
+                    </div>
+                    <div className="mt-3 flex-grow space-y-3 md:ml-10 md:space-y-5">
+                      <h3 className="text-2xl font-semibold transition-all duration-300 group-hover:text-amber-600 md:text-2xl lg:text-5xl">
+                        {recipe.title}
+                      </h3>
+                      <p className="transition-all duration-300 group-hover:text-amber-600">
+                        {currentChef.name}
+                      </p>
+                      <FiArrowRightCircle
+                        size={42}
+                        className="transition-all duration-300 group-hover:text-amber-600"
+                      />
+                    </div>
+                  </div>
+                </Link>
               </div>
-            </div>
-            </Link>
-            </div>
-          ))}
+            ))}
           </div>
-        </section>        
+        </section>
       </main>
-
     </Layout>
   );
 };
@@ -104,7 +137,7 @@ export const getStaticPaths = async () => {
   }`;
 
   const selectedChef = await sanityClient.fetch(query);
-  
+
   const paths = selectedChef.map((chef: Chef) => ({
     params: {
       slug: chef.slug,
@@ -118,13 +151,13 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-
   const query = `
   *[_type == "chef" && slug.current == $slug][0]{
     "currentChef":{
       name,
       image,
-      bio
+      bio,
+      "slug": slug.current
     },
     "relatedStories": *[_type=='story' && references(^._id)]{ 
       title,
@@ -140,23 +173,22 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       "slug": slug.current,
       "mainImage": mainImage.secure_url
     }
-  }`
+  }`;
 
   const chefWithRelatedVideos = await sanityClient.fetch(query, {
     slug: params?.slug,
   });
 
-  
   if (!chefWithRelatedVideos) {
     return {
       notFound: true,
-    }
+    };
   }
 
   return {
     props: {
-      chefWithRelatedVideos
+      chefWithRelatedVideos,
     },
-    revalidate: 60 * 60 * 24, 
+    revalidate: 60 * 60 * 24,
   };
 };

@@ -89,7 +89,14 @@ export const getStaticProps = async () => {
   const stories = await sanityClient.fetch(storiesQuery);
   const categories = await sanityClient.fetch(categoriesQuery);
 
-  return { props: { stories, categories },
-  revalidate: 60 * 60 * 24,  
+  if (!stories || !categories) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return { 
+    props: { stories, categories },
+    revalidate: 60 * 60 * 24, 
 };
 }
