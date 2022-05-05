@@ -4,14 +4,15 @@ import Document, {
   Head,
   Main,
   NextScript,
-} from 'next/document'
+} from "next/document";
 
+import React from "react";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx)
+    const initialProps = await Document.getInitialProps(ctx);
 
-    return initialProps
+    return initialProps;
   }
 
   render() {
@@ -21,9 +22,23 @@ class MyDocument extends Document {
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <link rel="shortcut icon" href="/images/favicon.ico" />
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
-          <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"/>
-          <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"/>
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/images/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/images/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/images/favicon-16x16.png"
+          />
           <meta name="robots" content="index, follow" />
           <link
             rel="preconnect"
@@ -72,13 +87,13 @@ class MyDocument extends Document {
             />
           </noscript>
         </Head>
-        <body className='bg-stone-200'>
+        <body className="bg-stone-200">
           <Main />
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
-export default MyDocument
+export default MyDocument;

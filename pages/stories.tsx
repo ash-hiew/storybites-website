@@ -1,17 +1,17 @@
-import Link from 'next/link';
-
+import Link from "next/link";
+import React from "react";
 import { Story, Category } from "../typing";
-import { sanityClient } from '../lib/sanity.server';
+import { sanityClient } from "../lib/sanity.server";
 
-import Image from 'next/image';
+import Image from "next/image";
 
 import { FiArrowRightCircle } from "react-icons/fi";
-import CategoryList from '../components/CategoryList';
-import Layout from '../components/Layout';
+import CategoryList from "../components/CategoryList";
+import Layout from "../components/Layout";
 
-import { NextSeo } from 'next-seo';
+import { NextSeo } from "next-seo";
 
-import siteMetadata from '../data/siteMetadata.js'
+import siteMetadata from "../data/siteMetadata.js";
 
 interface Props {
   stories: [Story];
@@ -37,47 +37,67 @@ const categoriesQuery = `*[_type == "category"]{
   "slug": slug.current
 }`;
 
-
-export default function StoriesPage({ stories, categories }: Props){
+export default function StoriesPage({ stories, categories }: Props) {
   return (
     <Layout>
-      <NextSeo 
-      title="Stories"
-      description="A collection of stories we've shared of chefs with different cultural backgrounds and cuisines. From their journeys as chefs to their love of food."
-      openGraph={{
-        url: `${siteMetadata.siteUrl}/stories/`,
-        title: "Stories",
-        description: "A collection of stories we've shared of chefs with different cultural backgrounds and cuisines. From their journeys as chefs to their love of food."
-      }}
+      <NextSeo
+        title="Stories"
+        description="A collection of stories we've shared of chefs with different cultural backgrounds and cuisines. From their journeys as chefs to their love of food."
+        openGraph={{
+          url: `${siteMetadata.siteUrl}/stories/`,
+          title: "Stories",
+          description:
+            "A collection of stories we've shared of chefs with different cultural backgrounds and cuisines. From their journeys as chefs to their love of food.",
+        }}
       />
       <main>
-      <section className='font-primary max-w-6xl px-10 mx-auto my-10'>
+        <section className="mx-auto my-10 max-w-6xl px-10 font-primary">
           <div className="space-y-4">
-            <h1 className="font-medium text-sm uppercase tracking-widest">Stories</h1>
-            <h2 className="font-display text-start font-semibold leading-tight tracking-tight text-4xl md:text-6xl md:leading-tight">All Stories</h2>
+            <h1 className="text-sm font-medium uppercase tracking-widest">
+              Stories
+            </h1>
+            <h2 className="text-start font-display text-4xl font-semibold leading-tight tracking-tight md:text-6xl md:leading-tight">
+              All Stories
+            </h2>
 
             {/* Categories Filter Section */}
-            <CategoryList categories={categories}/>
+            <CategoryList categories={categories} />
           </div>
 
-          <div className='flex flex-col mt-10'>
-          {stories.map((story, index) => (
-            <div key={index} className='py-10'>
-            <Link key={story._id} href={`/stories/${story.slug.current}`}>
-            <div className='links md:flex md:items-center group active:scale-105 duration-300 transition-all'>
-              <div className='overflow-hidden relative flex-shrink md:max-w-xs lg:max-w-sm'>
-                <Image className='w-full h-auto group-hover:scale-105 duration-300 transition-all' src={story.mainImage} alt={story.title} placeholder='blur' blurDataURL={story.mainImage} width={854} height={480} priority={true}/>
-              </div>                             
-              <div className='flex-grow mt-3 md:ml-10 space-y-3 md:space-y-5'>
-                <p className='text-xs uppercase tracking-widest text-stone-500 group-hover:text-amber-600 duration-300 transition-all'>{story.category.title}</p>
-                <h3 className='text-2xl md:text-2xl lg:text-4xl font-semibold group-hover:text-amber-600 duration-300 transition-all'>{story.title}</h3>
+          <div className="mt-10 flex flex-col">
+            {stories.map((story, index) => (
+              <div key={index} className="py-10">
+                <Link key={story._id} href={`/stories/${story.slug.current}`}>
+                  <div className="links group transition-all duration-300 active:scale-105 md:flex md:items-center">
+                    <div className="relative flex-shrink overflow-hidden md:max-w-xs lg:max-w-sm">
+                      <Image
+                        className="h-auto w-full transition-all duration-300 group-hover:scale-105"
+                        src={story.mainImage}
+                        alt={story.title}
+                        placeholder="blur"
+                        blurDataURL={story.mainImage}
+                        width={854}
+                        height={480}
+                        priority={true}
+                      />
+                    </div>
+                    <div className="mt-3 flex-grow space-y-3 md:ml-10 md:space-y-5">
+                      <p className="text-xs uppercase tracking-widest text-stone-500 transition-all duration-300 group-hover:text-amber-600">
+                        {story.category.title}
+                      </p>
+                      <h3 className="text-2xl font-semibold transition-all duration-300 group-hover:text-amber-600 md:text-2xl lg:text-4xl">
+                        {story.title}
+                      </h3>
 
-                <FiArrowRightCircle size={42} className='group-hover:text-amber-600 duration-300 transition-all'/>
+                      <FiArrowRightCircle
+                        size={42}
+                        className="transition-all duration-300 group-hover:text-amber-600"
+                      />
+                    </div>
+                  </div>
+                </Link>
               </div>
-            </div>
-            </Link>
-            </div>
-          ))}
+            ))}
           </div>
         </section>
       </main>
@@ -92,11 +112,11 @@ export const getStaticProps = async () => {
   if (!stories || !categories) {
     return {
       notFound: true,
-    }
+    };
   }
 
-  return { 
+  return {
     props: { stories, categories },
-    revalidate: 60 * 60 * 24, 
+    revalidate: 60 * 60 * 24,
+  };
 };
-}
