@@ -18,8 +18,7 @@ const config = {
 };
 
 const Layout = ({ children }: Props): JSX.Element => (
-    <div>
-        <motion.main
+        <motion.div
             initial="hidden"
             animate="enter"
             exit="exit"
@@ -28,8 +27,7 @@ const Layout = ({ children }: Props): JSX.Element => (
             className="mx-auto py-8 md:py-16 lg:py-24"
         >
             {children}
-        </motion.main>
-    </div>
+        </motion.div>
 )
 
 export default Layout
