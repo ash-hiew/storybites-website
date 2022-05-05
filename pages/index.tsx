@@ -10,7 +10,6 @@ import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 
 import Image from "next/image";
 import Layout from "../components/Layout";
-import { useForm, ValidationError } from "@formspree/react";
 import CTANewsletterForm from "../components/CTANewsletterForm";
 
 interface Props {
