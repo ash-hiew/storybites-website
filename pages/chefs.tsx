@@ -4,6 +4,9 @@ import { sanityClient } from '../lib/sanity.server';
 import Layout from '../components/Layout';
 import Link from 'next/link';
 
+import { NextSeo } from 'next-seo';
+import siteMetadata from '../data/siteMetadata';
+
 interface Props {
   chefs: [Chef];
 }
@@ -19,7 +22,16 @@ const chefsQuery = `*[_type == "chef"]{
 export default function ChefsPage({ chefs } : Props){
   return (
       <Layout>
-        <main className='mx-auto'>
+      <NextSeo
+      title="Our Chefs"
+      description="Check out our team of culinary collaborators who joined the narrative to share their love of food and their journey."
+      openGraph={{
+        url: `${siteMetadata.siteUrl}/chefs`,
+        title: "Our Chefs",
+        description: "Check out our team of culinary collaborators who joined the narrative to share their love of food and their journey.",
+      }}
+      />
+        <main>
           <section className='font-primary px-10 max-w-4xl my-10'>
           <div className="space-y-4 md:space-y-6">
             <h1 className="font-medium uppercase tracking-widest text-sm">Our Chefs</h1>
@@ -71,8 +83,9 @@ export default function ChefsPage({ chefs } : Props){
           </div>
 
           <a href="/stories" className='font-medium px-5 py-2 border-2 border-zinc-900 mx-auto bg-yellow-500 hover:bg-zinc-900 hover:text-white duration-500 transition-all'>Let's have a chat</a>
-        </section>
+        </section>          
         </main>
+
 
       </Layout>
   );

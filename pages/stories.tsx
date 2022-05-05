@@ -9,6 +9,9 @@ import { FiArrowRightCircle } from "react-icons/fi";
 import CategoryList from '../components/CategoryList';
 import Layout from '../components/Layout';
 
+import { NextSeo } from 'next-seo';
+
+import siteMetadata from '../data/siteMetadata.js'
 
 interface Props {
   stories: [Story];
@@ -38,7 +41,17 @@ const categoriesQuery = `*[_type == "category"]{
 export default function StoriesPage({ stories, categories }: Props){
   return (
     <Layout>
-        <section className='font-primary max-w-6xl px-10 mx-auto my-10'>
+      <NextSeo 
+      title="Stories"
+      description="A collection of stories we've shared of chefs with different cultural backgrounds and cuisines. From their journeys as chefs to their love of food."
+      openGraph={{
+        url: `${siteMetadata.siteUrl}/stories/`,
+        title: "Stories",
+        description: "A collection of stories we've shared of chefs with different cultural backgrounds and cuisines. From their journeys as chefs to their love of food."
+      }}
+      />
+      <main>
+      <section className='font-primary max-w-6xl px-10 mx-auto my-10'>
           <div className="space-y-4">
             <h1 className="font-medium text-sm uppercase tracking-widest">Stories</h1>
             <h2 className="font-display text-start font-semibold leading-tight tracking-tight text-4xl md:text-6xl md:leading-tight">All Stories</h2>
@@ -67,6 +80,7 @@ export default function StoriesPage({ stories, categories }: Props){
           ))}
           </div>
         </section>
+      </main>
     </Layout>
   );
 }

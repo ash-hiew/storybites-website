@@ -11,6 +11,9 @@ import Image from 'next/image';
 import CategoryList from "../components/CategoryList";
 import Layout from "../components/Layout";
 
+import { NextSeo } from 'next-seo';
+import siteMetadata from "../data/siteMetadata";
+
 interface Props {
   story: Story;
   stories: [Story];
@@ -26,6 +29,15 @@ const Category = ({categoryWithStories}: Props) => {
 
   return (
     <Layout>
+      <NextSeo 
+      title={`${currentCategory.title} - Stories`}
+      description=""
+      openGraph={{
+        url: `${siteMetadata.siteUrl}/${currentCategory}`,
+        title: `${currentCategory.title} - Stories`,
+        description: ""
+      }}
+      />
       <main>
         <section className='font-primary max-w-6xl px-10 mx-auto my-10'>
           <div className="space-y-4">
@@ -42,7 +54,7 @@ const Category = ({categoryWithStories}: Props) => {
             <Link key={story._id} href={`stories/${story.slug}`}>
             <div className='links md:flex md:items-center group active:scale-105 duration-300 transition-all'>
               <div className='overflow-hidden relative flex-shrink md:max-w-xs lg:max-w-sm'>
-                <Image className='w-full h-auto group-hover:scale-105 duration-300 transition-all' src={story.mainImage} alt={story.title} placeholder='blur' blurDataURL={story.mainImage} width={854} height={480} priority={true}/>
+                <Image className='w-full h-auto group-hover:scale-105 duration-300 transition-all' src={story.mainImage} alt={story.title} placeholder='blur' blurDataURL={story.mainImage} width={854} height={480}/>
               </div>                             
               <div className='flex-grow mt-3 md:ml-10 space-y-3 md:space-y-5'>
                 <p className='text-xs uppercase tracking-widest text-stone-500'>{story.category.title}</p>
@@ -55,8 +67,9 @@ const Category = ({categoryWithStories}: Props) => {
             </div>
           ))}
           </div>
-        </section>
+        </section>        
       </main>
+
     </Layout>
   );
 };

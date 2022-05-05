@@ -1,4 +1,3 @@
-import { urlFor } from "../../lib/sanity";
 import { sanityClient } from "../../lib/sanity.server";
 import { GetStaticProps } from "next";
 
@@ -14,6 +13,9 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 import Image from 'next/image';
 
+import { NextSeo } from 'next-seo';
+import siteMetadata from "../../data/siteMetadata";
+
 interface Props {
   story: Story;
   chef: Chef;
@@ -24,20 +26,36 @@ interface Props {
 const Story = ({story}: Props) => {
 
   const [emblaRef] = useEmblaCarousel({
-    align: 'start',
+    align: "start",
     skipSnaps: false,
-    inViewThreshold: 0.7,
     speed: 5,
     containScroll: 'trimSnaps',
   }, [WheelGesturesPlugin({forceWheelAxis:'x'})]);
 
   const { currentStory, stories } = story;
 
-  const moreStories = stories.sort(() => Math.random() - 0.5).slice(0,3)
+  const moreStories = stories.sort(() => Math.random() - 0.5).slice(0,3);
 
   return (
   <Layout>
-        <main>
+      <NextSeo
+      title={currentStory.title}
+      description={currentStory.shortDescription}
+      openGraph={{
+        url: `${siteMetadata.siteUrl}/recipes/${currentStory.slug.current}`,
+        title: `${currentStory.title}`,
+        description: `${currentStory.shortDescription}`,
+        images: [
+          {
+            url: `${currentStory.mainImage}`,
+            width: 1200,
+            height: 630,
+            alt: "StoryBites"
+          },
+        ],
+      }}
+      />
+    <main>
       <article className="font-primary mx-auto max-w-3xl my-10">
 
         <div className="flex flex-col m-10 space-y-5">
@@ -80,20 +98,20 @@ const Story = ({story}: Props) => {
         </div>
 
       </article>
-      <section className='font-primary flex flex-col justify-center max-w-7xl mx-auto my-32 lg:my-40 px-10'>
-          <h2 className='text-2xl md:text-3xl lg:mb-5'>More <span className='font-bold'>Stories</span></h2>
+      <section className='font-primary flex flex-col justify-center max-w-4xl mx-auto mt-32 mb-10 px-10'>
+          <h2 className='text-3xl md:text-4xl lg:mb-5'>More <span className='font-bold'>Stories</span></h2>
 
           <div className='embla overflow-hidden lg:px-0'>
-            <div className='embla__viewport ' ref={emblaRef}>
+            <div className='embla__viewport' ref={emblaRef}>
               <div className='embla__container'>
               {moreStories.map((moreStory, index) => (
                 <div key={index} className='embla__slide py-10'>
                   <Link key={moreStory._id} href={`/stories/${moreStory.slug.current}`}>
                     <div className='links mx-3 lg:mx-6 group active:scale-105 duration-500 transition-all'>
-                      <Image className='w-full h-auto group-hover:scale-105 duration-500 transition-all' src={moreStory.mainImage} alt={moreStory.title} placeholder='blur' blurDataURL={moreStory.mainImage} width={854} height={480} priority={true}/>
+                      <Image className='w-full h-auto group-hover:scale-105 duration-500 transition-all' src={moreStory.mainImage} alt={moreStory.title} placeholder='blur' blurDataURL={moreStory.mainImage} width={854} height={480}/>
                       <div>        
                       <p className='mt-3 text-xs uppercase tracking-widest text-stone-500 group-hover:text-amber-600 duration-300 transition-all'>{moreStory.category.title}</p>                     
-                      <h3 className='mt-2 text-xl md:text-2xl font-semibold group-hover:text-amber-600 duration-300 transition-all'>{moreStory.title}</h3>
+                      <h3 className='mt-2 text-lg md:text-xl font-semibold group-hover:text-amber-600 duration-300 transition-all'>{moreStory.title}</h3>
                       </div>
                     </div>
                   </Link>
@@ -102,9 +120,9 @@ const Story = ({story}: Props) => {
               </div>
             </div>
           </div>
-          
-        </section>
+        </section>     
     </main>
+ 
   </Layout>
   );
 };
@@ -129,6 +147,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     "currentStory": {
         _id,
         title,
+        shortDescription,
         description,
         video,
         slug,

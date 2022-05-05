@@ -1,4 +1,3 @@
-import { urlFor } from "../../lib/sanity";
 import { sanityClient } from "../../lib/sanity.server";
 import { GetStaticProps } from "next";
 
@@ -8,6 +7,9 @@ import { FiArrowRightCircle } from "react-icons/fi";
 import Image from 'next/image';
 import Layout from "../../components/Layout";
 import { Chef, Recipe, Story } from "../../typing";
+
+import { NextSeo } from 'next-seo';
+import siteMetadata from "../../data/siteMetadata";
 
 interface Props {
   story: Story;
@@ -23,6 +25,23 @@ const Chef = ({chefWithRelatedVideos}: Props ) => {
 
   return (
     <Layout>
+      <NextSeo
+      title={currentChef.name}
+      description={currentChef.bio}
+      openGraph={{
+        url: `${siteMetadata.siteUrl}/chefs/${currentChef.slug.current}`,
+        title: `${currentChef.name}`,
+        description: `${currentChef.bio}`,
+        images: [
+          {
+            url: `${currentChef.image}`,
+            width: 1200,
+            height: 630,
+            alt: "StoryBites"
+          },
+        ],
+      }}
+      />
       <main>
         <section className='font-primary max-w-6xl px-10 mx-auto my-10'>
           <div className="space-y-4">
@@ -37,7 +56,7 @@ const Chef = ({chefWithRelatedVideos}: Props ) => {
             <Link key={story._id} href={`stories/${story.slug}`}>
             <div className='links md:flex md:items-center group active:scale-105 duration-300 transition-all'>
               <div className='overflow-hidden relative flex-shrink md:max-w-xs lg:max-w-sm'>
-                <Image className='w-full h-auto group-hover:scale-105 duration-300 transition-all' src={story.mainImage} alt={story.title} placeholder='blur' blurDataURL={story.mainImage} width={854} height={480} priority={true}/>
+                <Image className='w-full h-auto group-hover:scale-105 duration-300 transition-all' src={story.mainImage} alt={story.title} placeholder='blur' blurDataURL={story.mainImage} width={854} height={480}/>
               </div>                             
               <div className='flex-grow mt-3 md:ml-10 space-y-3 md:space-y-5'>
                 <p className='text-xs uppercase tracking-widest text-stone-500 group-hover:text-amber-600 duration-300 transition-all'>{story.category.title}</p>
@@ -69,8 +88,9 @@ const Chef = ({chefWithRelatedVideos}: Props ) => {
             </div>
           ))}
           </div>
-        </section>
+        </section>        
       </main>
+
     </Layout>
   );
 };

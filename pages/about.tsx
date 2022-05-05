@@ -3,11 +3,24 @@ import Layout from "../components/Layout";
 import ReactPlayer from "react-player";
 import Link from "next/link";
 
+import { NextSeo } from 'next-seo';
+import siteMetadata from "../data/siteMetadata";
+
 export default function AboutPage(){
 
 
   return (
     <Layout>
+      <NextSeo
+      title="About"
+      description="Why StoryBites? Learn about our purpose for sharing stories of people and food."
+      openGraph={{
+        url: `${siteMetadata.siteUrl}/about`,
+        title: "About",
+        description: "Why StoryBites? Learn about our purpose for sharing stories of people and food.",
+      }}
+      />
+      <main>
         <section className='font-primary px-10 md:px-6 max-w-4xl mx-auto my-10'>
           <div className="space-y-4 md:space-y-6">
             <h1 className="font-medium uppercase tracking-wide">About Us</h1>
@@ -78,9 +91,9 @@ export default function AboutPage(){
               </p>
             </div>
           </div>
-
-        
         </section>
+      </main>
+
     </Layout>
   )
 }

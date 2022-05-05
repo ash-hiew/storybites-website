@@ -8,6 +8,9 @@ import Image from 'next/image';
 import { FiArrowRightCircle } from "react-icons/fi";
 import Layout from '../components/Layout';
 
+import { NextSeo } from 'next-seo';
+import siteMetadata from '../data/siteMetadata';
+
 interface Props {
   recipes: [Recipe];
 }
@@ -18,8 +21,7 @@ const recipesQuery = `*[_type == "recipe"]{
   slug,
   "mainImage": mainImage.url,
   chef-> {
-    name,
-    image
+    name
   }
 }| order(_createdAt desc)`;
 
@@ -27,7 +29,16 @@ const recipesQuery = `*[_type == "recipe"]{
 export default function RecipesPage({ recipes} : Props){
   return (
     <Layout>
-            <main>
+      <NextSeo
+      title="Recipes"
+      description="We've curated recipes from our culinary collaborators in hopes to inspire those at home to cook like the professionals."
+      openGraph={{
+        url: `${siteMetadata.siteUrl}/recipes/`,
+        title: "Recipes",
+        description: "We've curated recipes from our culinary collaborators in hopes to inspire those at home to cook like the professionals."
+      }}
+      />
+      <main>
         <section className='font-primary max-w-6xl mx-auto px-10 my-10'>
           <div className="space-y-4">
             <h1 className="font-medium uppercase tracking-widest">Recipes</h1>
@@ -53,8 +64,9 @@ export default function RecipesPage({ recipes} : Props){
             </div>
           ))}
           </div>
-        </section>
+        </section>        
       </main>
+
     </Layout>
 
   )
