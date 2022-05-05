@@ -18,6 +18,16 @@ export default {
       },
     },
     {
+      name: "shortDescription",
+      title: "Short Description",
+      type: "string",
+    },
+    {
+      name: "description",
+      title: "Description",
+      type: "blockContent",
+    },
+    {
       name: "chef",
       title: "Chef",
       type: "reference",

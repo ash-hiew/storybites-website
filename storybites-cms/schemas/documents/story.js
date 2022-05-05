@@ -68,6 +68,11 @@ export default {
       type: "url"
     },
     {
+      name: "shortDescription",
+      title: "Short Description",
+      type: "string",
+    },
+    {
       name: "description",
       title: "Description",
       type: "blockContent",
