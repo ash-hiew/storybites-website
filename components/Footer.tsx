@@ -3,20 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 
 import siteMetadata from "../data/siteMetadata.js";
-import { useForm, ValidationError } from "@formspree/react";
+import FooterNewsletterForm from "./FooterNewsletterForm";
 
 function Footer() {
-  const [state, handleSubmit] = useForm("mayvlgwy");
-
-  if (state.succeeded) {
-    return <p>Thanks for your submission!</p>;
-  }
-
   return (
-    <footer className="bg-zinc-900 pt-10 font-primary">
-      <div className="mx-auto flex max-w-screen-xl flex-col space-y-20 px-4 pt-5 pb-0 text-zinc-50 sm:p-6 lg:flex-row lg:items-end lg:space-x-20 lg:space-y-5">
+    <footer className="bg-zinc-900 pt-10 font-primary ">
+      <div className="mx-auto flex max-w-screen-xl flex-col justify-between space-y-20 px-4 pt-5 pb-0 text-zinc-50 sm:p-6 lg:flex-row lg:items-end lg:space-x-20 lg:space-y-5">
         {/* Logo Section */}
-        <div className="mx-auto flex max-w-xs flex-col items-center text-center lg:items-start lg:text-left">
+        <div className="mx-auto flex max-w-xs flex-col items-center text-center lg:mx-0 lg:items-start lg:text-left">
           <Link href="/">
             <Image
               src={siteMetadata.siteLogoColour}
@@ -32,36 +26,18 @@ function Footer() {
         </div>
 
         {/* Subscribe Form */}
-        <div className="md:mx-18 mx-10 flex flex-grow flex-col lg:items-center">
+        <div className="mx-auto flex max-w-sm flex-grow flex-col items-center">
           <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-zinc-50">
             SUBSCRIBE TO OUR NEWSLETTER
           </p>
-          <form onSubmit={handleSubmit} className="mb-2 flex lg:w-10/12">
-            <input
-              className="w-full border-2 border-zinc-50 bg-zinc-900 px-3 py-2 text-base leading-normal transition duration-150 ease-in-out focus:outline-none"
-              type="email"
-              placeholder="Enter your email"
-            />
-            <ValidationError
-              prefix="Email"
-              field="email"
-              errors={state.errors}
-            />
-            <button
-              className="bg-zinc-50 px-3 py-3 text-center text-sm font-medium text-zinc-900 no-underline transition-all duration-500 hover:bg-yellow-500"
-              type="submit"
-            >
-              Subscribe
-            </button>
-            <ValidationError errors={state.errors} />
-          </form>
+          <FooterNewsletterForm />
           <p className="text-xs leading-normal text-zinc-400">
             Get the latest on recipes, articles, and cooking tips.
           </p>
         </div>
 
         {/* Contact Info Section */}
-        <div className="mx-auto flex flex-col items-center space-y-4 lg:items-end">
+        <div className="flex-end mx-auto flex flex-col items-center space-y-4 lg:items-end">
           <p className="text-right text-2xl font-semibold">Get in Touch</p>
           <p>{siteMetadata.email}</p>
           <div className="mt-2 flex justify-end space-x-4 prose-a:text-zinc-400 prose-a:transition-all prose-a:duration-300 hover:prose-a:text-zinc-50">

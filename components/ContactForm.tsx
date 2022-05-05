@@ -6,7 +6,14 @@ export default function ContactForm() {
   const [state, handleSubmit] = useForm("mrgjovnd");
 
   if (state.succeeded) {
-    return <p>Thanks for your submission!</p>;
+    return (
+      <div className="mx-auto my-10 max-w-md space-y-2 bg-stone-300 p-10 text-center">
+        <p className="text-lg font-bold md:text-xl">Thank you!</p>
+        <p className="text-sm md:text-lg">
+          We&apos;ve received your message and will get back to you soon.
+        </p>
+      </div>
+    );
   }
 
   return (
@@ -33,7 +40,6 @@ export default function ContactForm() {
         <div className="group relative z-0 mb-6 w-full">
           <input
             type="tel"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             name="phone"
             id="floating_phone"
             className="peer block w-full appearance-none border-0 border-b-2 border-stone-300 bg-transparent py-2.5 px-0 text-sm text-stone-900 focus:border-amber-600 focus:outline-none focus:ring-0"
