@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://storybites.co.nz
+
+# Sitemaps
+Sitemap: https://storybites.co.nz/sitemap.xml
