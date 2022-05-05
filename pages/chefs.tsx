@@ -48,11 +48,11 @@ export default function ChefsPage({ chefs }: Props) {
         <section className="mx-auto">
           <div className="mx-auto">
             <Image
-              src="https://res.cloudinary.com/storybites/image/upload/v1651626139/chefs-kitchen_omxjya.avif"
+              src="https://res.cloudinary.com/storybites/image/upload/v1651790688/chefs-kitchen_dhmeef.jpg"
               width={3200}
               height={1468}
               placeholder="blur"
-              blurDataURL="https://res.cloudinary.com/storybites/image/upload/v1651626139/chefs-kitchen_omxjya.avif"
+              blurDataURL="https://res.cloudinary.com/storybites/image/upload/v1651790688/chefs-kitchen_dhmeef.jpg"
             />
           </div>
         </section>
