@@ -23,19 +23,20 @@ export interface Story {
     current: string;
   };
   video: url;
+  shortDescription: string;
   description: object[];
   category: Category;
   tags: object[]; 
   date: Date;
   stories: [Story];
   currentStory: Story;
-  previousStory: Story;
-  nextStory: Story;
 };
 
 export interface Recipe {
   instructions: object[];
   ingredients: object[];
+  shortDescription: string;
+  description: object[];
   _id: string;
   title: string;
   chef: Chef;
@@ -44,6 +45,8 @@ export interface Recipe {
     current: string;
   };
   video: url;
+  recipes: [Recipe];
+  currentRecipe: Recipe;
 };
 
 export interface Category {
