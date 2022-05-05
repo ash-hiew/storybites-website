@@ -43,7 +43,7 @@ const Recipe = ({ recipe }: Props) => {
         title={currentRecipe.title}
         description={currentRecipe.shortDescription}
         openGraph={{
-          url: `${siteMetadata.siteUrl}/recipes/${currentRecipe.slug.current}`,
+          url: `${siteMetadata.siteUrl}/recipes/${currentRecipe.slug}`,
           title: `${currentRecipe.title}`,
           description: `${currentRecipe.shortDescription}`,
           images: [
@@ -143,10 +143,7 @@ const Recipe = ({ recipe }: Props) => {
               <div className="embla__container">
                 {moreRecipes.map((recipe, index) => (
                   <div key={index} className="embla__slide py-10">
-                    <Link
-                      key={recipe._id}
-                      href={`/recipes/${recipe.slug.current}`}
-                    >
+                    <Link key={recipe._id} href={`/recipes/${recipe.slug}`}>
                       <div className="embla__slide__inner links group mx-3 transition-all duration-300 active:scale-105 lg:mx-6">
                         <Image
                           className="embla__slide__img h-auto w-full transition-all duration-300 group-hover:scale-105"
@@ -212,7 +209,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     ingredients,
     instructions,
     video,
-    slug,
+    "slug": slug.current,
     "mainImage": mainImage.secure_url,
     chef -> {
       name,

@@ -45,7 +45,7 @@ const Story = ({ story }: Props) => {
         title={currentStory.title}
         description={currentStory.shortDescription}
         openGraph={{
-          url: `${siteMetadata.siteUrl}/recipes/${currentStory.slug.current}`,
+          url: `${siteMetadata.siteUrl}/recipes/${currentStory.slug}`,
           title: `${currentStory.title}`,
           description: `${currentStory.shortDescription}`,
           images: [
@@ -67,7 +67,7 @@ const Story = ({ story }: Props) => {
               </span>{" "}
               -{" "}
               <span className="transition-all duration-300 hover:text-amber-600">
-                <Link href={`../${currentStory.category.slug.current}`}>
+                <Link href={`../${currentStory.category.slug}`}>
                   {currentStory.category.title}
                 </Link>
               </span>
@@ -132,7 +132,7 @@ const Story = ({ story }: Props) => {
                   <div key={index} className="embla__slide py-10">
                     <Link
                       key={moreStory._id}
-                      href={`/stories/${moreStory.slug.current}`}
+                      href={`/stories/${moreStory.slug}`}
                     >
                       <div className="links group mx-3 transition-all duration-500 active:scale-105 lg:mx-6">
                         <Image
@@ -186,7 +186,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         shortDescription,
         description,
         video,
-        slug,
+        "slug": slug.current,
         chefs[] -> {
           _id,
           name,
@@ -197,15 +197,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         category-> {
           _id,
           title,
-          slug {
-            current
-        }
+          "slug": slug.current
       }
     },
     "stories": *[_type == "story" && slug.current != $slug]{
       _id,
       title,
-      slug,
+      "slug": slug.current,
       "mainImage": mainImage.secure_url,
       category-> {
         _id,
