@@ -6,7 +6,9 @@ import siteMetadata from "../data/siteMetadata.js";
 import { useForm, ValidationError } from "@formspree/react";
 
 function Footer() {
-  const [state, handleSubmit] = useForm("mayvlgwy");
+  const [state, handleSubmit] = useForm(
+    process.env.NEXT_PUBLIC_NEWSLETTER_FORM
+  );
 
   if (state.succeeded) {
     return <p>Thanks for your submission!</p>;
