@@ -58,4 +58,5 @@ export interface Category {
   stories: Story[];
   currentCategory: Category;
   categories: [Category];
+  description: string;
 };

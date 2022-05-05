@@ -18,6 +18,11 @@ export default {
         source: 'title',
         auto: true
       }
+    },
+    {
+      title: 'Description',
+      name: 'description',
+      type: 'string'
     }
   ]
 }
