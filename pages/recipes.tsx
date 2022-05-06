@@ -31,9 +31,9 @@ export default function RecipesPage({ recipes }: Props) {
       <NextSeo
         title="Recipes"
         description="We've curated recipes from our culinary collaborators in hopes to inspire those at home to cook like the professionals."
-        canonical="https://storybites.co.nz/recipes/"
+        canonical="https://storybites.co.nz/recipe/"
         openGraph={{
-          url: `${siteMetadata.siteUrl}/recipes/`,
+          url: `${siteMetadata.siteUrl}/recipes`,
           title: "Recipes",
           description:
             "We've curated recipes from our culinary collaborators in hopes to inspire those at home to cook like the professionals.",
