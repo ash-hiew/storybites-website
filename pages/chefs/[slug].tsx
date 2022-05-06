@@ -46,12 +46,12 @@ const Chef = ({ chefWithRelatedVideos }: Props) => {
       <main>
         <section className="mx-auto my-10 max-w-6xl px-10 font-primary">
           <div className="space-y-4">
-            <h1 className="text-sm font-medium uppercase tracking-widest">
+            <h2 className="text-sm font-medium uppercase tracking-widest">
               Related Videos
-            </h1>
-            <h2 className="text-start font-display text-4xl font-semibold leading-tight tracking-tight md:text-6xl md:leading-tight">
-              {currentChef.name}
             </h2>
+            <h1 className="text-start font-display text-4xl font-semibold leading-tight tracking-tight md:text-6xl md:leading-tight">
+              {currentChef.name}
+            </h1>
           </div>
 
           <div className="mt-10 flex flex-col">
@@ -156,7 +156,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   *[_type == "chef" && slug.current == $slug][0]{
     "currentChef":{
       name,
-      image,
+      "image": image.secure_url,
       bio,
       "slug": slug.current
     },
