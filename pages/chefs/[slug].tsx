@@ -36,9 +36,9 @@ const Chef = ({ chefWithRelatedVideos }: Props) => {
           images: [
             {
               url: `${currentChef.image}`,
-              width: 1200,
-              height: 630,
-              alt: "StoryBites",
+              width: 1000,
+              height: 1000,
+              alt: `${currentChef.name}`,
             },
           ],
         }}
