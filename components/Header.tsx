@@ -35,13 +35,13 @@ function Header() {
           {/* Logo */}
           <div>
             <Link href="/">
-              <a className="group z-30 mr-4 inline-flex items-center transition-all duration-300">
+              <a className="group z-30 mr-4 inline-flex w-16 items-center transition-all duration-300">
                 <Image
-                  className="w-16 cursor-pointer object-contain transition-all duration-300 group-hover:scale-90"
+                  className="cursor-pointer object-contain transition-all duration-300 group-hover:scale-90"
                   src={siteMetadata.siteLogo}
                   alt="Storybites Logo"
-                  width={70}
-                  height={70}
+                  width={140}
+                  height={140}
                 />
               </a>
             </Link>
@@ -122,21 +122,21 @@ function Header() {
             <Link href="/">
               <a
                 onClick={handleClick}
-                className="group mb-6 inline-flex items-center"
+                className="group mb-6 inline-flex w-14 items-center"
               >
                 <Image
-                  className="w-16 cursor-pointer object-contain transition-all duration-300 group-hover:scale-90"
+                  className="cursor-pointer object-contain transition-all duration-300 group-hover:scale-90"
                   src={siteMetadata.siteLogo}
                   alt="Storybites Logo"
-                  width={80}
-                  height={80}
+                  width={140}
+                  height={140}
                 />
               </a>
             </Link>
             <motion.ul className="relative space-y-6 prose-li:cursor-pointer prose-li:text-3xl prose-li:duration-300 hover:prose-li:text-yellow-500">
               <li onClick={handleClick}>
                 <Link href="/stories">
-                  <a>Stories</a>
+                  <a className="right">Stories</a>
                 </Link>
               </li>
               <li onClick={handleClick}>
