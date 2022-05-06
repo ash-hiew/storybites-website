@@ -14,7 +14,7 @@ export default function AboutPage() {
         description="Why StoryBites? Learn about our purpose for sharing stories of people and food."
         canonical="https://storybites.co.nz/about"
         openGraph={{
-          url: `${siteMetadata.siteUrl}/about`,
+          url: `${siteMetadata.siteUrl}about`,
           title: "About",
           description:
             "Why StoryBites? Learn about our purpose for sharing stories of people and food.",

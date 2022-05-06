@@ -28,7 +28,7 @@ export default function ChefsPage({ chefs }: Props) {
         description="Check out our team of culinary collaborators who joined the narrative to share their love of food and their journey."
         canonical="https://storybites.co.nz/chefs"
         openGraph={{
-          url: `${siteMetadata.siteUrl}/chefs`,
+          url: `${siteMetadata.siteUrl}chefs`,
           title: "Our Chefs",
           description:
             "Check out our team of culinary collaborators who joined the narrative to share their love of food and their journey.",

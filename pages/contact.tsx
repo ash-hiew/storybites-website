@@ -10,8 +10,9 @@ export default function ContactPage() {
       <NextSeo
         title="Work With Us"
         description="If you're interested in what we do at StoryBites and would like to be involved, we'd love to hear from you. Fill out our contact form and we'll be in contact"
+        canonical={`${siteMetadata.siteUrl}contact`}
         openGraph={{
-          url: `${siteMetadata.siteUrl}/contact`,
+          url: `${siteMetadata.siteUrl}contact`,
           title: "Privacy Policy",
           description:
             "If you're interested in what we do at StoryBites and would like to be involved, we'd love to hear from you. Fill out our contact form and we'll be in contact",

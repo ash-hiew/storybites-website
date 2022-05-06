@@ -18,6 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         titleTemplate="%s | StoryBites"
         defaultTitle="StoryBites"
         description="We are a New Zealand based culinary brand mandated to empower one million people to find humanity in gastronomy."
+        canonical="https://storybites.co.nz/"
         openGraph={{
           url: "https://storybites.co.nz/",
           title: "StoryBites - A New Zealand based culinary brand",
