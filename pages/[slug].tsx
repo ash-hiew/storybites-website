@@ -30,6 +30,7 @@ const Category = ({ categoryWithStories }: Props) => {
       <NextSeo
         title={`${currentCategory.title} - Stories`}
         description=""
+        canonical={`${siteMetadata.siteUrl}/${currentCategory}`}
         openGraph={{
           url: `${siteMetadata.siteUrl}/${currentCategory}`,
           title: `${currentCategory.title} - Stories`,

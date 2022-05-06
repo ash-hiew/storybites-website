@@ -43,6 +43,7 @@ export default function StoriesPage({ stories, categories }: Props) {
       <NextSeo
         title="Stories"
         description="A collection of stories we've shared of chefs with different cultural backgrounds and cuisines. From their journeys as chefs to their love of food."
+        canonical="https://storybites.co.nz/stories"
         openGraph={{
           url: `${siteMetadata.siteUrl}/stories/`,
           title: "Stories",

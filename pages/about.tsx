@@ -12,6 +12,7 @@ export default function AboutPage() {
       <NextSeo
         title="About"
         description="Why StoryBites? Learn about our purpose for sharing stories of people and food."
+        canonical="https://storybites.co.nz/about"
         openGraph={{
           url: `${siteMetadata.siteUrl}/about`,
           title: "About",
@@ -46,7 +47,7 @@ export default function AboutPage() {
 
         <section className="prose-sm mx-auto my-10 max-w-xl font-primary md:prose-base md:my-20">
           <div className="space-y-4 px-10">
-            <h1 className="text-3xl font-semibold md:text-4xl">The Why</h1>
+            <h2 className="text-3xl font-semibold md:text-4xl">The Why</h2>
             <p className="leading-loose sm:leading-relaxed">
               Ask yourself this. What brings your neighbourhood together? What
               makes a city come alive? What is that one thing that nations would
@@ -66,9 +67,9 @@ export default function AboutPage() {
         </section>
 
         <section className="prose-sm mx-auto my-32 max-w-4xl px-10 font-primary md:prose-base">
-          <h1 className="text-center font-primary text-3xl font-semibold md:text-4xl">
+          <h2 className="text-center font-primary text-3xl font-semibold md:text-4xl">
             How We Share Stories One Bite At A Time
-          </h1>
+          </h2>
           <div className="mx-auto my-10 flex flex-col md:flex-row md:space-x-8">
             <div className="mx-auto max-w-sm">
               <div className="relative w-full">

@@ -42,6 +42,7 @@ const Recipe = ({ recipe }: Props) => {
       <NextSeo
         title={currentRecipe.title}
         description={currentRecipe.shortDescription}
+        canonical={`${siteMetadata.siteUrl}/recipes/${currentRecipe.slug}`}
         openGraph={{
           url: `${siteMetadata.siteUrl}/recipes/${currentRecipe.slug}`,
           title: `${currentRecipe.title}`,

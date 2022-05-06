@@ -9,6 +9,7 @@ export default function PrivacyPolicy() {
       <NextSeo
         title="Privacy Policy"
         description="At Storybites, we care for your data privacy. You'll find all the information about our privacy policy here."
+        canonical="https://storybites.co.nz/privacy-policy"
         openGraph={{
           url: `${siteMetadata.siteUrl}/privacy-policy`,
           title: "Privacy Policy",

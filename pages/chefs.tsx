@@ -26,6 +26,7 @@ export default function ChefsPage({ chefs }: Props) {
       <NextSeo
         title="Our Chefs"
         description="Check out our team of culinary collaborators who joined the narrative to share their love of food and their journey."
+        canonical="https://storybites.co.nz/chefs"
         openGraph={{
           url: `${siteMetadata.siteUrl}/chefs`,
           title: "Our Chefs",
@@ -49,6 +50,7 @@ export default function ChefsPage({ chefs }: Props) {
           <div className="mx-auto">
             <Image
               src="https://res.cloudinary.com/storybites/image/upload/v1651790688/chefs-kitchen_dhmeef.jpg"
+              alt="A Chef's Kitchen"
               width={3200}
               height={1468}
               placeholder="blur"

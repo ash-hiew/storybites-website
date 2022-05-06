@@ -28,6 +28,7 @@ const Chef = ({ chefWithRelatedVideos }: Props) => {
       <NextSeo
         title={currentChef.name}
         description={currentChef.bio}
+        canonical={`${siteMetadata.siteUrl}/chefs/${currentChef.slug}`}
         openGraph={{
           url: `${siteMetadata.siteUrl}/chefs/${currentChef.slug}`,
           title: `${currentChef.name}`,

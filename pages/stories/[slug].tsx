@@ -44,8 +44,9 @@ const Story = ({ story }: Props) => {
       <NextSeo
         title={currentStory.title}
         description={currentStory.shortDescription}
+        canonical={`${siteMetadata.siteUrl}/stories/${currentStory.slug}`}
         openGraph={{
-          url: `${siteMetadata.siteUrl}/recipes/${currentStory.slug}`,
+          url: `${siteMetadata.siteUrl}/stories/${currentStory.slug}`,
           title: `${currentStory.title}`,
           description: `${currentStory.shortDescription}`,
           images: [
