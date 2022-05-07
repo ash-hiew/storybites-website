@@ -57,7 +57,7 @@ const Chef = ({ chefWithRelatedVideos }: Props) => {
           <div className="mt-10 flex flex-col">
             {relatedStories.map((story) => (
               <div key={story._id} className="py-10">
-                <Link key={story._id} href={`stories/${story.slug}`}>
+                <Link key={story._id} href={`/stories/${story.slug}`}>
                   <div className="links group transition-all duration-300 active:scale-105 md:flex md:items-center">
                     <div className="relative flex-shrink overflow-hidden md:max-w-xs lg:max-w-sm">
                       <Image
