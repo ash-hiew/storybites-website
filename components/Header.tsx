@@ -11,8 +11,8 @@ function Header() {
   const [active, setActive] = useState(false);
 
   const variants = {
-    open: { left: "-100vw" },
     closed: { left: 0 },
+    open: { left: "-100vw" },
   };
 
   const handleClick = () => {
@@ -107,10 +107,9 @@ function Header() {
           animate={active ? "close" : "open"}
           variants={variants}
           transition={{
-            delay: 0.2,
             duration: 0.4,
             ease: "easeInOut",
-            stiffness: 50,
+            stiffness: 20,
           }}
           className="h-30 fixed top-0 left-0 bottom-0 z-40 w-full lg:hidden"
         >
