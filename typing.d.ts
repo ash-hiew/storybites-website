@@ -1,5 +1,4 @@
-import { Target } from "framer-motion";
-import { Url } from "url";
+declare module "gtag.js";
 
 export interface Chef {
   _id: string;
@@ -26,11 +25,11 @@ export interface Story {
   shortDescription: string;
   description: object[];
   category: Category;
-  tags: object[]; 
+  tags: object[];
   date: Date;
   stories: [Story];
   currentStory: Story;
-};
+}
 
 export interface Recipe {
   instructions: object[];
@@ -47,7 +46,7 @@ export interface Recipe {
   video: url;
   recipes: [Recipe];
   currentRecipe: Recipe;
-};
+}
 
 export interface Category {
   _id: string;
@@ -59,4 +58,4 @@ export interface Category {
   currentCategory: Category;
   categories: [Category];
   description: string;
-};
+}

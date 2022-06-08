@@ -4,6 +4,7 @@ module.exports = {
   env: {
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+    gaId: process.env.NEXT_PUBLIC_SANITY_GA_ID
   },
   images: {
     formats: ['image/avif', 'image/webp'],

@@ -1,5 +1,7 @@
 /* eslint-disable require-jsdoc */
-import React from "react";
+import React, { useEffect } from "react";
+import { useRouter } from "next/router";
+
 import "../styles/globals.css";
 import "../styles/embla.css";
 import { AnimatePresence, motion } from "framer-motion";
@@ -10,7 +12,30 @@ import { DefaultSeo } from "next-seo";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-function MyApp({ Component, pageProps }: AppProps) {
+const isProduction = process.env.NODE_ENV === "production";
+import * as gtag from "../lib/analytics";
+
+function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url: URL) => {
+      /* invoke analytics function only for production */
+      if (isProduction) {
+        gtag.pageview(url);
+      }
+    };
+    // When the component is mounted, subscribe to router changes
+    // and log those page views
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <div className="bg-stone-200">
       <DefaultSeo
