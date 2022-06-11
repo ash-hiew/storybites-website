@@ -108,7 +108,8 @@ const Chef = ({ chefWithRelatedVideos }: Props) => {
                     </div>
                     <div className="mt-3 flex-grow space-y-3 md:ml-10 md:space-y-5">
                       <h3 className="text-2xl font-semibold transition-all duration-300 group-hover:text-amber-600 md:text-2xl lg:text-5xl">
-                        {recipe.title}
+                        {recipe.title}{" "}
+                        <span className="invisible"> Recipe</span>
                       </h3>
                       <p className="transition-all duration-300 group-hover:text-amber-600">
                         {currentChef.name}

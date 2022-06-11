@@ -66,7 +66,7 @@ const Recipe = ({ recipe }: Props) => {
               </span>
             </h2>
             <h1 className="mt-3 font-display text-4xl font-bold sm:text-5xl md:text-6xl">
-              {currentRecipe.title}
+              {currentRecipe.title} <span className="invisible"> Recipe</span>
             </h1>
           </section>
 
@@ -161,6 +161,7 @@ const Recipe = ({ recipe }: Props) => {
                         <div>
                           <h3 className="mt-2 text-sm font-semibold transition-all duration-300 group-hover:text-amber-600 md:text-lg lg:text-xl">
                             {moreRecipe.title}
+                            <span className="invisible"> Recipe</span>
                           </h3>
                           <h4 className="mt-1 text-xs transition-all duration-300 group-hover:text-amber-600 md:text-sm">
                             {moreRecipe.chef.name}

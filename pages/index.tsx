@@ -174,7 +174,8 @@ export default function Home({ recipes, stories }: Props) {
                         />
                         <div>
                           <h3 className="mt-3 text-xl font-semibold transition-all duration-300 group-hover:text-amber-600 lg:text-2xl">
-                            {recipe.title}
+                            {recipe.title}{" "}
+                            <span className="invisible"> Recipe</span>
                           </h3>
                           <h4 className="mt-2 transition-all duration-300 group-hover:text-amber-600">
                             {recipe.chef.name}
