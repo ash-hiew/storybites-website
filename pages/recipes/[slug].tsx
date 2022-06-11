@@ -40,12 +40,12 @@ const Recipe = ({ recipe }: Props) => {
   return (
     <Layout>
       <NextSeo
-        title={currentRecipe.title}
+        title={`${currentRecipe.title} Recipe`}
         description={currentRecipe.shortDescription}
         canonical={`${siteMetadata.siteUrl}recipes/${currentRecipe.slug}`}
         openGraph={{
           url: `${siteMetadata.siteUrl}recipes/${currentRecipe.slug}`,
-          title: `${currentRecipe.title}`,
+          title: `${currentRecipe.title} Recipe`,
           description: `${currentRecipe.shortDescription}`,
           images: [
             {
@@ -88,7 +88,7 @@ const Recipe = ({ recipe }: Props) => {
             />
           </section>
 
-          <section className="m-10 bg-stone-100 p-6 sm:p-8">
+          <section className="my-10 mx-5 bg-stone-100 p-6 sm:p-8 md:mx-10">
             <h2 className="mb-4 text-3xl">Ingredients</h2>
             <PortableText
               dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
@@ -134,12 +134,12 @@ const Recipe = ({ recipe }: Props) => {
           </section>
         </article>
 
-        <section className="mx-auto mt-32 mb-10 flex max-w-4xl flex-col justify-center px-10 font-primary">
-          <h2 className="text-3xl md:text-4xl lg:mb-5">
+        <section className="mx-auto mt-32 mb-10 flex max-w-4xl flex-col justify-center font-primary">
+          <h2 className="px-10 text-3xl md:text-4xl lg:mb-5">
             More <span className="font-bold">Recipes</span>
           </h2>
 
-          <div className="embla mx-auto">
+          <div className="embla mx-auto px-5">
             <div id="embla_div" className="embla__viewport" ref={emblaRef}>
               <div className="embla__container">
                 {moreRecipes.map((moreRecipe, index) => (
@@ -159,10 +159,10 @@ const Recipe = ({ recipe }: Props) => {
                           height={480}
                         />
                         <div>
-                          <h3 className="mt-5 text-lg font-semibold transition-all duration-300 group-hover:text-amber-600 lg:text-xl">
+                          <h3 className="mt-2 text-sm font-semibold transition-all duration-300 group-hover:text-amber-600 md:text-lg lg:text-xl">
                             {moreRecipe.title}
                           </h3>
-                          <h4 className="mt-2 transition-all duration-300 group-hover:text-amber-600">
+                          <h4 className="mt-1 text-xs transition-all duration-300 group-hover:text-amber-600 md:text-sm">
                             {moreRecipe.chef.name}
                           </h4>
                         </div>

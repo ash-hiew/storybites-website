@@ -52,8 +52,8 @@ export default function StoriesPage({ stories, categories }: Props) {
         }}
       />
       <main>
-        <section className="mx-auto my-10 max-w-6xl px-10 font-primary">
-          <div className="space-y-4">
+        <section className="mx-auto my-10 max-w-6xl font-primary">
+          <div className="space-y-4 px-10">
             <h1 className="text-sm font-medium uppercase tracking-widest">
               Stories
             </h1>
@@ -65,7 +65,7 @@ export default function StoriesPage({ stories, categories }: Props) {
             <CategoryList categories={categories} />
           </div>
 
-          <div className="mt-10 flex flex-col">
+          <div className="mt-10 flex flex-col px-5">
             {stories.map((story, index) => (
               <div key={index} className="py-10">
                 <Link key={story._id} href={`/stories/${story.slug.current}`}>

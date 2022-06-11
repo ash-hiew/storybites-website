@@ -121,12 +121,12 @@ const Story = ({ story }: Props) => {
             </div>
           </div>
         </article>
-        <section className="mx-auto mt-32 mb-10 flex max-w-4xl flex-col justify-center px-10 font-primary">
-          <h2 className="text-3xl md:text-4xl lg:mb-5">
+        <section className="mx-auto mt-32 mb-4 flex max-w-4xl flex-col justify-center font-primary">
+          <h2 className="px-10 text-3xl md:text-4xl lg:mb-5">
             More <span className="font-bold">Stories</span>
           </h2>
 
-          <div className="embla overflow-hidden lg:px-0">
+          <div className="embla mx-auto px-5">
             <div className="embla__viewport" ref={emblaRef}>
               <div className="embla__container">
                 {moreStories.map((moreStory, index) => (
@@ -146,10 +146,10 @@ const Story = ({ story }: Props) => {
                           height={480}
                         />
                         <div>
-                          <p className="mt-3 text-xs uppercase tracking-widest text-stone-500 transition-all duration-300 group-hover:text-amber-600">
+                          <p className="mt-2 text-xs uppercase  tracking-widest text-stone-500 transition-all duration-300 group-hover:text-amber-600 md:text-sm">
                             {moreStory.category.title}
                           </p>
-                          <h3 className="mt-2 text-lg font-semibold transition-all duration-300 group-hover:text-amber-600 md:text-xl">
+                          <h3 className="mt-1 text-sm font-semibold transition-all duration-300 group-hover:text-amber-600 md:text-lg lg:text-xl">
                             {moreStory.title}
                           </h3>
                         </div>

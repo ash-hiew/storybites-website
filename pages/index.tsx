@@ -100,12 +100,12 @@ export default function Home({ recipes, stories }: Props) {
         </section>
 
         {/* Recent Embla Stories Section */}
-        <section className="mx-auto my-32 flex max-w-7xl flex-col justify-center px-10 font-primary lg:my-40">
-          <h2 className="text-3xl md:text-5xl lg:mb-5">
+        <section className="mx-auto my-32 flex max-w-7xl flex-col justify-center font-primary lg:my-40">
+          <h2 className="-mb-3 px-10 text-3xl sm:text-4xl md:mb-3 md:text-5xl lg:mb-5">
             <span className="font-bold">Stories</span> We&apos;ve Shared.
           </h2>
 
-          <div className="embla overflow-hidden lg:px-0">
+          <div className="embla overflow-hidden px-5 lg:px-0">
             <div className="embla__viewport " ref={emblaRef}>
               <div className="embla__container">
                 {stories.map((story, index) => (
@@ -141,19 +141,19 @@ export default function Home({ recipes, stories }: Props) {
           </div>
 
           <Link href="/stories">
-            <a className="mx-auto mt-5 border-2 border-zinc-900 px-5 py-2 font-medium transition-all duration-300 hover:bg-yellow-500 lg:mt-16">
+            <a className="mx-auto mt-3 border-2 border-zinc-900 px-5 py-2 font-medium transition-all duration-300 hover:bg-yellow-500 lg:mt-16">
               See All Stories
             </a>
           </Link>
         </section>
 
         {/* Recent Recipes Section */}
-        <section className="mx-auto my-32 flex max-w-7xl flex-col justify-center px-10 font-primary lg:my-40">
-          <h2 className="text-3xl md:text-5xl lg:mb-5">
+        <section className="mx-auto my-32 flex max-w-7xl flex-col justify-center font-primary lg:my-40">
+          <h2 className="-mb-3 px-10 text-3xl sm:text-4xl md:mb-3 md:text-5xl lg:mb-5">
             The Latest <span className="font-bold">Recipes</span> Collected.
           </h2>
 
-          <div className="embla mx-auto">
+          <div className="embla mx-auto px-5">
             <div id="embla_div" className="embla__viewport" ref={emblaRef2}>
               <div className="embla__container">
                 {recipes.map((recipe, index) => (
@@ -173,7 +173,7 @@ export default function Home({ recipes, stories }: Props) {
                           height={480}
                         />
                         <div>
-                          <h3 className="mt-5 text-xl font-semibold transition-all duration-300 group-hover:text-amber-600 lg:text-2xl">
+                          <h3 className="mt-3 text-xl font-semibold transition-all duration-300 group-hover:text-amber-600 lg:text-2xl">
                             {recipe.title}
                           </h3>
                           <h4 className="mt-2 transition-all duration-300 group-hover:text-amber-600">

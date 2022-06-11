@@ -40,15 +40,15 @@ export default function RecipesPage({ recipes }: Props) {
         }}
       />
       <main>
-        <section className="mx-auto my-10 max-w-6xl px-10 font-primary">
-          <div className="space-y-4">
+        <section className="mx-auto my-10 max-w-6xl font-primary">
+          <div className="space-y-4 px-10">
             <h1 className="font-medium uppercase tracking-widest">Recipes</h1>
             <h2 className="text-start font-display text-4xl font-semibold leading-tight tracking-tight md:text-6xl md:leading-tight">
               All Recipes
             </h2>
           </div>
 
-          <div className="mt-10 flex flex-col">
+          <div className="mt-10 flex flex-col px-5">
             {recipes.map((recipe, index) => (
               <div key={index} className="py-10">
                 <Link key={index} href={`/recipes/${recipe.slug.current}`}>
