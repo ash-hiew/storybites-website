@@ -126,7 +126,7 @@ const Story = ({ story }: Props) => {
             More <span className="font-bold">Stories</span>
           </h2>
 
-          <div className="embla mx-auto px-5">
+          <div className="embla mx-auto break-words px-5">
             <div className="embla__viewport" ref={emblaRef}>
               <div className="embla__container">
                 {moreStories.map((moreStory, index) => (
