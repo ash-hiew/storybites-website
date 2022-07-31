@@ -113,7 +113,7 @@ class MyDocument extends Document {
             </>
           )}
         </Head>
-        <body className="bg-stone-200">
+        <body>
           <Main />
           <NextScript />
         </body>

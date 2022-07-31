@@ -64,9 +64,9 @@ export default function Home({ recipes, stories }: Props) {
 
   return (
     <Layout>
-      <main>
+      <main className="bg-stone-200">
         {/* Hero Section */}
-        <section className="my-10 px-10 text-center sm:mx-10 lg:m-24 lg:max-w-4xl xl:mx-auto">
+        <section className="py-10 px-10 text-center sm:mx-10 lg:max-w-4xl lg:p-24 xl:mx-auto">
           <h4 className="m-6 font-primary text-sm font-medium uppercase tracking-widest">
             Storybites
           </h4>
@@ -91,7 +91,7 @@ export default function Home({ recipes, stories }: Props) {
         </section>
 
         {/* Higlight Reel Section */}
-        <section className="my-24 px-10 text-center sm:mx-10 sm:py-44 lg:m-40 lg:max-w-4xl xl:mx-auto">
+        <section className="my-24 bg-stone-50 px-10 text-center sm:x-10 sm:py-44 lg:max-w-4xl lg:p-40 xl:mx-auto">
           <h2 className="text-l font-primary leading-loose md:text-2xl">
             We are a <span className="font-semibold">New Zealand</span> based
             culinary brand mandated to empower one million people to find

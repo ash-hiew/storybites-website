@@ -66,7 +66,7 @@ const Recipe = ({ recipe }: Props) => {
               </span>
             </h2>
             <h1 className="mt-3 font-display text-4xl font-bold sm:text-5xl md:text-6xl">
-              {currentRecipe.title} <span className="invisible"> Recipe</span>
+              {currentRecipe.title} <span className="hidden"> Recipe</span>
             </h1>
           </section>
 

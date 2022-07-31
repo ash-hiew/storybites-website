@@ -34,8 +34,8 @@ export default function ChefsPage({ chefs }: Props) {
             "Check out our team of culinary collaborators who joined the narrative to share their love of food and their journey.",
         }}
       />
-      <main>
-        <section className="my-10 max-w-4xl px-10 font-primary">
+      <main className="bg-stone-200">
+        <section className="max-w-4xl py-10 px-10 font-primary">
           <div className="space-y-4 md:space-y-6">
             <h1 className="text-sm font-medium uppercase tracking-widest">
               Our Chefs

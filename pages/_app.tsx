@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   }, [router.events]);
 
   return (
-    <div className="bg-stone-200">
+    <div>
       <DefaultSeo
         title="Home"
         titleTemplate="%s | StoryBites"
