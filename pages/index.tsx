@@ -91,7 +91,7 @@ export default function Home({ recipes, stories }: Props) {
         </section>
 
         {/* Higlight Reel Section */}
-        <section className="sm:x-10 my-24 bg-stone-50 px-10 text-center sm:py-44 lg:max-w-4xl lg:p-40 xl:mx-auto">
+        <section className="sm:x-10 my-24 px-10 text-center sm:py-44 lg:max-w-4xl lg:p-40 xl:mx-auto">
           <h2 className="text-l font-primary leading-loose md:text-2xl">
             We are a <span className="font-semibold">New Zealand</span> based
             culinary brand mandated to empower one million people to find
