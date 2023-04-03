@@ -1,11 +1,11 @@
 {
   "root": true,
+  "api": {
+    "projectId": "6wi47n02",
+    "dataset": "production"
+  },
   "project": {
     "name": "storybites-cms"
-  },
-  "api": {
-    "projectId": "rmu3z19b",
-    "dataset": "production"
   },
   "plugins": [
     "@sanity/base",
