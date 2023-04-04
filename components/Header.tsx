@@ -34,16 +34,17 @@ function Header() {
         <div className="flex p-6">
           {/* Logo */}
           <div>
-            <Link href="/">
-              <a className="group z-30 mr-4 inline-flex w-16 items-center transition-all duration-300">
-                <Image
-                  className="cursor-pointer object-contain transition-all duration-300 group-hover:scale-90"
-                  src={siteMetadata.siteLogo}
-                  alt="Storybites Logo"
-                  width={140}
-                  height={140}
-                />
-              </a>
+            <Link
+              href="/"
+              className="group z-30 mr-4 inline-flex w-16 items-center transition-all duration-300"
+            >
+              <Image
+                className="cursor-pointer object-contain transition-all duration-300 group-hover:scale-90"
+                src={siteMetadata.siteLogo}
+                alt="Storybites Logo"
+                width={140}
+                height={140}
+              />
             </Link>
           </div>
 
@@ -108,19 +109,18 @@ function Header() {
             className="absolute top-0 left-0 z-40 h-screen w-full overflow-y-auto overscroll-auto bg-stone-50 p-10"
           >
             {/* Logo */}
-            <Link href="/">
-              <a
-                onClick={handleClick}
-                className="group mb-6 inline-flex w-14 items-center"
-              >
-                <Image
-                  className="cursor-pointer object-contain transition-all duration-300 group-hover:scale-90"
-                  src={siteMetadata.siteLogo}
-                  alt="Storybites Logo"
-                  width={140}
-                  height={140}
-                />
-              </a>
+            <Link
+              href="/"
+              onClick={handleClick}
+              className="group mb-6 inline-flex w-14 items-center"
+            >
+              <Image
+                className="cursor-pointer object-contain transition-all duration-300 group-hover:scale-90"
+                src={siteMetadata.siteLogo}
+                alt="Storybites Logo"
+                width={140}
+                height={140}
+              />
             </Link>
             <motion.ul className="relative space-y-6 prose-li:cursor-pointer prose-li:text-3xl prose-li:duration-300 hover:prose-li:text-yellow-500">
               <li onClick={handleClick}>

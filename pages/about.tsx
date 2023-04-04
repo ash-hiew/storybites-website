@@ -98,10 +98,8 @@ export default function AboutPage() {
               </p>
               <p>
                 Check out more of our{" "}
-                <Link href="/chefs">
-                  <a className="font-semibold underline">
-                    Culinary Collaborators
-                  </a>
+                <Link href="/chefs" className="font-semibold underline">
+                  Culinary Collaborators
                 </Link>
               </p>
             </div>
