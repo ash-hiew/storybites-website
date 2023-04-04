@@ -78,7 +78,7 @@ const Recipe = ({ recipe }: Props) => {
 
           <section className="relative my-10 pb-fluid-video">
             <ReactPlayer
-              className="absolute top-0 left-0 h-full w-full"
+              className="absolute left-0 top-0 h-full w-full"
               url={currentRecipe.video}
               width="100%"
               height="100%"
@@ -86,7 +86,7 @@ const Recipe = ({ recipe }: Props) => {
             />
           </section>
 
-          <section className="my-10 mx-5 bg-stone-100 p-6 sm:p-8 md:mx-10">
+          <section className="mx-5 my-10 bg-stone-100 p-6 sm:p-8 md:mx-10">
             <h2 className="mb-4 text-3xl">Ingredients</h2>
             <PortableText
               dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
@@ -132,12 +132,12 @@ const Recipe = ({ recipe }: Props) => {
           </section>
         </article>
 
-        <section className="mx-auto mt-32 mb-10 flex max-w-4xl flex-col justify-center font-primary">
+        <section className="mx-auto mb-4 mt-32 flex max-w-4xl flex-col justify-center font-primary">
           <h2 className="px-10 text-3xl md:text-4xl lg:mb-5">
             More <span className="font-bold">Recipes</span>
           </h2>
 
-          <div className="embla mx-auto px-5">
+          <div className="embla mx-auto break-words px-5">
             <div id="embla_div" className="embla__viewport" ref={emblaRef}>
               <div className="embla__container">
                 {moreRecipes.map((moreRecipe, index) => (
@@ -146,9 +146,9 @@ const Recipe = ({ recipe }: Props) => {
                       key={moreRecipe._id}
                       href={`/recipes/${moreRecipe.slug}`}
                     >
-                      <div className="embla__slide__inner links group mx-3 transition-all duration-300 active:scale-105 lg:mx-6">
+                      <div className="links group mx-3 transition-all duration-500 active:scale-105 lg:mx-6">
                         <Image
-                          className="embla__slide__img h-auto w-full transition-all duration-300 group-hover:scale-105"
+                          className="h-auto w-full transition-all duration-500 group-hover:scale-105"
                           src={moreRecipe.mainImage}
                           alt={moreRecipe.title}
                           placeholder="blur"

@@ -16,17 +16,18 @@ interface Props {
   stories: [Story];
 }
 
-const recipesQuery = `*[_type == "recipe"][0..3]{
+const recipesQuery = `*[_type == "recipe"]{
   _id,
   title,
   slug,
   "mainImage": mainImage.secure_url,
   chef-> {
     name,
-  },_createdAt
-}| order(_createdAt desc)`;
+  },
+  _createdAt
+}| order(_createdAt desc)[0..3]`;
 
-const storiesQuery = `*[_type == "story"][0..3]{
+const storiesQuery = `*[_type == "story"]{
   _id,
   title,
   slug,
@@ -34,8 +35,9 @@ const storiesQuery = `*[_type == "story"][0..3]{
   category-> {
     _id,
     title
-  },_createdAt
-}| order(_createdAt desc)`;
+  },
+  _createdAt
+}| order(_createdAt desc)[0..3]`;
 
 export default function Home({ recipes, stories }: Props) {
   // emblaRef will be a reference to our carousel viewport
@@ -59,7 +61,7 @@ export default function Home({ recipes, stories }: Props) {
     <Layout>
       <main>
         {/* Hero Section */}
-        <section className="py-10 px-10 text-center sm:mx-10 lg:max-w-4xl lg:p-24 xl:mx-auto">
+        <section className="px-10 py-10 text-center sm:mx-10 lg:max-w-4xl lg:p-24 xl:mx-auto">
           <h4 className="m-6 font-primary text-sm font-medium uppercase tracking-widest">
             Storybites
           </h4>
