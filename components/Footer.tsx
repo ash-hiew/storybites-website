@@ -78,34 +78,22 @@ function Footer() {
       <div className="mx-auto max-w-screen-xl space-y-8 overflow-hidden px-4 py-12 text-sm leading-6 sm:px-6 md:text-base lg:px-8">
         <nav className="-mx-5 -my-2 flex flex-wrap justify-center text-zinc-400 prose-a:duration-500 hover:prose-a:text-zinc-50">
           <div className="px-5 py-2">
-            <Link href="/stories">
-              <a>Stories</a>
-            </Link>
+            <Link href="/stories">Stories</Link>
           </div>
           <div className="px-5 py-2">
-            <Link href="/recipes">
-              <a>Recipes</a>
-            </Link>
+            <Link href="/recipes">Recipes</Link>
           </div>
           <div className="px-5 py-2">
-            <Link href="/chefs">
-              <a>Our Chefs</a>
-            </Link>
+            <Link href="/chefs">Our Chefs</Link>
           </div>
           <div className="px-5 py-2">
-            <Link href="/about">
-              <a>About</a>
-            </Link>
+            <Link href="/about">About</Link>
           </div>
           <div className="px-5 py-2">
-            <Link href="/contact">
-              <a>Contact</a>
-            </Link>
+            <Link href="/contact">Contact</Link>
           </div>
           <div className="px-5 py-2">
-            <Link href="/privacy-policy">
-              <a>Privacy Policy</a>
-            </Link>
+            <Link href="/privacy-policy">Privacy Policy</Link>
           </div>
         </nav>
         <p className="mt-8 text-center text-zinc-400">

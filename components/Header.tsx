@@ -50,29 +50,19 @@ function Header() {
           {/* Navigation Links: Desktop */}
           <div className="relative mr-4 hidden w-full items-center justify-end space-x-6 prose-a:tracking-wider prose-a:duration-300 hover:prose-a:text-yellow-500 lg:flex">
             <div>
-              <Link href="/stories">
-                <a>Stories</a>
-              </Link>
+              <Link href="/stories">Stories</Link>
             </div>
             <div>
-              <Link href="/recipes">
-                <a>Recipes</a>
-              </Link>
+              <Link href="/recipes">Recipes</Link>
             </div>
             <div>
-              <Link href="/about">
-                <a>About</a>
-              </Link>
+              <Link href="/about">About</Link>
             </div>
             <div>
-              <Link href="/chefs">
-                <a>Our Chefs</a>
-              </Link>
+              <Link href="/chefs">Our Chefs</Link>
             </div>
             <div>
-              <Link href="/contact">
-                <a>Work with Us</a>
-              </Link>
+              <Link href="/contact">Work with Us</Link>
             </div>
           </div>
         </div>
@@ -134,29 +124,21 @@ function Header() {
             </Link>
             <motion.ul className="relative space-y-6 prose-li:cursor-pointer prose-li:text-3xl prose-li:duration-300 hover:prose-li:text-yellow-500">
               <li onClick={handleClick}>
-                <Link href="/stories">
-                  <a className="right">Stories</a>
+                <Link href="/stories" className="right">
+                  Stories
                 </Link>
               </li>
               <li onClick={handleClick}>
-                <Link href="/recipes">
-                  <a>Recipes</a>
-                </Link>
+                <Link href="/recipes">Recipes</Link>
               </li>
               <li onClick={handleClick}>
-                <Link href="/about">
-                  <a>About</a>
-                </Link>
+                <Link href="/about">About</Link>
               </li>
               <li onClick={handleClick}>
-                <Link href="/chefs">
-                  <a>Our Chefs</a>
-                </Link>
+                <Link href="/chefs">Our Chefs</Link>
               </li>
               <li onClick={handleClick}>
-                <Link href="/contact">
-                  <a>Work with Us</a>
-                </Link>
+                <Link href="/contact">Work with Us</Link>
               </li>
             </motion.ul>
             {/* Contact Section */}

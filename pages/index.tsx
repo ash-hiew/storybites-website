@@ -72,16 +72,18 @@ export default function Home({ recipes, stories }: Props) {
           </h4>
           <h1 className="font-display text-3xl font-semibold leading-tight tracking-tight transition-all duration-300 sm:text-4xl md:text-6xl md:leading-tight">
             Sharing our love for{" "}
-            <Link href="/stories">
-              <a className="underline-offset-3 text-yellow-500 underline decoration-transparent decoration-4 transition-all duration-500 hover:decoration-yellow-500">
-                people
-              </a>
+            <Link
+              href="/stories"
+              className="underline-offset-3 text-yellow-500 underline decoration-transparent decoration-4 transition-all duration-500 hover:decoration-yellow-500"
+            >
+              people
             </Link>{" "}
             and{" "}
-            <Link href="/recipes">
-              <a className="underline-offset-3 text-yellow-500 underline decoration-transparent decoration-4 transition-all duration-500 hover:decoration-yellow-500">
-                food
-              </a>
+            <Link
+              href="/recipes"
+              className="underline-offset-3 text-yellow-500 underline decoration-transparent decoration-4 transition-all duration-500 hover:decoration-yellow-500"
+            >
+              food
             </Link>{" "}
             one bite at a time
             <Link href="/about">
@@ -140,10 +142,11 @@ export default function Home({ recipes, stories }: Props) {
             </div>
           </div>
 
-          <Link href="/stories">
-            <a className="mx-auto mt-3 border-2 border-zinc-900 px-5 py-2 font-medium transition-all duration-300 hover:bg-yellow-500 lg:mt-16">
-              See All Stories
-            </a>
+          <Link
+            href="/stories"
+            className="mx-auto mt-3 border-2 border-zinc-900 px-5 py-2 font-medium transition-all duration-300 hover:bg-yellow-500 lg:mt-16"
+          >
+            See All Stories
           </Link>
         </section>
 
@@ -189,10 +192,11 @@ export default function Home({ recipes, stories }: Props) {
             </div>
           </div>
 
-          <Link href="/recipes">
-            <a className="mx-auto mt-5 border-2 border-zinc-900 px-5 py-2 font-medium transition-all duration-300 hover:bg-yellow-500 lg:mt-16">
-              See All Recipes
-            </a>
+          <Link
+            href="/recipes"
+            className="mx-auto mt-5 border-2 border-zinc-900 px-5 py-2 font-medium transition-all duration-300 hover:bg-yellow-500 lg:mt-16"
+          >
+            See All Recipes
           </Link>
         </section>
 
