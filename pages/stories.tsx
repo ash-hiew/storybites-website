@@ -28,7 +28,7 @@ const storiesQuery = `*[_type == "story"]{
   category-> {
     _id,
     title
-  }
+  },_createdAt
   }| order(_createdAt desc)`;
 
 const categoriesQuery = `*[_type == "category"]{

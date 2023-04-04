@@ -22,8 +22,9 @@ const recipesQuery = `*[_type == "recipe"]{
   "mainImage": mainImage.secure_url,
   chef-> {
     name
-  }
-}| order(_createdAt desc) | order(_updatedAt desc) `;
+  },
+  _createdAt
+} | order(_createdAt desc)`;
 
 export default function RecipesPage({ recipes }: Props) {
   return (

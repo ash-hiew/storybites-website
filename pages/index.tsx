@@ -23,7 +23,7 @@ const recipesQuery = `*[_type == "recipe"][0..3]{
   "mainImage": mainImage.secure_url,
   chef-> {
     name,
-  }
+  },_createdAt
 }| order(_createdAt desc)`;
 
 const storiesQuery = `*[_type == "story"][0..3]{
@@ -34,7 +34,7 @@ const storiesQuery = `*[_type == "story"][0..3]{
   category-> {
     _id,
     title
-  }
+  },_createdAt
 }| order(_createdAt desc)`;
 
 export default function Home({ recipes, stories }: Props) {

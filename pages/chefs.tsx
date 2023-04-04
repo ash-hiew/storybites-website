@@ -18,7 +18,7 @@ const chefsQuery = `*[_type == "chef"]{
   "slug": slug.current,
   "image": image.secure_url,
   bio
-}`;
+} | order(name, asc)`;
 
 export default function ChefsPage({ chefs }: Props) {
   return (
