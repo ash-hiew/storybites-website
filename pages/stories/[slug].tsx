@@ -13,7 +13,6 @@ import Link from "next/link";
 import Layout from "../../components/Layout";
 
 import useEmblaCarousel from "embla-carousel-react";
-import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import Image from "next/image";
 
 import { NextSeo } from "next-seo";
@@ -27,15 +26,12 @@ interface Props {
 }
 
 const Story = ({ story }: Props) => {
-  const [emblaRef] = useEmblaCarousel(
-    {
-      align: "start",
-      skipSnaps: false,
-      speed: 5,
-      containScroll: "trimSnaps",
-    },
-    [WheelGesturesPlugin({ forceWheelAxis: "x" })]
-  );
+  const [emblaRef] = useEmblaCarousel({
+    align: "start",
+    skipSnaps: false,
+    speed: 5,
+    containScroll: "trimSnaps",
+  });
 
   const { currentStory, stories } = story;
 

@@ -6,7 +6,6 @@ import { sanityClient } from "../lib/sanity.server";
 import { Recipe, Story } from "../typing";
 
 import useEmblaCarousel from "embla-carousel-react";
-import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 
 import Image from "next/image";
 import Layout from "../components/Layout";
@@ -40,27 +39,21 @@ const storiesQuery = `*[_type == "story"][0..3]{
 
 export default function Home({ recipes, stories }: Props) {
   // emblaRef will be a reference to our carousel viewport
-  const [emblaRef] = useEmblaCarousel(
-    {
-      align: "start",
-      skipSnaps: false,
-      inViewThreshold: 0.7,
-      speed: 5,
-      containScroll: "trimSnaps",
-    },
-    [WheelGesturesPlugin({ forceWheelAxis: "x" })]
-  );
+  const [emblaRef] = useEmblaCarousel({
+    align: "start",
+    skipSnaps: false,
+    inViewThreshold: 0.7,
+    speed: 5,
+    containScroll: "trimSnaps",
+  });
 
-  const [emblaRef2] = useEmblaCarousel(
-    {
-      align: "start",
-      skipSnaps: false,
-      inViewThreshold: 0.7,
-      speed: 5,
-      containScroll: "trimSnaps",
-    },
-    [WheelGesturesPlugin({ forceWheelAxis: "x" })]
-  );
+  const [emblaRef2] = useEmblaCarousel({
+    align: "start",
+    skipSnaps: false,
+    inViewThreshold: 0.7,
+    speed: 5,
+    containScroll: "trimSnaps",
+  });
 
   return (
     <Layout>

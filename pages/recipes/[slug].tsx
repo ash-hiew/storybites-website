@@ -12,7 +12,6 @@ const ReactPlayer = _ReactPlayer as unknown as React.FC<ReactPlayerProps>;
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import useEmblaCarousel from "embla-carousel-react";
-import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 
 import { NextSeo } from "next-seo";
 import siteMetadata from "../../data/siteMetadata";
@@ -24,16 +23,13 @@ interface Props {
 }
 
 const Recipe = ({ recipe }: Props) => {
-  const [emblaRef] = useEmblaCarousel(
-    {
-      align: "start",
-      skipSnaps: false,
-      inViewThreshold: 0.7,
-      speed: 5,
-      containScroll: "trimSnaps",
-    },
-    [WheelGesturesPlugin({ forceWheelAxis: "x" })]
-  );
+  const [emblaRef] = useEmblaCarousel({
+    align: "start",
+    skipSnaps: false,
+    inViewThreshold: 0.7,
+    speed: 5,
+    containScroll: "trimSnaps",
+  });
 
   const { currentRecipe, recipes } = recipe;
 
