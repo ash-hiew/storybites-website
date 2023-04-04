@@ -6,15 +6,18 @@ import { visionTool } from '@sanity/vision';
 import {cloudinarySchemaPlugin} from 'sanity-plugin-cloudinary';
 import {cloudinaryImageSource} from 'sanity-plugin-cloudinary';
 import {tags} from 'sanity-plugin-tags';
+import { vercelDeployTool } from 'sanity-plugin-vercel-deploy';
 
 export default defineConfig({
+  name: 'default',
   title: "storybites-cms",
     projectId: "rmu3z19b",
     dataset: "production",
   plugins: [cloudinarySchemaPlugin(),
   tags({}),deskTool(),
-  visionTool()
-  ], tools: (prev) => {
+  visionTool(), vercelDeployTool()],
+  
+  tools: (prev) => {
     // 👇 Uses environment variables set by Vite in development mode
     if (import.meta.env.DEV) {
       return prev

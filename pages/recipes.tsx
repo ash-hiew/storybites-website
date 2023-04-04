@@ -23,7 +23,7 @@ const recipesQuery = `*[_type == "recipe"]{
   chef-> {
     name
   }
-}| order(_createdAt desc)`;
+}| order(_createdAt desc) | order(_updatedAt desc) `;
 
 export default function RecipesPage({ recipes }: Props) {
   return (
@@ -67,7 +67,7 @@ export default function RecipesPage({ recipes }: Props) {
                     </div>
                     <div className="mt-3 flex-grow space-y-3 md:ml-10 md:space-y-5">
                       {/* <p className='text-xs text-stone-400 group-hover:text-yellow-500 duration-300 transition-all'>Category</p>*/}
-                      <h3 className="text-2xl font-semibold transition-all duration-300 group-hover:text-amber-600 md:text-2xl lg:text-5xl">
+                      <h3 className="text-xl font-semibold transition-all duration-300 group-hover:text-amber-600 md:text-xl lg:text-3xl">
                         {recipe.title}
                       </h3>
                       <p className="transition-all duration-300 group-hover:text-amber-600">

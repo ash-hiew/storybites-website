@@ -165,9 +165,9 @@ export default function Home({ recipes, stories }: Props) {
                       key={recipe._id}
                       href={`/recipes/${recipe.slug.current}`}
                     >
-                      <div className="embla__slide__inner links group mx-3 transition-all duration-300 active:scale-105 lg:mx-6">
+                      <div className="links group mx-3 transition-all duration-500 active:scale-105 lg:mx-6">
                         <Image
-                          className="embla__slide__img h-auto w-full transition-all duration-300 group-hover:scale-105"
+                          className="h-auto w-full transition-all duration-500 group-hover:scale-105"
                           src={recipe.mainImage}
                           alt={recipe.title}
                           placeholder="blur"
