@@ -41,9 +41,7 @@
           {title: 'Strong', value: 'strong'},
           {title: 'Emphasis', value: 'em'},
           { title: 'Code', value: 'code',
-            blockEditor: {
               icon: () => 'C'
-            }
           },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.

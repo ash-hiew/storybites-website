@@ -29,7 +29,8 @@ export default {
       type: 'tags',
       options: {
         //Closes menu after tag selected (defaults to true)
-        closeMenuOnSelect: true
+        closeMenuOnSelect: true,
+        includeFromRelated: 'Tags'
       }
     },
     {

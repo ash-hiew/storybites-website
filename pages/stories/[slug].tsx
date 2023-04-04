@@ -6,7 +6,9 @@ import { Story, Chef } from "../../typing";
 
 import PortableText from "react-portable-text";
 
-import ReactPlayer from "react-player/lazy";
+import { default as _ReactPlayer } from "react-player/lazy";
+import { ReactPlayerProps } from "react-player/types/lib";
+const ReactPlayer = _ReactPlayer as unknown as React.FC<ReactPlayerProps>;
 import Link from "next/link";
 import Layout from "../../components/Layout";
 

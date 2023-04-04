@@ -1,6 +1,8 @@
 import React from "react";
 import Layout from "../components/Layout";
-import ReactPlayer from "react-player";
+import { default as _ReactPlayer } from "react-player/lazy";
+import { ReactPlayerProps } from "react-player/types/lib";
+const ReactPlayer = _ReactPlayer as unknown as React.FC<ReactPlayerProps>;
 import Link from "next/link";
 
 import { NextSeo } from "next-seo";
