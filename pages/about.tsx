@@ -33,17 +33,15 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="mx-auto">
-          <div className="mx-auto max-w-4xl">
-            <div className="relative w-full">
-              <ReactPlayer
-                url="https://res.cloudinary.com/diwz5znsp/video/upload/v1651151979/Videos/about-banner-video_snhie8.mp4"
-                width="100%"
-                height="100%"
-                playing={true}
-                muted={true}
-              />
-            </div>
+        <section className="">
+          <div className="relative w-full">
+            <ReactPlayer
+              url="https://res.cloudinary.com/diwz5znsp/video/upload/v1651151979/Videos/about-banner-video_snhie8.mp4"
+              width="100%"
+              height="100%"
+              playing={true}
+              muted={true}
+            />
           </div>
         </section>
 
