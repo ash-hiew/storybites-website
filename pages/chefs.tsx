@@ -43,7 +43,7 @@ export default function ChefsPage({ chefs }: Props) {
             <p className="font-display text-4xl font-semibold tracking-tight md:text-6xl md:leading-tight">
               The Quintessence to Culinary Collaboration.
             </p>
-            <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base sm:leading-loose">
+            <p className="mt-3 max-w-2xl text-sm sm:text-base sm:leading-loose">
               With over 60 years of industry experience in some of the world's
               best restaurants, our team of culinary collaborators have a heart
               for teaching everyday home cooks the fundamentals behind cooking
