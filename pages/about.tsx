@@ -13,13 +13,13 @@ export default function AboutPage() {
     <Layout>
       <NextSeo
         title="About"
-        description="Why StoryBites? Learn about our purpose for sharing stories of people and food."
+        description="Giving back to your local through telling the stories that matter most."
         canonical="https://storybites.co.nz/about"
         openGraph={{
           url: `${siteMetadata.siteUrl}about`,
           title: "About",
           description:
-            "Why StoryBites? Learn about our purpose for sharing stories of people and food.",
+            "Giving back to your local through telling the stories that matter most.",
         }}
       />
       <main>
@@ -27,8 +27,8 @@ export default function AboutPage() {
           <div className="space-y-4 md:space-y-6">
             <h1 className="font-medium uppercase tracking-wide">About Us</h1>
             <h2 className="text-start font-display text-4xl font-semibold leading-tight tracking-tight md:text-6xl md:leading-tight">
-              Unapologetically passionate about giving back to local communities
-              through sharing the stories that matter most.
+              Giving back to your local through telling the stories that matter
+              most.
             </h2>
           </div>
         </section>
