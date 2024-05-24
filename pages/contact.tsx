@@ -26,9 +26,8 @@ export default function ContactPage() {
               Work With Us
             </h2>
             <p className="text-sm leading-loose sm:text-base sm:leading-loose">
-              See potential for a synergistic conversation? No matter your
-              background whether in hospitality, FMCG, equipment innovation, or
-              food tourism, we want to hear from you.
+              Reckon we could help with your business? {<br />}Drop us a line,
+              and we'd love to hear from you.
             </p>
           </div>
           {/* Contact Form */}
