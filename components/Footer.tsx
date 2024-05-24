@@ -8,14 +8,14 @@ import FooterNewsletterForm from "./FooterNewsletterForm";
 function Footer() {
   return (
     <footer className="bg-zinc-900 pt-10 font-primary ">
-      <div className="mx-auto flex max-w-screen-xl flex-col justify-between space-y-20 px-4 pt-5 pb-0 text-zinc-50 sm:p-6 lg:flex-row lg:items-end lg:space-x-20 lg:space-y-5">
+      <div className="mx-auto flex max-w-screen-xl flex-col justify-between space-y-20 px-4 pb-0 pt-5 text-zinc-50 sm:p-6 lg:flex-row lg:items-end lg:space-x-20 lg:space-y-5">
         {/* Logo Section */}
         <div className="mx-auto flex max-w-xs flex-col items-center text-center lg:mx-0 lg:items-start lg:text-left">
           <Link href="/">
             <Image
               src={siteMetadata.siteLogoColour}
               alt="Storybites Logo"
-              className="w-1/3"
+              className="w-1/3 items-center"
               width={100}
               height={100}
             />
