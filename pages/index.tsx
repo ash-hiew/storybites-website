@@ -61,7 +61,7 @@ export default function Home({ recipes, stories }: Props) {
     <Layout>
       <main>
         {/* Hero Section */}
-        <section className="px-10 py-10 text-center sm:mx-10 lg:max-w-4xl lg:p-24 xl:mx-auto">
+        <section className="px-10 py-10 text-center sm:mx-10 lg:max-w-4xl xl:mx-auto">
           <h4 className="m-6 font-primary text-sm font-medium uppercase tracking-widest">
             Storybites
           </h4>
@@ -89,10 +89,9 @@ export default function Home({ recipes, stories }: Props) {
 
         {/* Higlight Reel Section */}
         <section className="sm:x-10 my-24 px-10 text-center sm:py-44 lg:max-w-4xl lg:p-40 xl:mx-auto">
-          <h2 className="text-l font-primary leading-loose md:text-2xl">
-            We are a <span className="font-semibold">New Zealand</span> based
-            culinary brand mandated to empower one million people to find
-            humanity in <span className="font-semibold">gastronomy</span>.
+          <h2 className="text-l font-primary md:text-2xl">
+            We are a New Zealand based food network and creative agency
+            passionate about celebrating the gift of hospitality.
           </h2>
         </section>
 

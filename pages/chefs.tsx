@@ -35,13 +35,19 @@ export default function ChefsPage({ chefs }: Props) {
         }}
       />
       <main className="bg-stone-200">
-        <section className="max-w-4xl py-10 px-10 font-primary">
+        <section className="max-w-4xl px-10 py-10 font-primary">
           <div className="space-y-4 md:space-y-6">
             <h1 className="text-sm font-medium uppercase tracking-widest">
               Our Chefs
             </h1>
             <p className="font-display text-4xl font-semibold tracking-tight md:text-6xl md:leading-tight">
               The Quintessence to Culinary Collaboration.
+            </p>
+            <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base sm:leading-loose">
+              With over 60 years of industry experience in some of the world's
+              best restaurants, our team of culinary collaborators have a heart
+              for teaching everyday home cooks the fundamentals behind cooking
+              with confidence in the kitchen.
             </p>
           </div>
         </section>
@@ -60,13 +66,16 @@ export default function ChefsPage({ chefs }: Props) {
         </section>
 
         <section className="mx-auto my-20 max-w-4xl px-10 font-primary">
-          <div className="text-start space-y-4 md:space-y-6 md:text-center">
+          <div className="space-y-4 text-start md:space-y-6 md:text-center">
             <h2 className="text-3xl font-semibold tracking-tight">
               Chefs We&apos;ve Collaborated With.
             </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base sm:leading-loose">
+            <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base">
               From fried chicken, to french pastries, food has no place for
-              discrimination. Check out our team of culinary collaborators.
+              discrimination.
+            </p>
+            <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base">
+              Check out our team of culinary collaborators.
             </p>
           </div>
 
@@ -74,9 +83,9 @@ export default function ChefsPage({ chefs }: Props) {
             {chefs.map((chef, index) => (
               <Link key={index} href={`/chefs/${chef.slug}`}>
                 <div className="links group my-8 flex flex-col justify-center transition-all">
-                  <div className="rounded-full grayscale transition-all duration-300 group-hover:grayscale-0">
+                  <div className="rounded-full transition-all duration-300 group-hover:grayscale-0 lg:grayscale">
                     <Image
-                      className="h-44 w-44 rounded-full "
+                      className="h-auto w-44 rounded-full "
                       src={chef.image}
                       width={400}
                       height={400}
