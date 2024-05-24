@@ -46,7 +46,7 @@ export default function AboutPage() {
         </section>
 
         <section className="prose-sm mx-auto my-10 max-w-xl font-primary md:prose-base md:my-20">
-          <div className="space-y-4">
+          <div className="space-y-4mx-auto mx-auto max-w-sm">
             <h2 className="text-3xl font-semibold md:text-4xl">Who Are We?</h2>
             <p className="leading-loose sm:leading-relaxed">
               A team of hungry creatives out on a mission to capture the essence
@@ -82,7 +82,7 @@ export default function AboutPage() {
                 />
               </div>
             </div>
-            <div className="mx-auto max-w-sm space-y-6">
+            <div className="mx-auto max-w-xs space-y-6">
               <h3 className="text-2xl font-semibold md:text-3xl">People</h3>
               <p>
                 Our team of cinematographers, photographers, and graphic
