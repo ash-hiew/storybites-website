@@ -46,22 +46,23 @@ export default function AboutPage() {
         </section>
 
         <section className="prose-sm mx-auto my-10 max-w-xl font-primary md:prose-base md:my-20">
-          <div className="space-y-4 px-10">
-            <h2 className="text-3xl font-semibold md:text-4xl">The Why</h2>
+          <div className="space-y-4">
+            <h2 className="text-3xl font-semibold md:text-4xl">Who Are We?</h2>
             <p className="leading-loose sm:leading-relaxed">
-              Ask yourself this. What brings your neighbourhood together? What
-              makes a city come alive? What is that one thing that nations would
-              put race, creed, or religion aside for to sit in unity with one
-              another;{" "}
-              <span className="font-semibold">
-                their love for people and food
-              </span>
-              .
+              A team of hungry creatives out on a mission to capture the essence
+              of what hospitality means to this country.
             </p>
             <p className="leading-loose sm:leading-relaxed">
-              StoryBites was conceived from a place of cultural preservation
-              through celebrating the chefs, producers and culinary
-              collaborators that work humbly behind the food we all love.{" "}
+              When all the doors were closed in the midst of the 2021 lockdown,
+              we decided New Zealand deserved a platform to recognise and
+              celebrate the people behind our favourite bars, cafes, and
+              restaurants.
+            </p>
+            <p className="leading-loose sm:leading-relaxed">
+              Three years on, we stand proudly along side over 90 chefs that we
+              have featured across our digital platforms including Instagram,
+              YouTube, and Spotify. Our community of over 66,000 members reminds
+              us that the narrative is changing, for the better.
             </p>
           </div>
         </section>
