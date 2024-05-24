@@ -42,13 +42,14 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         title="Home"
         titleTemplate="%s | StoryBites"
         defaultTitle="StoryBites"
-        description="We are a New Zealand based culinary brand mandated to empower one million people to find humanity in gastronomy."
+        description="We are a New Zealand based food network and creative agency passionate about celebrating the gift of hospitality."
         canonical="https://storybites.co.nz/"
         openGraph={{
           url: "https://storybites.co.nz/",
-          title: "StoryBites - A New Zealand based culinary brand",
+          title:
+            "StoryBites - A New Zealand based food network and creative agency",
           description:
-            "We are a New Zealand based culinary brand mandated to empower one million people to find humanity in gastronomy.",
+            "We are a New Zealand based food network and creative agency passionate about celebrating the gift of hospitality.",
           images: [
             {
               url: "/images/og-image.png",
