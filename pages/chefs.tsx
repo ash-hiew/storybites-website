@@ -74,7 +74,7 @@ export default function ChefsPage({ chefs }: Props) {
               From fried chicken, to french pastries, food has no place for
               discrimination.
             </p>
-            <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base">
+            <p className="mx-auto max-w-2xl text-sm sm:text-base">
               Check out our team of culinary collaborators.
             </p>
           </div>
