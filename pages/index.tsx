@@ -147,7 +147,7 @@ export default function Home({ recipes, stories }: Props) {
         {/* Recent Recipes Section */}
         <section className="mx-auto my-32 flex max-w-7xl flex-col justify-center font-primary lg:my-40">
           <h2 className="-mb-3 px-10 text-3xl sm:text-4xl md:mb-3 md:text-5xl lg:mb-5">
-            The Latest <span className="font-bold">Recipes</span> Collected.
+            Latest <span className="font-bold">Recipes</span>.
           </h2>
 
           <div className="embla mx-auto px-5">
