@@ -111,7 +111,7 @@ function Footer() {
           </div>
         </nav>
         <p className="mt-8 text-center text-zinc-400">
-          © 2022 Storybites. All rights reserved.
+          © 2024 Storybites. All rights reserved.
         </p>
       </div>
     </footer>
