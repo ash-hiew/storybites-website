@@ -95,6 +95,161 @@ export default function Home({ recipes, stories }: Props) {
           </h2>
         </section>
 
+        {/* Brand Partners Section */}
+        <section className="mx-auto my-24 text-center">
+          <h2 className="text-l px-10 sm:mb-3 sm:text-xl md:mb-3 md:text-2xl lg:mb-5">
+            <span className="font-bold">Brands</span> We&apos;ve Worked With
+          </h2>
+          <div className="flex space-x-16 overflow-hidden">
+            <div className="flex animate-marquee-infinite space-x-20">
+              <Image
+                className="max-w-none"
+                src="/images/partner-logos/selwyn-from-the-land--logo.webp"
+                alt="Selwyn from the Land Logo"
+                width={150}
+                height={100}
+              />
+              <Image
+                className="max-w-none"
+                src="/images/partner-logos/upstock--logo.webp"
+                alt="Upstock Logo"
+                width={150}
+                height={100}
+              />
+              <Image
+                className="max-w-none"
+                src="/images/partner-logos/makikihi-fries--logo.webp"
+                alt="Makikihi Fries Logo"
+                width={150}
+                height={100}
+              />
+              <Image
+                className="max-w-none"
+                src="/images/partner-logos/maimoa--logo.webp"
+                alt="Maimoa Logo"
+                width={150}
+                height={100}
+              />
+              <Image
+                className="max-w-none"
+                src="/images/partner-logos/gong-cha--logo.webp"
+                alt="Gong Cha Logo"
+                width={150}
+                height={100}
+              />
+              <Image
+                className="max-w-none"
+                src="/images/partner-logos/ora-king--logo.webp"
+                alt="Ora King Logo"
+                width={150}
+                height={100}
+              />
+              <Image
+                className="max-w-none"
+                src="/images/partner-logos/aoraki--logo.webp"
+                alt="Aoraki Logo"
+                width={150}
+                height={100}
+              />
+              <Image
+                className="max-w-none"
+                src="/images/partner-logos/proper-crisps--logo.webp"
+                alt="Proper Crisps Logo"
+                width={150}
+                height={100}
+              />
+              <Image
+                className="max-w-none"
+                src="/images/partner-logos/ooni--logo.webp"
+                alt="Ooni - Pizza Ovens Logo"
+                width={150}
+                height={100}
+              />
+              <Image
+                className="max-w-none"
+                src="/images/partner-logos/papparich--logo.webp"
+                alt="Papparich Logo"
+                width={150}
+                height={100}
+              />
+            </div>
+            <div
+              className="flex animate-marquee-infinite space-x-20"
+              aria-hidden="true"
+            >
+              <Image
+                className="max-w-none"
+                src="/images/partner-logos/selwyn-from-the-land--logo.webp"
+                alt="Selwyn from the Land Logo"
+                width={150}
+                height={100}
+              />
+              <Image
+                className="max-w-none"
+                src="/images/partner-logos/upstock--logo.webp"
+                alt="Upstock Logo"
+                width={150}
+                height={100}
+              />
+              <Image
+                className="max-w-none"
+                src="/images/partner-logos/makikihi-fries--logo.webp"
+                alt="Makikihi Fries Logo"
+                width={150}
+                height={100}
+              />
+              <Image
+                className="max-w-none"
+                src="/images/partner-logos/maimoa--logo.webp"
+                alt="Maimoa Logo"
+                width={150}
+                height={100}
+              />
+              <Image
+                className="max-w-none"
+                src="/images/partner-logos/gong-cha--logo.webp"
+                alt="Gong Cha Logo"
+                width={150}
+                height={100}
+              />
+              <Image
+                className="max-w-none"
+                src="/images/partner-logos/ora-king--logo.webp"
+                alt="Ora King Logo"
+                width={150}
+                height={100}
+              />
+              <Image
+                className="max-w-none"
+                src="/images/partner-logos/aoraki--logo.webp"
+                alt="Aoraki Logo"
+                width={150}
+                height={100}
+              />
+              <Image
+                className="max-w-none"
+                src="/images/partner-logos/proper-crisps--logo.webp"
+                alt="Proper Crisps Logo"
+                width={150}
+                height={100}
+              />
+              <Image
+                className="max-w-none"
+                src="/images/partner-logos/ooni--logo.webp"
+                alt="Ooni - Pizza Ovens Logo"
+                width={150}
+                height={100}
+              />
+              <Image
+                className="max-w-none"
+                src="/images/partner-logos/papparich--logo.webp"
+                alt="Papparich Logo"
+                width={150}
+                height={100}
+              />
+            </div>
+          </div>
+        </section>
         {/* Recent Embla Stories Section */}
         <section className="mx-auto my-32 flex max-w-7xl flex-col justify-center font-primary lg:my-40">
           <h2 className="-mb-3 px-10 text-3xl sm:text-4xl md:mb-3 md:text-5xl lg:mb-5">
