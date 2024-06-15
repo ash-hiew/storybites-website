@@ -118,8 +118,9 @@ export default function ChefsPage({ chefs }: Props) {
               Keen to Partner With Us?
             </h3>
             <p className="mx-auto mt-6 max-w-2xl">
-              If you are passionate about sharing your craft to the community we
-              are building, join the narrative and start the conversation today.
+              If you're a brand that wants to collaborate with our network of
+              chefs through fun and exciting recipe development, let's start the
+              conversation today.
             </p>
           </div>
 
