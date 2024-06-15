@@ -10,7 +10,7 @@ module.exports = {
     },
     extend: { padding: { "fluid-video": "56.25%" },
     animation: {
-      'marquee-infinite': 'marquee 50s linear infinite',
+      'marquee-infinite': 'marquee 60s linear infinite',
     },
     keyframes: {
       marquee: {

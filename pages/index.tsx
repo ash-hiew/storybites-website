@@ -97,10 +97,10 @@ export default function Home({ recipes, stories }: Props) {
 
         {/* Brand Partners Section */}
         <section className="mx-auto my-24 text-center">
-          <h2 className="text-l px-10 sm:mb-3 sm:text-xl md:mb-3 md:text-2xl lg:mb-5">
+          <h2 className="px-10 text-lg sm:mb-3 sm:text-xl md:mb-3 md:text-2xl lg:mb-5">
             <span className="font-bold">Brands</span> We&apos;ve Worked With
           </h2>
-          <div className="flex space-x-16 overflow-hidden">
+          <div className="flex space-x-20 overflow-hidden pt-5">
             <div className="flex animate-marquee-infinite space-x-20">
               <Image
                 className="max-w-none"
