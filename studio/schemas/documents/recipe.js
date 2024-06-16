@@ -36,7 +36,8 @@ export default {
     {
       name: "mainImage",
       title: "Recipe Main Image",
-      type: "cloudinary.asset"
+      type: "cloudinary.asset",
+      description: "This asset is served from Cloudinary"
     },
     {
       name: "video",

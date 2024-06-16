@@ -21,6 +21,7 @@ export default {
       name: "image",
       title: "Image",
       type: "cloudinary.asset",
+      description: "This asset is served from Cloudinary",
       options: {
         hotspot: true,
       },

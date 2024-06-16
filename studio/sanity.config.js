@@ -1,10 +1,11 @@
 // sanity.config.js
 import { defineConfig } from "sanity";
-import { deskTool } from 'sanity/desk';
 import schemas from './schemas/schema';
 import { visionTool } from '@sanity/vision';
 import {cloudinarySchemaPlugin} from 'sanity-plugin-cloudinary';
 import {cloudinaryImageSource} from 'sanity-plugin-cloudinary';
+import {cloudinaryAssetSourcePlugin} from 'sanity-plugin-cloudinary'
+import {structureTool} from 'sanity/structure';
 import {tags} from 'sanity-plugin-tags';
 import { vercelDeployTool } from 'sanity-plugin-vercel-deploy';
 
@@ -14,8 +15,8 @@ export default defineConfig({
     projectId: "rmu3z19b",
     dataset: "production",
   plugins: [cloudinarySchemaPlugin(),
-  tags({}),deskTool(),
-  visionTool(), vercelDeployTool()],
+  tags({}),
+  visionTool(), vercelDeployTool(), structureTool(), cloudinaryAssetSourcePlugin()],
   
   tools: (prev) => {
     // 👇 Uses environment variables set by Vite in development mode
