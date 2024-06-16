@@ -4,7 +4,7 @@ import { GetStaticProps } from "next";
 import { Recipe } from "../../typing";
 import React from "react";
 import Image from "next/image";
-import PortableText from "react-portable-text";
+import { PortableText }from "@portabletext/react";
 
 import { default as _ReactPlayer } from "react-player/lazy";
 import { ReactPlayerProps } from "react-player/types/lib";
@@ -27,7 +27,6 @@ const Recipe = ({ recipe }: Props) => {
     align: "start",
     skipSnaps: false,
     inViewThreshold: 0.7,
-    speed: 5,
     containScroll: "trimSnaps",
   });
 
@@ -69,11 +68,10 @@ const Recipe = ({ recipe }: Props) => {
           </section>
 
           <section className="prose m-10 break-words prose-headings:font-bold prose-p:text-sm prose-p:leading-loose sm:prose-p:text-base sm:prose-p:leading-loose">
-            <PortableText
-              dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
-              projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
-              content={currentRecipe.description}
-            />
+            <div className="prose-p:text-sm prose-p:leading-loose sm:prose-p:text-base sm:prose-p:leading-loose"><PortableText
+              value={currentRecipe.description}
+            /></div>
+            
           </section>
 
           <section className="relative my-10 pb-fluid-video">
@@ -88,21 +86,18 @@ const Recipe = ({ recipe }: Props) => {
 
           <section className="mx-5 my-10 bg-stone-100 p-6 sm:p-8 md:mx-10">
             <h2 className="mb-4 text-3xl">Ingredients</h2>
-            <PortableText
-              dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
-              projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
-              content={currentRecipe.ingredients}
-              className="prose prose-headings:font-bold prose-li:text-sm sm:prose-li:text-base"
-            />
+            <div className="prose prose-headings:font-bold prose-li:text-sm sm:prose-li:text-base">            
+              <PortableText
+              value={currentRecipe.ingredients}
+            /></div>
+
           </section>
           <section className="m-10">
             <h2 className="mb-4 text-3xl">Instructions</h2>
-            <PortableText
-              dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
-              projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
-              content={currentRecipe.instructions}
-              className="prose prose-headings:font-bold prose-p:text-sm prose-p:leading-loose sm:prose-p:text-base sm:prose-p:leading-loose"
-            />
+            <div className="prose prose-headings:font-bold prose-p:text-sm prose-p:leading-loose sm:prose-p:text-base sm:prose-p:leading-loose"><PortableText
+              value={currentRecipe.instructions}
+            /></div>
+            
           </section>
 
           <section className="my-20 grid justify-items-center">

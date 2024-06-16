@@ -4,7 +4,7 @@ import { GetStaticProps } from "next";
 import React from "react";
 import { Story, Chef } from "../../typing";
 
-import PortableText from "react-portable-text";
+import { PortableText }from "@portabletext/react";
 
 import { default as _ReactPlayer } from "react-player/lazy";
 import { ReactPlayerProps } from "react-player/types/lib";
@@ -29,7 +29,6 @@ const Story = ({ story }: Props) => {
   const [emblaRef] = useEmblaCarousel({
     align: "start",
     skipSnaps: false,
-    speed: 5,
     containScroll: "trimSnaps",
   });
 
@@ -77,11 +76,7 @@ const Story = ({ story }: Props) => {
           </div>
 
           <div className="prose m-10 prose-headings:font-bold prose-p:text-sm prose-p:leading-loose sm:prose-p:text-base sm:prose-p:leading-loose">
-            <PortableText
-              dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
-              projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
-              content={currentStory.description}
-            />
+            <PortableText value={currentStory.description}/>
           </div>
 
           <div className="relative mt-10 pb-fluid-video">

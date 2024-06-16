@@ -45,7 +45,6 @@ export default function Home({ recipes, stories }: Props) {
     align: "start",
     skipSnaps: false,
     inViewThreshold: 0.7,
-    speed: 5,
     containScroll: "trimSnaps",
   });
 
@@ -53,7 +52,6 @@ export default function Home({ recipes, stories }: Props) {
     align: "start",
     skipSnaps: false,
     inViewThreshold: 0.7,
-    speed: 5,
     containScroll: "trimSnaps",
   });
 

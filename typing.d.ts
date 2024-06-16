@@ -23,7 +23,7 @@ export interface Story {
   };
   video: url;
   shortDescription: string;
-  description: object[];
+  description: typedObject[];
   category: Category;
   tags: object[];
   date: Date;
@@ -32,10 +32,10 @@ export interface Story {
 }
 
 export interface Recipe {
-  instructions: object[];
-  ingredients: object[];
+  instructions: typedObject[];
+  ingredients: typedObject[];
   shortDescription: string;
-  description: object[];
+  description: typedObject[];
   _id: string;
   title: string;
   chef: Chef;
