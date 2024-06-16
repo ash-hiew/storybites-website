@@ -7,7 +7,18 @@ module.exports = {
     gaId: process.env.NEXT_PUBLIC_SANITY_GA_ID
   },
   images: {
-    formats: ['image/avif', 'image/webp'],
-    domains: ['cdn.sanity.io', 'res.cloudinary.com']
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '**',
+      },
+            {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        pathname: '**',
+      }
+    ],
+    formats: ['image/avif', 'image/webp']
   }
 }
