@@ -4,6 +4,7 @@ module.exports = {
     'es2021': true,
   },
   'extends': [
+    'eslint:recommended',
     'plugin:@next/next/recommended',
     'google',
     'prettier',
