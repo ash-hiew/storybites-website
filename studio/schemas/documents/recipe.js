@@ -40,6 +40,12 @@ export default {
       description: "This asset is served from Cloudinary"
     },
     {
+      name: "finalImage",
+      title: "Recipe Final Image",
+      type: "cloudinary.asset",
+      description: "This asset is served from Cloudinary"
+    },
+    {
       name: "video",
       title: "Recipe Video Url",
       type: "url"

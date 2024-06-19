@@ -40,6 +40,7 @@ export interface Recipe {
   title: string;
   chef: Chef;
   mainImage: string;
+  finalImage: string;
   slug: {
     current: string;
   };

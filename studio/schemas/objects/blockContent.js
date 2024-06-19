@@ -27,6 +27,7 @@
         {title: 'H2', value: 'h2'},
         {title: 'H3', value: 'h3'},
         {title: 'H4', value: 'h4'},
+        {title: 'Emphasis', value: 'em'},
         {title: 'Quote', value: 'blockquote'},
       ],
       lists: [
@@ -67,6 +68,9 @@
         ],
       },
     },
+    {
+      type: 'image'
+    }
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
