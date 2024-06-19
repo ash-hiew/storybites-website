@@ -73,6 +73,16 @@ const Recipe = ({ recipe }: Props) => {
             </div>
           </section>
 
+          <Image
+            className="h-auto w-full transition-all duration-500 group-hover:scale-105"
+            src={currentRecipe.finalImage}
+            alt={currentRecipe.title}
+            placeholder="blur"
+            blurDataURL={currentRecipe.finalImage}
+            width={854}
+            height={480}
+          />
+
           <section className="relative my-10 pb-fluid-video">
             <ReactPlayer
               className="absolute left-0 top-0 h-full w-full"
@@ -94,15 +104,6 @@ const Recipe = ({ recipe }: Props) => {
             <div className="prose prose-headings:font-bold prose-p:text-sm prose-p:leading-loose sm:prose-p:text-base sm:prose-p:leading-loose">
               <PortableText value={currentRecipe.instructions} />
             </div>
-            <Image
-              className="h-auto w-full transition-all duration-500 group-hover:scale-105"
-              src={currentRecipe.finalImage}
-              alt={currentRecipe.title}
-              placeholder="blur"
-              blurDataURL={currentRecipe.finalImage}
-              width={854}
-              height={480}
-            />
           </section>
 
           <section className="my-20 grid justify-items-center">

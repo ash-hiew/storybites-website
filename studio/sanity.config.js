@@ -16,7 +16,7 @@ export default defineConfig({
     dataset: "production",
   plugins: [cloudinarySchemaPlugin(),
   tags({}),
-  visionTool(), vercelDeployTool(), structureTool(), cloudinaryAssetSourcePlugin()],
+  visionTool(), vercelDeployTool(), structureTool(), cloudinaryAssetSourcePlugin(), vercelDeployTool()],
   
   tools: (prev) => {
     // 👇 Uses environment variables set by Vite in development mode
