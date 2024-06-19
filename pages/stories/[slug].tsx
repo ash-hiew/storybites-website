@@ -2,9 +2,9 @@
 import { sanityClient } from "../../lib/sanity.server";
 import { GetStaticProps } from "next";
 import React from "react";
-import { Story, Chef } from "../../typing";
+import { type Story, Chef } from "../../typing";
 
-import { PortableText }from "@portabletext/react";
+import { PortableText } from "@portabletext/react";
 
 import { default as _ReactPlayer } from "react-player/lazy";
 import { ReactPlayerProps } from "react-player/types/lib";
@@ -76,7 +76,7 @@ const Story = ({ story }: Props) => {
           </div>
 
           <div className="prose m-10 prose-headings:font-bold prose-p:text-sm prose-p:leading-loose sm:prose-p:text-base sm:prose-p:leading-loose">
-            <PortableText value={currentStory.description}/>
+            <PortableText value={currentStory.description} />
           </div>
 
           <div className="relative mt-10 pb-fluid-video">

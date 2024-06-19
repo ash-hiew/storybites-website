@@ -1,7 +1,7 @@
 /* eslint-disable new-cap */
 import { sanityClient } from "../../lib/sanity.server";
 import { GetStaticProps } from "next";
-import { Recipe } from "../../typing";
+import { type Recipe } from "../../typing";
 import React from "react";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
@@ -79,8 +79,8 @@ const Recipe = ({ recipe }: Props) => {
             alt={currentRecipe.title}
             placeholder="blur"
             blurDataURL={currentRecipe.finalImage}
-            width={854}
-            height={480}
+            width={1024}
+            height={768}
           />
 
           <section className="relative my-10 pb-fluid-video">

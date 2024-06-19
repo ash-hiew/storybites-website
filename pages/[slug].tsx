@@ -1,7 +1,7 @@
 import { sanityClient } from "../lib/sanity.server";
 import { GetStaticProps } from "next";
 import React from "react";
-import { Story, Chef, Category } from "../typing";
+import { Story, Chef, type Category } from "../typing";
 
 import Link from "next/link";
 import { FiArrowRightCircle } from "react-icons/fi";

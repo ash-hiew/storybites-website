@@ -7,7 +7,7 @@ import { FiArrowRightCircle } from "react-icons/fi";
 
 import Image from "next/image";
 import Layout from "../../components/Layout";
-import { Chef, Recipe, Story } from "../../typing";
+import { type Chef, Recipe, Story } from "../../typing";
 
 import { NextSeo } from "next-seo";
 import siteMetadata from "../../data/siteMetadata";
